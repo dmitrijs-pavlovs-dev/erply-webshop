@@ -5,6 +5,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class ProductService {
+  private apiUrl = 'http://erply-challenge.herokuapp.com/';
   constructor(private http: HttpClient) {}
   getProducts(): Observable<IProduct[]> {
     let options = {
@@ -13,6 +14,6 @@ export class ProductService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.get<IProduct[]>('/list', options);
+    return this.http.get<IProduct[]>(this.apiUrl + '/list', options);
   }
 }
