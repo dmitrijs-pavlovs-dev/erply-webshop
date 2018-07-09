@@ -2,7 +2,11 @@
   "name": "erply-webshop",
   "version": "0.0.0",
   "scripts": {
+<<<<<<< HEAD
     "postinstall": "ng build --aot-prod",
+=======
+    "postinstall": "ng build --prod",
+>>>>>>> 299bbceb47f24028bc8dc344fb8961e6e43eadd9
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
