@@ -2,9 +2,9 @@
   "name": "erply-webshop",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "ng build --prod",
+    "postinstall": "ng build",
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve --proxy-config proxy.conf.json --port 8080",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
