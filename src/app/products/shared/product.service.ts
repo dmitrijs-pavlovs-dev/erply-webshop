@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {IProduct} from './product.model';
-import {httpClient, httpHeaders} from '@angular/common/http';
+
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class ProductService {
   private apiUrl = 'https://erply-challenge.herokuapp.com';
 
 
-  constructor(private http: httpClient) {}
+  constructor(private http: HttpClient) {}
 
   getProducts():Observable<IProduct[]> {
     
@@ -22,7 +23,7 @@ export class ProductService {
   /*
   getProducts(): Observable<IProduct[]> {
     let options = {
-      headers: new httpHeaders({
+      headers: new HttpHeaders({
         AUTH: 'fae7b9f6-6363-45a1-a9c9-3def2dae206d',
         'Access-Control-Allow-Origin': '*'
       })
