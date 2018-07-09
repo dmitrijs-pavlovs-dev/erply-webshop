@@ -11,12 +11,14 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts():Observable<IProduct[]> {
+    
+    //Api call emulation.
     let products = new Subject<IProduct[]>()
-    setTimeout(() => {products.next(PRODUCTS); products.complete(); }, 100)
+    setTimeout(() => {products.next(PRODUCTS); products.complete(); }, Math.floor((Math.random() * 1000) + 100))
     return products
   }
   //Real api call. Returns No 'Access-Control-Allow-Origin' header is present on the requested resource. 
-  
+
   /*
   getProducts(): Observable<IProduct[]> {
     let options = {
