@@ -20,7 +20,7 @@
 </mat-toolbar>
 <div class="productlist-wrapper">
     <mat-card *ngFor="let product of pagedItems">
-        <div *ngIf="product.instore" matBadge="Not in store"></div>
+
         <mat-card-header [routerLink]="['/products', product.id]">
             <div mat-card-avatar [ngStyle]="{background: 'url(' + product.image + ') no-repeat center center ',
              'background-size': 'cover'}"></div>
@@ -29,6 +29,7 @@
             </mat-card-title>
             <mat-card-subtitle>
                 <h6>{{product.store}}</h6>
+                <h6>{{product.instock}}</h6>
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>

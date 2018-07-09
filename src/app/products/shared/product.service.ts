@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {IProduct} from './product.model';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {httpClient, httpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class ProductService {
   private apiUrl = 'https://erply-challenge.herokuapp.com';
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: httpClient) {}
 
   getProducts():Observable<IProduct[]> {
     
@@ -22,7 +22,7 @@ export class ProductService {
   /*
   getProducts(): Observable<IProduct[]> {
     let options = {
-      headers: new HttpHeaders({
+      headers: new httpHeaders({
         AUTH: 'fae7b9f6-6363-45a1-a9c9-3def2dae206d',
         'Access-Control-Allow-Origin': '*'
       })
@@ -36,7 +36,7 @@ const PRODUCTS:IProduct[] =
 [
   {
       "id": 1,
-      "image": "http://dummyimage.com/106x246.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/106x246.png/ff4444/ffffff",
       "productcode": "76420-780",
       "name": "Syrup - Golden, Lyles",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -48,7 +48,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 2,
-      "image": "http://dummyimage.com/223x202.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/223x202.jpg/cc0000/ffffff",
       "productcode": "35418-750",
       "name": "Nantucket Orange Juice",
       "description": "Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -60,7 +60,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 3,
-      "image": "http://dummyimage.com/162x156.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/162x156.jpg/cc0000/ffffff",
       "productcode": "63629-3211",
       "name": "Bread - Sticks, Thin, Plain",
       "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
@@ -72,7 +72,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 4,
-      "image": "http://dummyimage.com/180x174.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/180x174.jpg/dddddd/000000",
       "productcode": "0338-9542",
       "name": "Pepper - Orange",
       "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
@@ -84,7 +84,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 5,
-      "image": "http://dummyimage.com/229x223.png/dddddd/000000",
+      "image": "https://dummyimage.com/229x223.png/dddddd/000000",
       "productcode": "0781-3166",
       "name": "Cocoa Powder - Natural",
       "description": "Maecenas tincidunt lacus at velit.",
@@ -96,7 +96,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 6,
-      "image": "http://dummyimage.com/228x217.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/228x217.bmp/dddddd/000000",
       "productcode": "50382-011",
       "name": "Island Oasis - Wildberry",
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -108,7 +108,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 7,
-      "image": "http://dummyimage.com/180x166.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/180x166.bmp/cc0000/ffffff",
       "productcode": "10096-0311",
       "name": "Vegetable - Base",
       "description": "Nullam porttitor lacus at turpis.",
@@ -120,7 +120,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 8,
-      "image": "http://dummyimage.com/215x215.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/215x215.png/cc0000/ffffff",
       "productcode": "67544-023",
       "name": "Zucchini - Yellow",
       "description": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
@@ -132,7 +132,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 9,
-      "image": "http://dummyimage.com/234x150.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/234x150.bmp/5fa2dd/ffffff",
       "productcode": "51672-1322",
       "name": "Flour - Cake",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -144,7 +144,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 10,
-      "image": "http://dummyimage.com/180x250.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/180x250.png/5fa2dd/ffffff",
       "productcode": "0548-3015",
       "name": "Salmon - Smoked, Sliced",
       "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -156,7 +156,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 11,
-      "image": "http://dummyimage.com/196x111.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/196x111.bmp/cc0000/ffffff",
       "productcode": "61300-0001",
       "name": "Oxtail - Cut",
       "description": "Proin risus.",
@@ -168,7 +168,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 12,
-      "image": "http://dummyimage.com/196x100.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/196x100.jpg/5fa2dd/ffffff",
       "productcode": "51672-4063",
       "name": "Walkers Special Old Whiskey",
       "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.",
@@ -180,7 +180,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 13,
-      "image": "http://dummyimage.com/154x199.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/154x199.png/5fa2dd/ffffff",
       "productcode": "13630-0051",
       "name": "Onions - Cippolini",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.",
@@ -192,7 +192,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 14,
-      "image": "http://dummyimage.com/169x164.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/169x164.bmp/dddddd/000000",
       "productcode": "53329-061",
       "name": "Bread - Rye",
       "description": "In hac habitasse platea dictumst.",
@@ -204,7 +204,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 15,
-      "image": "http://dummyimage.com/205x188.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/205x188.jpg/dddddd/000000",
       "productcode": "17089-242",
       "name": "Wine - White, Mosel Gold",
       "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
@@ -216,7 +216,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 16,
-      "image": "http://dummyimage.com/247x103.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/247x103.jpg/ff4444/ffffff",
       "productcode": "49884-056",
       "name": "Appetizer - Mini Egg Roll, Shrimp",
       "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -228,7 +228,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 17,
-      "image": "http://dummyimage.com/159x199.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/159x199.jpg/cc0000/ffffff",
       "productcode": "62935-302",
       "name": "Lamb Rack - Ontario",
       "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
@@ -240,7 +240,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 18,
-      "image": "http://dummyimage.com/211x110.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/211x110.bmp/ff4444/ffffff",
       "productcode": "63713-461",
       "name": "Soup Campbells Mexicali Tortilla",
       "description": "Vestibulum sed magna at nunc commodo placerat.",
@@ -252,7 +252,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 19,
-      "image": "http://dummyimage.com/187x207.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/187x207.jpg/cc0000/ffffff",
       "productcode": "0054-0404",
       "name": "Extract - Almond",
       "description": "Proin risus. Praesent lectus.",
@@ -264,7 +264,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 20,
-      "image": "http://dummyimage.com/181x217.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/181x217.bmp/5fa2dd/ffffff",
       "productcode": "37808-698",
       "name": "Lotus Root",
       "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
@@ -276,7 +276,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 21,
-      "image": "http://dummyimage.com/226x235.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/226x235.bmp/dddddd/000000",
       "productcode": "41167-4310",
       "name": "Cheese - Cambozola",
       "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -288,7 +288,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 22,
-      "image": "http://dummyimage.com/140x132.png/dddddd/000000",
+      "image": "https://dummyimage.com/140x132.png/dddddd/000000",
       "productcode": "16590-863",
       "name": "Appetizer - Seafood Assortment",
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
@@ -300,7 +300,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 23,
-      "image": "http://dummyimage.com/165x107.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/165x107.jpg/cc0000/ffffff",
       "productcode": "10237-754",
       "name": "Squash - Sunburst",
       "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
@@ -312,7 +312,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 24,
-      "image": "http://dummyimage.com/234x229.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/234x229.png/cc0000/ffffff",
       "productcode": "0268-6526",
       "name": "Wine - Cava Aria Estate Brut",
       "description": "Aliquam erat volutpat. In congue. Etiam justo.",
@@ -324,7 +324,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 25,
-      "image": "http://dummyimage.com/140x149.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/140x149.jpg/dddddd/000000",
       "productcode": "68788-9790",
       "name": "Fruit Salad Deluxe",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -336,7 +336,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 26,
-      "image": "http://dummyimage.com/143x219.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/143x219.bmp/5fa2dd/ffffff",
       "productcode": "49909-005",
       "name": "Cookies - Englishbay Oatmeal",
       "description": "Donec semper sapien a libero.",
@@ -348,7 +348,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 27,
-      "image": "http://dummyimage.com/148x209.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/148x209.jpg/cc0000/ffffff",
       "productcode": "0096-0741",
       "name": "Pork - Back, Long Cut, Boneless",
       "description": "Aenean lectus. Pellentesque eget nunc.",
@@ -360,7 +360,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 28,
-      "image": "http://dummyimage.com/250x232.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/250x232.jpg/ff4444/ffffff",
       "productcode": "36987-1668",
       "name": "Apricots - Dried",
       "description": "In quis justo.",
@@ -372,7 +372,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 29,
-      "image": "http://dummyimage.com/133x192.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/133x192.bmp/ff4444/ffffff",
       "productcode": "76214-034",
       "name": "Dragon Fruit",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -384,7 +384,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 30,
-      "image": "http://dummyimage.com/233x214.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/233x214.png/5fa2dd/ffffff",
       "productcode": "0093-1026",
       "name": "Canada Dry",
       "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
@@ -396,7 +396,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 31,
-      "image": "http://dummyimage.com/175x144.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/175x144.bmp/5fa2dd/ffffff",
       "productcode": "0268-6648",
       "name": "Vinegar - Balsamic",
       "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -408,7 +408,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 32,
-      "image": "http://dummyimage.com/235x213.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/235x213.jpg/5fa2dd/ffffff",
       "productcode": "63402-511",
       "name": "Dikon",
       "description": "Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.",
@@ -420,7 +420,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 33,
-      "image": "http://dummyimage.com/229x102.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/229x102.bmp/dddddd/000000",
       "productcode": "36987-2688",
       "name": "Mushroom - Lg - Cello",
       "description": "Aenean sit amet justo. Morbi ut odio.",
@@ -432,7 +432,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 34,
-      "image": "http://dummyimage.com/198x112.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/198x112.jpg/dddddd/000000",
       "productcode": "55289-302",
       "name": "Pepper - Red Chili",
       "description": "Etiam justo. Etiam pretium iaculis justo.",
@@ -444,7 +444,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 35,
-      "image": "http://dummyimage.com/188x204.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/188x204.png/cc0000/ffffff",
       "productcode": "36987-1586",
       "name": "Spice - Paprika",
       "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -456,7 +456,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 36,
-      "image": "http://dummyimage.com/126x186.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/126x186.bmp/5fa2dd/ffffff",
       "productcode": "36987-2607",
       "name": "Trout - Rainbow, Frozen",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -468,7 +468,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 37,
-      "image": "http://dummyimage.com/198x226.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/198x226.png/5fa2dd/ffffff",
       "productcode": "54575-969",
       "name": "Carrots - Purple, Organic",
       "description": "Nulla tempus.",
@@ -480,7 +480,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 38,
-      "image": "http://dummyimage.com/155x201.png/dddddd/000000",
+      "image": "https://dummyimage.com/155x201.png/dddddd/000000",
       "productcode": "63629-3386",
       "name": "Cheese - Havarti, Salsa",
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
@@ -492,7 +492,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 39,
-      "image": "http://dummyimage.com/238x125.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/238x125.png/ff4444/ffffff",
       "productcode": "36987-2707",
       "name": "Bread - Hot Dog Buns",
       "description": "Proin at turpis a pede posuere nonummy.",
@@ -504,7 +504,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 40,
-      "image": "http://dummyimage.com/200x224.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/200x224.bmp/ff4444/ffffff",
       "productcode": "14743-103",
       "name": "Dasheen",
       "description": "Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.",
@@ -516,7 +516,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 41,
-      "image": "http://dummyimage.com/146x203.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/146x203.bmp/cc0000/ffffff",
       "productcode": "43353-656",
       "name": "Venison - Ground",
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
@@ -528,7 +528,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 42,
-      "image": "http://dummyimage.com/140x118.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/140x118.png/ff4444/ffffff",
       "productcode": "0093-0263",
       "name": "Cheese - Grana Padano",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -540,7 +540,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 43,
-      "image": "http://dummyimage.com/245x182.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/245x182.jpg/5fa2dd/ffffff",
       "productcode": "64679-810",
       "name": "Veal - Kidney",
       "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
@@ -552,7 +552,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 44,
-      "image": "http://dummyimage.com/200x170.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/200x170.bmp/5fa2dd/ffffff",
       "productcode": "63261-250",
       "name": "Yoplait - Strawbrasp Peac",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
@@ -564,7 +564,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 45,
-      "image": "http://dummyimage.com/170x129.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/170x129.bmp/5fa2dd/ffffff",
       "productcode": "62018-001",
       "name": "Tea Leaves - Oolong",
       "description": "Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
@@ -576,7 +576,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 46,
-      "image": "http://dummyimage.com/217x168.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/217x168.bmp/cc0000/ffffff",
       "productcode": "60512-2003",
       "name": "Soup - Boston Clam Chowder",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -588,7 +588,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 47,
-      "image": "http://dummyimage.com/103x114.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/103x114.bmp/ff4444/ffffff",
       "productcode": "65044-4702",
       "name": "Blouse / Shirt / Sweater",
       "description": "Maecenas tincidunt lacus at velit.",
@@ -600,7 +600,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 48,
-      "image": "http://dummyimage.com/148x172.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/148x172.bmp/5fa2dd/ffffff",
       "productcode": "68001-116",
       "name": "Oil - Canola",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -612,7 +612,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 49,
-      "image": "http://dummyimage.com/103x240.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/103x240.jpg/5fa2dd/ffffff",
       "productcode": "65841-729",
       "name": "Beef - Diced",
       "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -624,7 +624,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 50,
-      "image": "http://dummyimage.com/139x197.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/139x197.jpg/cc0000/ffffff",
       "productcode": "63739-557",
       "name": "Chervil - Fresh",
       "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -636,7 +636,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 51,
-      "image": "http://dummyimage.com/237x151.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/237x151.jpg/ff4444/ffffff",
       "productcode": "41167-0105",
       "name": "Mushroom - Lg - Cello",
       "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
@@ -648,7 +648,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 52,
-      "image": "http://dummyimage.com/121x130.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/121x130.png/cc0000/ffffff",
       "productcode": "0703-5656",
       "name": "Pastry - Mini French Pastries",
       "description": "Integer ac leo. Pellentesque ultrices mattis odio.",
@@ -660,7 +660,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 53,
-      "image": "http://dummyimage.com/243x154.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/243x154.jpg/cc0000/ffffff",
       "productcode": "33342-037",
       "name": "Flour - Whole Wheat",
       "description": "Sed sagittis.",
@@ -672,7 +672,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 54,
-      "image": "http://dummyimage.com/206x242.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/206x242.bmp/cc0000/ffffff",
       "productcode": "68479-013",
       "name": "Peppercorns - Pink",
       "description": "In hac habitasse platea dictumst.",
@@ -684,7 +684,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 55,
-      "image": "http://dummyimage.com/192x158.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/192x158.png/cc0000/ffffff",
       "productcode": "49790-001",
       "name": "Plastic Arrow Stir Stick",
       "description": "Phasellus sit amet erat. Nulla tempus.",
@@ -696,7 +696,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 56,
-      "image": "http://dummyimage.com/228x107.png/dddddd/000000",
+      "image": "https://dummyimage.com/228x107.png/dddddd/000000",
       "productcode": "50268-265",
       "name": "Soap - Mr.clean Floor Soap",
       "description": "Phasellus id sapien in sapien iaculis congue.",
@@ -708,7 +708,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 57,
-      "image": "http://dummyimage.com/204x156.png/dddddd/000000",
+      "image": "https://dummyimage.com/204x156.png/dddddd/000000",
       "productcode": "55648-312",
       "name": "Coffee - Decafenated",
       "description": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
@@ -720,7 +720,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 58,
-      "image": "http://dummyimage.com/174x161.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/174x161.png/ff4444/ffffff",
       "productcode": "53808-0888",
       "name": "Beer - Sleemans Cream Ale",
       "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -732,7 +732,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 59,
-      "image": "http://dummyimage.com/131x160.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/131x160.jpg/dddddd/000000",
       "productcode": "0067-2021",
       "name": "Wine - Malbec Trapiche Reserve",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -744,7 +744,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 60,
-      "image": "http://dummyimage.com/179x250.png/dddddd/000000",
+      "image": "https://dummyimage.com/179x250.png/dddddd/000000",
       "productcode": "52584-321",
       "name": "Vinegar - Raspberry",
       "description": "Duis bibendum.",
@@ -756,7 +756,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 61,
-      "image": "http://dummyimage.com/190x166.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/190x166.bmp/ff4444/ffffff",
       "productcode": "24236-364",
       "name": "Cup - 4oz Translucent",
       "description": "Maecenas rhoncus aliquam lacus.",
@@ -768,7 +768,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 62,
-      "image": "http://dummyimage.com/190x185.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/190x185.bmp/ff4444/ffffff",
       "productcode": "0006-0757",
       "name": "Momiji Oroshi Chili Sauce",
       "description": "Praesent lectus.",
@@ -780,7 +780,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 63,
-      "image": "http://dummyimage.com/200x171.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/200x171.jpg/dddddd/000000",
       "productcode": "49817-0053",
       "name": "Pork Casing",
       "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
@@ -792,7 +792,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 64,
-      "image": "http://dummyimage.com/201x162.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/201x162.png/5fa2dd/ffffff",
       "productcode": "0591-0408",
       "name": "Bagel - 12 Grain Preslice",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -804,7 +804,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 65,
-      "image": "http://dummyimage.com/151x156.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/151x156.png/ff4444/ffffff",
       "productcode": "59779-182",
       "name": "Lady Fingers",
       "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
@@ -816,7 +816,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 66,
-      "image": "http://dummyimage.com/215x164.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/215x164.png/5fa2dd/ffffff",
       "productcode": "51523-001",
       "name": "Ecolab - Hobart Upr Prewash Arm",
       "description": "Nulla ut erat id mauris vulputate elementum.",
@@ -828,7 +828,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 67,
-      "image": "http://dummyimage.com/204x218.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/204x218.bmp/ff4444/ffffff",
       "productcode": "59995-001",
       "name": "Pork - Back Ribs",
       "description": "Praesent lectus.",
@@ -840,7 +840,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 68,
-      "image": "http://dummyimage.com/163x239.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/163x239.bmp/cc0000/ffffff",
       "productcode": "11822-0004",
       "name": "Bag Clear 10 Lb",
       "description": "Fusce consequat.",
@@ -852,7 +852,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 69,
-      "image": "http://dummyimage.com/140x160.png/dddddd/000000",
+      "image": "https://dummyimage.com/140x160.png/dddddd/000000",
       "productcode": "57955-0128",
       "name": "Cheese - Oka",
       "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -864,7 +864,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 70,
-      "image": "http://dummyimage.com/101x101.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/101x101.bmp/5fa2dd/ffffff",
       "productcode": "49643-018",
       "name": "Pastry - Apple Muffins - Mini",
       "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
@@ -876,7 +876,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 71,
-      "image": "http://dummyimage.com/169x235.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/169x235.png/ff4444/ffffff",
       "productcode": "61957-0117",
       "name": "Sherbet - Raspberry",
       "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -888,7 +888,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 72,
-      "image": "http://dummyimage.com/160x187.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/160x187.jpg/5fa2dd/ffffff",
       "productcode": "0009-0225",
       "name": "Coke - Diet, 355 Ml",
       "description": "Nam dui.",
@@ -900,7 +900,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 73,
-      "image": "http://dummyimage.com/101x113.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/101x113.jpg/dddddd/000000",
       "productcode": "51079-460",
       "name": "Long Island Ice Tea",
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
@@ -912,7 +912,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 74,
-      "image": "http://dummyimage.com/126x201.png/dddddd/000000",
+      "image": "https://dummyimage.com/126x201.png/dddddd/000000",
       "productcode": "0002-4771",
       "name": "Chinese Foods - Plain Fried Rice",
       "description": "Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
@@ -924,7 +924,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 75,
-      "image": "http://dummyimage.com/189x193.png/dddddd/000000",
+      "image": "https://dummyimage.com/189x193.png/dddddd/000000",
       "productcode": "36987-3171",
       "name": "Water, Tap",
       "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
@@ -936,7 +936,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 76,
-      "image": "http://dummyimage.com/110x133.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/110x133.png/cc0000/ffffff",
       "productcode": "24385-036",
       "name": "Juice - Clam, 46 Oz",
       "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
@@ -948,7 +948,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 77,
-      "image": "http://dummyimage.com/111x185.png/dddddd/000000",
+      "image": "https://dummyimage.com/111x185.png/dddddd/000000",
       "productcode": "51079-223",
       "name": "Turkey - Whole, Fresh",
       "description": "Suspendisse accumsan tortor quis turpis.",
@@ -960,7 +960,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 78,
-      "image": "http://dummyimage.com/210x171.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/210x171.png/cc0000/ffffff",
       "productcode": "29500-8030",
       "name": "Wine - White, Cooking",
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
@@ -972,7 +972,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 79,
-      "image": "http://dummyimage.com/250x126.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/250x126.png/5fa2dd/ffffff",
       "productcode": "0363-2102",
       "name": "Honey - Comb",
       "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
@@ -984,7 +984,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 80,
-      "image": "http://dummyimage.com/222x128.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/222x128.jpg/5fa2dd/ffffff",
       "productcode": "68462-115",
       "name": "Wine - Chateauneuf Du Pape",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
@@ -996,7 +996,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 81,
-      "image": "http://dummyimage.com/177x208.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/177x208.png/ff4444/ffffff",
       "productcode": "0363-0534",
       "name": "Blueberries - Frozen",
       "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -1008,7 +1008,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 82,
-      "image": "http://dummyimage.com/225x205.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/225x205.bmp/ff4444/ffffff",
       "productcode": "64980-175",
       "name": "Sauce - Apple, Unsweetened",
       "description": "Pellentesque at nulla.",
@@ -1020,7 +1020,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 83,
-      "image": "http://dummyimage.com/177x127.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/177x127.png/ff4444/ffffff",
       "productcode": "42998-963",
       "name": "Truffle - Peelings",
       "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
@@ -1032,7 +1032,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 84,
-      "image": "http://dummyimage.com/153x206.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/153x206.bmp/cc0000/ffffff",
       "productcode": "68472-092",
       "name": "Sprouts - Baby Pea Tendrils",
       "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.",
@@ -1044,7 +1044,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 85,
-      "image": "http://dummyimage.com/233x157.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/233x157.jpg/dddddd/000000",
       "productcode": "36987-1522",
       "name": "Cheese - Boursin, Garlic / Herbs",
       "description": "Mauris sit amet eros.",
@@ -1056,7 +1056,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 86,
-      "image": "http://dummyimage.com/211x116.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/211x116.bmp/5fa2dd/ffffff",
       "productcode": "0121-4793",
       "name": "Ecolab - Hand Soap Form Antibac",
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
@@ -1068,7 +1068,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 87,
-      "image": "http://dummyimage.com/127x154.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/127x154.jpg/dddddd/000000",
       "productcode": "49953-2801",
       "name": "Soup - Campbells Chili Veg",
       "description": "In congue.",
@@ -1080,7 +1080,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 88,
-      "image": "http://dummyimage.com/145x214.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/145x214.png/5fa2dd/ffffff",
       "productcode": "58118-3541",
       "name": "Longos - Grilled Veg Sandwiches",
       "description": "Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
@@ -1092,7 +1092,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 89,
-      "image": "http://dummyimage.com/109x219.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/109x219.bmp/cc0000/ffffff",
       "productcode": "50845-0048",
       "name": "Squeeze Bottle",
       "description": "Aenean auctor gravida sem.",
@@ -1104,7 +1104,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 90,
-      "image": "http://dummyimage.com/108x230.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/108x230.png/5fa2dd/ffffff",
       "productcode": "10356-351",
       "name": "Beef - Striploin Aa",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -1116,7 +1116,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 91,
-      "image": "http://dummyimage.com/126x171.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/126x171.bmp/cc0000/ffffff",
       "productcode": "0228-2530",
       "name": "Irish Cream - Baileys",
       "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.",
@@ -1128,7 +1128,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 92,
-      "image": "http://dummyimage.com/154x143.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/154x143.bmp/ff4444/ffffff",
       "productcode": "60977-144",
       "name": "Chicken - Whole",
       "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
@@ -1140,7 +1140,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 93,
-      "image": "http://dummyimage.com/177x156.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/177x156.jpg/dddddd/000000",
       "productcode": "60429-163",
       "name": "Pork - Backs - Boneless",
       "description": "Nam nulla.",
@@ -1152,7 +1152,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 94,
-      "image": "http://dummyimage.com/214x153.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/214x153.png/ff4444/ffffff",
       "productcode": "55154-9427",
       "name": "Celery",
       "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.",
@@ -1164,7 +1164,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 95,
-      "image": "http://dummyimage.com/127x239.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/127x239.png/cc0000/ffffff",
       "productcode": "13537-284",
       "name": "Sour Puss - Tangerine",
       "description": "Integer non velit.",
@@ -1176,7 +1176,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 96,
-      "image": "http://dummyimage.com/153x250.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/153x250.jpg/ff4444/ffffff",
       "productcode": "47632-0029",
       "name": "Scallops 60/80 Iqf",
       "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
@@ -1188,7 +1188,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 97,
-      "image": "http://dummyimage.com/132x108.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/132x108.jpg/cc0000/ffffff",
       "productcode": "0904-6296",
       "name": "Chicken - Whole Roasting",
       "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -1200,7 +1200,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 98,
-      "image": "http://dummyimage.com/125x196.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/125x196.jpg/dddddd/000000",
       "productcode": "65044-1061",
       "name": "Melon - Watermelon, Seedless",
       "description": "Maecenas pulvinar lobortis est.",
@@ -1212,7 +1212,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 99,
-      "image": "http://dummyimage.com/171x150.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/171x150.jpg/dddddd/000000",
       "productcode": "63629-5311",
       "name": "Oneshot Automatic Soap System",
       "description": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
@@ -1224,7 +1224,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 100,
-      "image": "http://dummyimage.com/122x238.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/122x238.jpg/5fa2dd/ffffff",
       "productcode": "0179-0091",
       "name": "Amaretto",
       "description": "Phasellus sit amet erat. Nulla tempus.",
@@ -1236,7 +1236,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 101,
-      "image": "http://dummyimage.com/231x205.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/231x205.jpg/ff4444/ffffff",
       "productcode": "61442-173",
       "name": "Chinese Foods - Cantonese",
       "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -1248,7 +1248,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 102,
-      "image": "http://dummyimage.com/171x138.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/171x138.jpg/ff4444/ffffff",
       "productcode": "49288-0196",
       "name": "Cake - Lemon Chiffon",
       "description": "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -1260,7 +1260,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 103,
-      "image": "http://dummyimage.com/199x221.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/199x221.bmp/ff4444/ffffff",
       "productcode": "60429-241",
       "name": "Cranberries - Fresh",
       "description": "Etiam justo. Etiam pretium iaculis justo.",
@@ -1272,7 +1272,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 104,
-      "image": "http://dummyimage.com/201x182.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/201x182.jpg/cc0000/ffffff",
       "productcode": "0781-5627",
       "name": "Mcgillicuddy Vanilla Schnap",
       "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
@@ -1284,7 +1284,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 105,
-      "image": "http://dummyimage.com/105x199.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/105x199.jpg/dddddd/000000",
       "productcode": "0172-6406",
       "name": "Brandy Cherry - Mcguinness",
       "description": "Integer a nibh.",
@@ -1296,7 +1296,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 106,
-      "image": "http://dummyimage.com/239x178.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/239x178.png/5fa2dd/ffffff",
       "productcode": "55289-711",
       "name": "Salmon - Atlantic, Skin On",
       "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
@@ -1308,7 +1308,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 107,
-      "image": "http://dummyimage.com/205x136.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/205x136.jpg/dddddd/000000",
       "productcode": "0781-3059",
       "name": "Fennel - Seeds",
       "description": "Maecenas ut massa quis augue luctus tincidunt.",
@@ -1320,7 +1320,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 108,
-      "image": "http://dummyimage.com/187x124.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/187x124.jpg/5fa2dd/ffffff",
       "productcode": "36987-1403",
       "name": "Sugar - Brown, Individual",
       "description": "Aliquam erat volutpat.",
@@ -1332,7 +1332,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 109,
-      "image": "http://dummyimage.com/190x187.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/190x187.jpg/dddddd/000000",
       "productcode": "68007-204",
       "name": "Quail - Whole, Bone - In",
       "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.",
@@ -1344,7 +1344,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 110,
-      "image": "http://dummyimage.com/141x138.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/141x138.jpg/dddddd/000000",
       "productcode": "64117-273",
       "name": "Neckerchief Blck",
       "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -1356,7 +1356,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 111,
-      "image": "http://dummyimage.com/135x222.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/135x222.png/5fa2dd/ffffff",
       "productcode": "67777-232",
       "name": "Island Oasis - Strawberry",
       "description": "Etiam faucibus cursus urna. Ut tellus.",
@@ -1368,7 +1368,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 112,
-      "image": "http://dummyimage.com/100x192.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/100x192.png/cc0000/ffffff",
       "productcode": "55910-893",
       "name": "Mudslide",
       "description": "Suspendisse potenti. In eleifend quam a odio.",
@@ -1380,7 +1380,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 113,
-      "image": "http://dummyimage.com/168x157.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/168x157.bmp/5fa2dd/ffffff",
       "productcode": "0904-6216",
       "name": "Garbage Bags - Clear",
       "description": "Morbi vel lectus in quam fringilla rhoncus.",
@@ -1392,7 +1392,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 114,
-      "image": "http://dummyimage.com/138x192.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/138x192.jpg/5fa2dd/ffffff",
       "productcode": "51991-294",
       "name": "Syrup - Monin - Granny Smith",
       "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -1404,7 +1404,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 115,
-      "image": "http://dummyimage.com/120x176.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/120x176.jpg/5fa2dd/ffffff",
       "productcode": "66915-612",
       "name": "Pickle - Dill",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -1416,7 +1416,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 116,
-      "image": "http://dummyimage.com/236x220.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/236x220.bmp/dddddd/000000",
       "productcode": "51079-868",
       "name": "Flour - Rye",
       "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
@@ -1428,7 +1428,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 117,
-      "image": "http://dummyimage.com/239x150.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/239x150.bmp/ff4444/ffffff",
       "productcode": "68196-544",
       "name": "Strawberries",
       "description": "Praesent lectus.",
@@ -1440,7 +1440,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 118,
-      "image": "http://dummyimage.com/169x249.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/169x249.jpg/ff4444/ffffff",
       "productcode": "0527-1445",
       "name": "Nescafe - Frothy French Vanilla",
       "description": "Nullam varius. Nulla facilisi.",
@@ -1452,7 +1452,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 119,
-      "image": "http://dummyimage.com/175x186.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/175x186.jpg/ff4444/ffffff",
       "productcode": "49288-0035",
       "name": "Chocolate - Liqueur Cups With Foil",
       "description": "Suspendisse potenti. In eleifend quam a odio.",
@@ -1464,7 +1464,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 120,
-      "image": "http://dummyimage.com/205x139.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/205x139.bmp/dddddd/000000",
       "productcode": "61727-302",
       "name": "Olives - Morracan Dired",
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -1476,7 +1476,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 121,
-      "image": "http://dummyimage.com/141x156.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/141x156.png/ff4444/ffffff",
       "productcode": "48951-8127",
       "name": "Lemonade - Black Cherry, 591 Ml",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -1488,7 +1488,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 122,
-      "image": "http://dummyimage.com/198x243.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/198x243.bmp/5fa2dd/ffffff",
       "productcode": "0023-9205",
       "name": "Flower - Commercial Spider",
       "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
@@ -1500,7 +1500,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 123,
-      "image": "http://dummyimage.com/180x162.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/180x162.jpg/ff4444/ffffff",
       "productcode": "51621-047",
       "name": "Steamers White",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
@@ -1512,7 +1512,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 124,
-      "image": "http://dummyimage.com/215x146.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/215x146.bmp/dddddd/000000",
       "productcode": "0159-2200",
       "name": "Macaroons - Two Bite Choc",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -1524,7 +1524,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 125,
-      "image": "http://dummyimage.com/188x136.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/188x136.bmp/ff4444/ffffff",
       "productcode": "63739-475",
       "name": "Saskatoon Berries - Frozen",
       "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
@@ -1536,7 +1536,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 126,
-      "image": "http://dummyimage.com/240x130.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/240x130.jpg/ff4444/ffffff",
       "productcode": "45737-210",
       "name": "Wine - German Riesling",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
@@ -1548,7 +1548,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 127,
-      "image": "http://dummyimage.com/138x116.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/138x116.jpg/cc0000/ffffff",
       "productcode": "64735-030",
       "name": "Lamb - Loin, Trimmed, Boneless",
       "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -1560,7 +1560,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 128,
-      "image": "http://dummyimage.com/122x201.png/dddddd/000000",
+      "image": "https://dummyimage.com/122x201.png/dddddd/000000",
       "productcode": "58177-368",
       "name": "Aspic - Clear",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.",
@@ -1572,7 +1572,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 129,
-      "image": "http://dummyimage.com/166x190.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/166x190.bmp/5fa2dd/ffffff",
       "productcode": "55154-3528",
       "name": "Cheese - Shred Cheddar / Mozza",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat.",
@@ -1584,7 +1584,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 130,
-      "image": "http://dummyimage.com/130x148.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/130x148.png/cc0000/ffffff",
       "productcode": "52125-707",
       "name": "Rappini - Andy Boy",
       "description": "Ut at dolor quis odio consequat varius.",
@@ -1596,7 +1596,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 131,
-      "image": "http://dummyimage.com/187x146.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/187x146.bmp/cc0000/ffffff",
       "productcode": "59779-143",
       "name": "Sobe - Orange Carrot",
       "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
@@ -1608,7 +1608,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 132,
-      "image": "http://dummyimage.com/140x182.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/140x182.bmp/5fa2dd/ffffff",
       "productcode": "63459-101",
       "name": "Island Oasis - Magarita Mix",
       "description": "Duis mattis egestas metus.",
@@ -1620,7 +1620,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 133,
-      "image": "http://dummyimage.com/134x245.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/134x245.jpg/5fa2dd/ffffff",
       "productcode": "53208-427",
       "name": "Wine - Sauvignon Blanc",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.",
@@ -1632,7 +1632,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 134,
-      "image": "http://dummyimage.com/121x213.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/121x213.jpg/dddddd/000000",
       "productcode": "0268-6197",
       "name": "Wine - Placido Pinot Grigo",
       "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
@@ -1644,7 +1644,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 135,
-      "image": "http://dummyimage.com/116x200.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/116x200.jpg/dddddd/000000",
       "productcode": "61867-101",
       "name": "Lettuce - Arugula",
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
@@ -1656,7 +1656,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 136,
-      "image": "http://dummyimage.com/107x150.png/dddddd/000000",
+      "image": "https://dummyimage.com/107x150.png/dddddd/000000",
       "productcode": "68472-066",
       "name": "Sherry - Dry",
       "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -1668,7 +1668,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 137,
-      "image": "http://dummyimage.com/164x119.png/dddddd/000000",
+      "image": "https://dummyimage.com/164x119.png/dddddd/000000",
       "productcode": "36800-161",
       "name": "Beef Tenderloin Aaa",
       "description": "Nulla mollis molestie lorem.",
@@ -1680,7 +1680,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 138,
-      "image": "http://dummyimage.com/192x149.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/192x149.jpg/cc0000/ffffff",
       "productcode": "64778-0376",
       "name": "Cheese - Valancey",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -1692,7 +1692,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 139,
-      "image": "http://dummyimage.com/107x243.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/107x243.png/ff4444/ffffff",
       "productcode": "51885-3353",
       "name": "Milk - Chocolate 250 Ml",
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
@@ -1704,7 +1704,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 140,
-      "image": "http://dummyimage.com/250x213.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/250x213.jpg/cc0000/ffffff",
       "productcode": "50988-184",
       "name": "Ginger - Pickled",
       "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
@@ -1716,7 +1716,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 141,
-      "image": "http://dummyimage.com/149x206.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/149x206.bmp/dddddd/000000",
       "productcode": "49349-374",
       "name": "Foam Dinner Plate",
       "description": "Phasellus id sapien in sapien iaculis congue.",
@@ -1728,7 +1728,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 142,
-      "image": "http://dummyimage.com/162x112.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/162x112.bmp/dddddd/000000",
       "productcode": "46287-014",
       "name": "Wine - Merlot Vina Carmen",
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
@@ -1740,7 +1740,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 143,
-      "image": "http://dummyimage.com/137x250.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/137x250.bmp/dddddd/000000",
       "productcode": "55111-203",
       "name": "Wine - German Riesling",
       "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
@@ -1752,7 +1752,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 144,
-      "image": "http://dummyimage.com/120x165.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/120x165.png/5fa2dd/ffffff",
       "productcode": "29033-001",
       "name": "Beef - Ground Medium",
       "description": "Aliquam non mauris.",
@@ -1764,7 +1764,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 145,
-      "image": "http://dummyimage.com/235x215.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/235x215.png/ff4444/ffffff",
       "productcode": "42291-226",
       "name": "Bread - Rye",
       "description": "Nunc purus.",
@@ -1776,7 +1776,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 146,
-      "image": "http://dummyimage.com/133x203.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/133x203.png/5fa2dd/ffffff",
       "productcode": "36987-1692",
       "name": "Chilli Paste, Hot Sambal Oelek",
       "description": "Nulla ac enim.",
@@ -1788,7 +1788,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 147,
-      "image": "http://dummyimage.com/165x128.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/165x128.png/cc0000/ffffff",
       "productcode": "49348-642",
       "name": "Beef - Kindney, Whole",
       "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
@@ -1800,7 +1800,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 148,
-      "image": "http://dummyimage.com/153x158.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/153x158.bmp/dddddd/000000",
       "productcode": "52904-468",
       "name": "Celery Root",
       "description": "Integer a nibh.",
@@ -1812,7 +1812,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 149,
-      "image": "http://dummyimage.com/104x159.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/104x159.jpg/5fa2dd/ffffff",
       "productcode": "50184-1029",
       "name": "Peppercorns - Pink",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -1824,7 +1824,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 150,
-      "image": "http://dummyimage.com/118x216.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/118x216.bmp/5fa2dd/ffffff",
       "productcode": "11822-9271",
       "name": "Figs",
       "description": "Ut at dolor quis odio consequat varius.",
@@ -1836,7 +1836,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 151,
-      "image": "http://dummyimage.com/150x215.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/150x215.png/cc0000/ffffff",
       "productcode": "10893-500",
       "name": "Bread - Pumpernickel",
       "description": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
@@ -1848,7 +1848,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 152,
-      "image": "http://dummyimage.com/247x231.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/247x231.bmp/cc0000/ffffff",
       "productcode": "21695-717",
       "name": "Pasta - Tortellini, Fresh",
       "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
@@ -1860,7 +1860,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 153,
-      "image": "http://dummyimage.com/126x216.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/126x216.png/ff4444/ffffff",
       "productcode": "25021-233",
       "name": "Sauce - Ranch Dressing",
       "description": "Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
@@ -1872,7 +1872,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 154,
-      "image": "http://dummyimage.com/104x124.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/104x124.png/5fa2dd/ffffff",
       "productcode": "45014-140",
       "name": "Chinese Foods - Chicken",
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -1884,7 +1884,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 155,
-      "image": "http://dummyimage.com/128x206.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/128x206.jpg/dddddd/000000",
       "productcode": "43406-0021",
       "name": "Corn - Cream, Canned",
       "description": "Praesent blandit.",
@@ -1896,7 +1896,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 156,
-      "image": "http://dummyimage.com/236x226.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/236x226.jpg/5fa2dd/ffffff",
       "productcode": "67938-0990",
       "name": "Wine - Ice Wine",
       "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -1908,7 +1908,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 157,
-      "image": "http://dummyimage.com/195x187.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/195x187.png/5fa2dd/ffffff",
       "productcode": "49349-062",
       "name": "Sweet Pea Sprouts",
       "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -1920,7 +1920,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 158,
-      "image": "http://dummyimage.com/229x158.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/229x158.jpg/5fa2dd/ffffff",
       "productcode": "57469-058",
       "name": "Flour - Bread",
       "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
@@ -1932,7 +1932,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 159,
-      "image": "http://dummyimage.com/238x228.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/238x228.png/ff4444/ffffff",
       "productcode": "64942-1230",
       "name": "Celery",
       "description": "Nunc purus. Phasellus in felis.",
@@ -1944,7 +1944,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 160,
-      "image": "http://dummyimage.com/212x141.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/212x141.jpg/dddddd/000000",
       "productcode": "49349-528",
       "name": "Oregano - Fresh",
       "description": "Nunc purus. Phasellus in felis.",
@@ -1956,7 +1956,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 161,
-      "image": "http://dummyimage.com/175x219.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/175x219.jpg/cc0000/ffffff",
       "productcode": "53329-410",
       "name": "Wine - Periguita Fonseca",
       "description": "Morbi non quam nec dui luctus rutrum.",
@@ -1968,7 +1968,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 162,
-      "image": "http://dummyimage.com/209x209.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/209x209.bmp/5fa2dd/ffffff",
       "productcode": "55910-489",
       "name": "Soap - Hand Soap",
       "description": "In hac habitasse platea dictumst.",
@@ -1980,7 +1980,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 163,
-      "image": "http://dummyimage.com/167x126.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/167x126.bmp/cc0000/ffffff",
       "productcode": "19392-400",
       "name": "Cucumber - English",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
@@ -1992,7 +1992,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 164,
-      "image": "http://dummyimage.com/159x207.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/159x207.jpg/ff4444/ffffff",
       "productcode": "41250-640",
       "name": "Bread - Dark Rye, Loaf",
       "description": "Duis ac nibh.",
@@ -2004,7 +2004,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 165,
-      "image": "http://dummyimage.com/187x116.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/187x116.png/5fa2dd/ffffff",
       "productcode": "59062-1210",
       "name": "Bulgar",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -2016,7 +2016,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 166,
-      "image": "http://dummyimage.com/142x193.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/142x193.jpg/5fa2dd/ffffff",
       "productcode": "55910-299",
       "name": "Chocolate - Compound Coating",
       "description": "Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
@@ -2028,7 +2028,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 167,
-      "image": "http://dummyimage.com/229x140.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/229x140.jpg/cc0000/ffffff",
       "productcode": "99207-171",
       "name": "Sprouts - Onion",
       "description": "Morbi a ipsum. Integer a nibh.",
@@ -2040,7 +2040,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 168,
-      "image": "http://dummyimage.com/208x101.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/208x101.bmp/cc0000/ffffff",
       "productcode": "54868-6207",
       "name": "Gelatine Leaves - Envelopes",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
@@ -2052,7 +2052,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 169,
-      "image": "http://dummyimage.com/230x250.png/dddddd/000000",
+      "image": "https://dummyimage.com/230x250.png/dddddd/000000",
       "productcode": "0573-0184",
       "name": "Veal - Tenderloin, Untrimmed",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.",
@@ -2064,7 +2064,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 170,
-      "image": "http://dummyimage.com/162x114.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/162x114.bmp/dddddd/000000",
       "productcode": "42192-605",
       "name": "Oxtail - Cut",
       "description": "In hac habitasse platea dictumst.",
@@ -2076,7 +2076,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 171,
-      "image": "http://dummyimage.com/122x135.png/dddddd/000000",
+      "image": "https://dummyimage.com/122x135.png/dddddd/000000",
       "productcode": "43742-0187",
       "name": "Pur Value",
       "description": "Quisque ut erat. Curabitur gravida nisi at nibh.",
@@ -2088,7 +2088,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 172,
-      "image": "http://dummyimage.com/109x174.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/109x174.bmp/cc0000/ffffff",
       "productcode": "49348-561",
       "name": "Pails With Lids",
       "description": "Suspendisse potenti.",
@@ -2100,7 +2100,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 173,
-      "image": "http://dummyimage.com/187x130.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/187x130.png/cc0000/ffffff",
       "productcode": "0172-4280",
       "name": "Pasta - Spaghetti, Dry",
       "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
@@ -2112,7 +2112,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 174,
-      "image": "http://dummyimage.com/130x152.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/130x152.bmp/dddddd/000000",
       "productcode": "61957-1022",
       "name": "Bread Sour Rolls",
       "description": "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
@@ -2124,7 +2124,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 175,
-      "image": "http://dummyimage.com/249x146.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/249x146.bmp/5fa2dd/ffffff",
       "productcode": "68421-5400",
       "name": "Bread - Flat Bread",
       "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
@@ -2136,7 +2136,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 176,
-      "image": "http://dummyimage.com/161x145.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/161x145.jpg/ff4444/ffffff",
       "productcode": "52125-615",
       "name": "Juice - Orange, Concentrate",
       "description": "Vivamus vel nulla eget eros elementum pellentesque.",
@@ -2148,7 +2148,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 177,
-      "image": "http://dummyimage.com/220x134.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/220x134.bmp/5fa2dd/ffffff",
       "productcode": "21695-950",
       "name": "Tea - English Breakfast",
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
@@ -2160,7 +2160,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 178,
-      "image": "http://dummyimage.com/109x111.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/109x111.png/cc0000/ffffff",
       "productcode": "54092-256",
       "name": "Cookies - Oreo, 4 Pack",
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -2172,7 +2172,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 179,
-      "image": "http://dummyimage.com/141x222.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/141x222.bmp/dddddd/000000",
       "productcode": "47682-220",
       "name": "Soup - Campbells, Beef Barley",
       "description": "Morbi non lectus.",
@@ -2184,7 +2184,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 180,
-      "image": "http://dummyimage.com/245x164.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/245x164.png/ff4444/ffffff",
       "productcode": "55154-0695",
       "name": "Limes",
       "description": "Nulla mollis molestie lorem.",
@@ -2196,7 +2196,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 181,
-      "image": "http://dummyimage.com/160x116.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/160x116.png/cc0000/ffffff",
       "productcode": "37205-337",
       "name": "Nori Sea Weed",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -2208,7 +2208,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 182,
-      "image": "http://dummyimage.com/110x112.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/110x112.png/cc0000/ffffff",
       "productcode": "59078-002",
       "name": "Tea - English Breakfast",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
@@ -2220,7 +2220,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 183,
-      "image": "http://dummyimage.com/129x225.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/129x225.png/ff4444/ffffff",
       "productcode": "61852-977",
       "name": "Dc - Frozen Momji",
       "description": "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
@@ -2232,7 +2232,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 184,
-      "image": "http://dummyimage.com/169x193.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/169x193.bmp/ff4444/ffffff",
       "productcode": "49288-0658",
       "name": "Wine - Zinfandel Rosenblum",
       "description": "Pellentesque viverra pede ac diam.",
@@ -2244,7 +2244,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 185,
-      "image": "http://dummyimage.com/183x176.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/183x176.bmp/dddddd/000000",
       "productcode": "10252-002",
       "name": "Jameson - Irish Whiskey",
       "description": "Aliquam erat volutpat.",
@@ -2256,7 +2256,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 186,
-      "image": "http://dummyimage.com/209x144.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/209x144.png/ff4444/ffffff",
       "productcode": "51248-151",
       "name": "Nut - Hazelnut, Ground, Natural",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique.",
@@ -2268,7 +2268,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 187,
-      "image": "http://dummyimage.com/247x140.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/247x140.png/5fa2dd/ffffff",
       "productcode": "29149-001",
       "name": "Horseradish Root",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -2280,7 +2280,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 188,
-      "image": "http://dummyimage.com/158x193.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/158x193.bmp/ff4444/ffffff",
       "productcode": "59676-562",
       "name": "Tomatoes Tear Drop",
       "description": "Suspendisse ornare consequat lectus.",
@@ -2292,7 +2292,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 189,
-      "image": "http://dummyimage.com/206x165.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/206x165.png/cc0000/ffffff",
       "productcode": "63187-081",
       "name": "Chicken - Whole Fryers",
       "description": "Morbi quis tortor id nulla ultrices aliquet.",
@@ -2304,7 +2304,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 190,
-      "image": "http://dummyimage.com/106x125.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/106x125.bmp/ff4444/ffffff",
       "productcode": "0781-5656",
       "name": "Wine - Winzer Krems Gruner",
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -2316,7 +2316,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 191,
-      "image": "http://dummyimage.com/212x164.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/212x164.jpg/5fa2dd/ffffff",
       "productcode": "52533-034",
       "name": "Lobster - Tail 6 Oz",
       "description": "Aliquam erat volutpat.",
@@ -2328,7 +2328,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 192,
-      "image": "http://dummyimage.com/108x133.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/108x133.png/5fa2dd/ffffff",
       "productcode": "25021-211",
       "name": "Water - Evian 355 Ml",
       "description": "Donec ut mauris eget massa tempor convallis.",
@@ -2340,7 +2340,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 193,
-      "image": "http://dummyimage.com/201x120.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/201x120.jpg/dddddd/000000",
       "productcode": "29500-1000",
       "name": "Nougat - Paste / Cream",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
@@ -2352,7 +2352,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 194,
-      "image": "http://dummyimage.com/199x116.png/dddddd/000000",
+      "image": "https://dummyimage.com/199x116.png/dddddd/000000",
       "productcode": "51346-084",
       "name": "Grapes - Black",
       "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
@@ -2364,7 +2364,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 195,
-      "image": "http://dummyimage.com/175x182.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/175x182.png/cc0000/ffffff",
       "productcode": "60512-6558",
       "name": "Table Cloth 54x72 White",
       "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
@@ -2376,7 +2376,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 196,
-      "image": "http://dummyimage.com/124x215.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/124x215.png/cc0000/ffffff",
       "productcode": "60429-189",
       "name": "Cheese - Swiss",
       "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -2388,7 +2388,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 197,
-      "image": "http://dummyimage.com/193x229.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/193x229.bmp/ff4444/ffffff",
       "productcode": "55154-6987",
       "name": "Wine - Alsace Riesling Reserve",
       "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
@@ -2400,7 +2400,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 198,
-      "image": "http://dummyimage.com/223x131.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/223x131.jpg/5fa2dd/ffffff",
       "productcode": "59779-823",
       "name": "Wine - Ruffino Chianti Classico",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
@@ -2412,7 +2412,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 199,
-      "image": "http://dummyimage.com/103x165.png/dddddd/000000",
+      "image": "https://dummyimage.com/103x165.png/dddddd/000000",
       "productcode": "55154-2071",
       "name": "Veal - Nuckle",
       "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
@@ -2424,7 +2424,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 200,
-      "image": "http://dummyimage.com/204x241.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/204x241.jpg/cc0000/ffffff",
       "productcode": "0363-0949",
       "name": "Cloves - Whole",
       "description": "Praesent lectus.",
@@ -2436,7 +2436,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 201,
-      "image": "http://dummyimage.com/165x224.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/165x224.jpg/cc0000/ffffff",
       "productcode": "57664-175",
       "name": "Syrup - Monin, Amaretta",
       "description": "Quisque ut erat.",
@@ -2448,7 +2448,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 202,
-      "image": "http://dummyimage.com/117x163.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/117x163.jpg/cc0000/ffffff",
       "productcode": "53808-0947",
       "name": "Beer - Sleemans Cream Ale",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum.",
@@ -2460,7 +2460,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 203,
-      "image": "http://dummyimage.com/108x132.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/108x132.bmp/cc0000/ffffff",
       "productcode": "54868-4645",
       "name": "Potatoes - Mini White 3 Oz",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -2472,7 +2472,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 204,
-      "image": "http://dummyimage.com/106x172.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/106x172.jpg/cc0000/ffffff",
       "productcode": "55154-2852",
       "name": "Ham - Cooked Italian",
       "description": "Donec semper sapien a libero. Nam dui.",
@@ -2484,7 +2484,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 205,
-      "image": "http://dummyimage.com/101x247.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/101x247.jpg/cc0000/ffffff",
       "productcode": "64380-726",
       "name": "Sachet",
       "description": "Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
@@ -2496,7 +2496,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 206,
-      "image": "http://dummyimage.com/188x130.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/188x130.png/5fa2dd/ffffff",
       "productcode": "16590-155",
       "name": "Wine - Ruffino Chianti Classico",
       "description": "Nulla suscipit ligula in lacus.",
@@ -2508,7 +2508,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 207,
-      "image": "http://dummyimage.com/230x196.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/230x196.bmp/cc0000/ffffff",
       "productcode": "30142-501",
       "name": "Southern Comfort",
       "description": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
@@ -2520,7 +2520,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 208,
-      "image": "http://dummyimage.com/145x176.png/dddddd/000000",
+      "image": "https://dummyimage.com/145x176.png/dddddd/000000",
       "productcode": "43742-0244",
       "name": "Pepper - Red Bell",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
@@ -2532,7 +2532,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 209,
-      "image": "http://dummyimage.com/184x176.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/184x176.jpg/cc0000/ffffff",
       "productcode": "51346-027",
       "name": "Spring Roll Wrappers",
       "description": "Ut at dolor quis odio consequat varius.",
@@ -2544,7 +2544,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 210,
-      "image": "http://dummyimage.com/109x176.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/109x176.jpg/dddddd/000000",
       "productcode": "44924-015",
       "name": "Oil - Grapeseed Oil",
       "description": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
@@ -2556,7 +2556,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 211,
-      "image": "http://dummyimage.com/166x105.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/166x105.png/5fa2dd/ffffff",
       "productcode": "61296-001",
       "name": "Garam Marsala",
       "description": "Curabitur at ipsum ac tellus semper interdum.",
@@ -2568,7 +2568,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 212,
-      "image": "http://dummyimage.com/146x175.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/146x175.jpg/ff4444/ffffff",
       "productcode": "61957-2110",
       "name": "Wine - Beringer Founders Estate",
       "description": "Aenean lectus.",
@@ -2580,7 +2580,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 213,
-      "image": "http://dummyimage.com/197x141.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/197x141.jpg/dddddd/000000",
       "productcode": "55289-203",
       "name": "Leeks - Large",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
@@ -2592,7 +2592,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 214,
-      "image": "http://dummyimage.com/154x238.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/154x238.bmp/dddddd/000000",
       "productcode": "57896-638",
       "name": "Turkey - Whole, Fresh",
       "description": "Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
@@ -2604,7 +2604,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 215,
-      "image": "http://dummyimage.com/134x177.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/134x177.png/cc0000/ffffff",
       "productcode": "33992-8000",
       "name": "Jameson - Irish Whiskey",
       "description": "Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
@@ -2616,7 +2616,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 216,
-      "image": "http://dummyimage.com/142x117.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/142x117.bmp/ff4444/ffffff",
       "productcode": "11673-454",
       "name": "Pork - Tenderloin, Frozen",
       "description": "Aenean sit amet justo. Morbi ut odio.",
@@ -2628,7 +2628,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 217,
-      "image": "http://dummyimage.com/101x245.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/101x245.bmp/ff4444/ffffff",
       "productcode": "36987-3356",
       "name": "Lighter - Bbq",
       "description": "Duis ac nibh.",
@@ -2640,7 +2640,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 218,
-      "image": "http://dummyimage.com/124x142.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/124x142.bmp/cc0000/ffffff",
       "productcode": "49349-073",
       "name": "Veal - Striploin",
       "description": "Nulla ac enim.",
@@ -2652,7 +2652,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 219,
-      "image": "http://dummyimage.com/222x102.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/222x102.bmp/dddddd/000000",
       "productcode": "76045-004",
       "name": "Eel - Smoked",
       "description": "Integer ac neque.",
@@ -2664,7 +2664,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 220,
-      "image": "http://dummyimage.com/109x114.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/109x114.jpg/ff4444/ffffff",
       "productcode": "68258-8902",
       "name": "Wine - Duboeuf Beaujolais",
       "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
@@ -2676,7 +2676,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 221,
-      "image": "http://dummyimage.com/147x226.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/147x226.png/5fa2dd/ffffff",
       "productcode": "52125-573",
       "name": "Yogurt - Raspberry, 175 Gr",
       "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
@@ -2688,7 +2688,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 222,
-      "image": "http://dummyimage.com/206x150.png/dddddd/000000",
+      "image": "https://dummyimage.com/206x150.png/dddddd/000000",
       "productcode": "10019-644",
       "name": "Spinach - Packaged",
       "description": "Etiam pretium iaculis justo.",
@@ -2700,7 +2700,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 223,
-      "image": "http://dummyimage.com/154x159.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/154x159.bmp/cc0000/ffffff",
       "productcode": "13537-134",
       "name": "Island Oasis - Sweet And Sour Mix",
       "description": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
@@ -2712,7 +2712,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 224,
-      "image": "http://dummyimage.com/111x135.png/dddddd/000000",
+      "image": "https://dummyimage.com/111x135.png/dddddd/000000",
       "productcode": "37000-350",
       "name": "Ice Cream - Turtles Stick Bar",
       "description": "In eleifend quam a odio.",
@@ -2724,7 +2724,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 225,
-      "image": "http://dummyimage.com/238x108.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/238x108.bmp/5fa2dd/ffffff",
       "productcode": "16571-215",
       "name": "Shichimi Togarashi Peppeers",
       "description": "Suspendisse accumsan tortor quis turpis. Sed ante.",
@@ -2736,7 +2736,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 226,
-      "image": "http://dummyimage.com/177x229.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/177x229.png/ff4444/ffffff",
       "productcode": "21695-950",
       "name": "Ranchero - Primerba, Paste",
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
@@ -2748,7 +2748,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 227,
-      "image": "http://dummyimage.com/226x244.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/226x244.bmp/dddddd/000000",
       "productcode": "0065-0665",
       "name": "Bread - Pumpernickle, Rounds",
       "description": "Morbi porttitor lorem id ligula.",
@@ -2760,7 +2760,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 228,
-      "image": "http://dummyimage.com/124x230.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/124x230.jpg/5fa2dd/ffffff",
       "productcode": "33261-933",
       "name": "Vacuum Bags 12x16",
       "description": "Nullam porttitor lacus at turpis.",
@@ -2772,7 +2772,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 229,
-      "image": "http://dummyimage.com/133x165.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/133x165.png/ff4444/ffffff",
       "productcode": "52685-462",
       "name": "Ice Cream - Life Savers",
       "description": "Vivamus vel nulla eget eros elementum pellentesque.",
@@ -2784,7 +2784,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 230,
-      "image": "http://dummyimage.com/112x139.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/112x139.jpg/cc0000/ffffff",
       "productcode": "13668-333",
       "name": "Ocean Spray - Kiwi Strawberry",
       "description": "Etiam pretium iaculis justo.",
@@ -2796,7 +2796,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 231,
-      "image": "http://dummyimage.com/108x155.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/108x155.jpg/cc0000/ffffff",
       "productcode": "63739-554",
       "name": "Juice - Propel Sport",
       "description": "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.",
@@ -2808,7 +2808,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 232,
-      "image": "http://dummyimage.com/152x105.png/dddddd/000000",
+      "image": "https://dummyimage.com/152x105.png/dddddd/000000",
       "productcode": "62372-743",
       "name": "Calypso - Pineapple Passion",
       "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
@@ -2820,7 +2820,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 233,
-      "image": "http://dummyimage.com/108x147.png/dddddd/000000",
+      "image": "https://dummyimage.com/108x147.png/dddddd/000000",
       "productcode": "62856-243",
       "name": "Napkin - Beverge, White 2 - Ply",
       "description": "Morbi porttitor lorem id ligula.",
@@ -2832,7 +2832,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 234,
-      "image": "http://dummyimage.com/164x124.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/164x124.jpg/cc0000/ffffff",
       "productcode": "64760-408",
       "name": "Wine - Fat Bastard Merlot",
       "description": "Ut tellus.",
@@ -2844,7 +2844,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 235,
-      "image": "http://dummyimage.com/140x111.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/140x111.jpg/cc0000/ffffff",
       "productcode": "59898-810",
       "name": "Horseradish Root",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum.",
@@ -2856,7 +2856,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 236,
-      "image": "http://dummyimage.com/217x185.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/217x185.jpg/dddddd/000000",
       "productcode": "10056-329",
       "name": "Gelatine Leaves - Envelopes",
       "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -2868,7 +2868,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 237,
-      "image": "http://dummyimage.com/181x120.png/dddddd/000000",
+      "image": "https://dummyimage.com/181x120.png/dddddd/000000",
       "productcode": "76077-500",
       "name": "Alize Gold Passion",
       "description": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
@@ -2880,7 +2880,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 238,
-      "image": "http://dummyimage.com/212x176.png/dddddd/000000",
+      "image": "https://dummyimage.com/212x176.png/dddddd/000000",
       "productcode": "14783-447",
       "name": "Beans - Wax",
       "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
@@ -2892,7 +2892,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 239,
-      "image": "http://dummyimage.com/250x220.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/250x220.bmp/ff4444/ffffff",
       "productcode": "63629-2958",
       "name": "Chinese Foods - Chicken",
       "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
@@ -2904,7 +2904,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 240,
-      "image": "http://dummyimage.com/109x167.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/109x167.jpg/ff4444/ffffff",
       "productcode": "47335-144",
       "name": "Glass Clear 8 Oz",
       "description": "In hac habitasse platea dictumst.",
@@ -2916,7 +2916,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 241,
-      "image": "http://dummyimage.com/196x194.png/dddddd/000000",
+      "image": "https://dummyimage.com/196x194.png/dddddd/000000",
       "productcode": "0378-1134",
       "name": "Soup - Clam Chowder, Dry Mix",
       "description": "Nulla facilisi.",
@@ -2928,7 +2928,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 242,
-      "image": "http://dummyimage.com/127x216.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/127x216.bmp/ff4444/ffffff",
       "productcode": "16864-001",
       "name": "Cheese - Brick With Pepper",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -2940,7 +2940,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 243,
-      "image": "http://dummyimage.com/113x156.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/113x156.jpg/5fa2dd/ffffff",
       "productcode": "0409-7941",
       "name": "Mushroom - Enoki, Fresh",
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -2952,7 +2952,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 244,
-      "image": "http://dummyimage.com/156x141.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/156x141.jpg/ff4444/ffffff",
       "productcode": "0904-5677",
       "name": "Wine - Winzer Krems Gruner",
       "description": "Curabitur in libero ut massa volutpat convallis.",
@@ -2964,7 +2964,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 245,
-      "image": "http://dummyimage.com/155x221.png/dddddd/000000",
+      "image": "https://dummyimage.com/155x221.png/dddddd/000000",
       "productcode": "65517-0014",
       "name": "Butter - Unsalted",
       "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
@@ -2976,7 +2976,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 246,
-      "image": "http://dummyimage.com/154x132.png/dddddd/000000",
+      "image": "https://dummyimage.com/154x132.png/dddddd/000000",
       "productcode": "59627-002",
       "name": "Appetiser - Bought",
       "description": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.",
@@ -2988,7 +2988,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 247,
-      "image": "http://dummyimage.com/233x215.png/dddddd/000000",
+      "image": "https://dummyimage.com/233x215.png/dddddd/000000",
       "productcode": "0093-5277",
       "name": "Fudge - Cream Fudge",
       "description": "Aliquam erat volutpat.",
@@ -3000,7 +3000,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 248,
-      "image": "http://dummyimage.com/142x191.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/142x191.png/5fa2dd/ffffff",
       "productcode": "44924-003",
       "name": "Cilantro / Coriander - Fresh",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -3012,7 +3012,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 249,
-      "image": "http://dummyimage.com/180x229.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/180x229.jpg/5fa2dd/ffffff",
       "productcode": "63304-827",
       "name": "Bread Cranberry Foccacia",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -3024,7 +3024,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 250,
-      "image": "http://dummyimage.com/130x169.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/130x169.jpg/dddddd/000000",
       "productcode": "52125-681",
       "name": "Rolled Oats",
       "description": "Nullam molestie nibh in lectus. Pellentesque at nulla.",
@@ -3036,7 +3036,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 251,
-      "image": "http://dummyimage.com/167x195.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/167x195.bmp/dddddd/000000",
       "productcode": "65786-1717",
       "name": "Zucchini - Green",
       "description": "Aliquam non mauris. Morbi non lectus.",
@@ -3048,7 +3048,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 252,
-      "image": "http://dummyimage.com/114x122.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/114x122.png/5fa2dd/ffffff",
       "productcode": "0268-0952",
       "name": "Mix - Cappucino Cocktail",
       "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
@@ -3060,7 +3060,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 253,
-      "image": "http://dummyimage.com/203x100.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/203x100.png/cc0000/ffffff",
       "productcode": "57471-3061",
       "name": "Spaghetti Squash",
       "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -3072,7 +3072,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 254,
-      "image": "http://dummyimage.com/100x175.png/dddddd/000000",
+      "image": "https://dummyimage.com/100x175.png/dddddd/000000",
       "productcode": "59667-0101",
       "name": "Flax Seed",
       "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
@@ -3084,7 +3084,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 255,
-      "image": "http://dummyimage.com/194x118.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/194x118.jpg/dddddd/000000",
       "productcode": "59779-103",
       "name": "Pork - Side Ribs",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
@@ -3096,7 +3096,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 256,
-      "image": "http://dummyimage.com/169x243.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/169x243.bmp/ff4444/ffffff",
       "productcode": "76519-1001",
       "name": "Wine - Sawmill Creek Autumn",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -3108,7 +3108,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 257,
-      "image": "http://dummyimage.com/161x184.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/161x184.png/5fa2dd/ffffff",
       "productcode": "53329-210",
       "name": "Soup - Beef, Base Mix",
       "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
@@ -3120,7 +3120,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 258,
-      "image": "http://dummyimage.com/198x184.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/198x184.jpg/dddddd/000000",
       "productcode": "68752-005",
       "name": "Wine - Jaboulet Cotes Du Rhone",
       "description": "Nunc nisl.",
@@ -3132,7 +3132,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 259,
-      "image": "http://dummyimage.com/190x125.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/190x125.png/ff4444/ffffff",
       "productcode": "36987-2750",
       "name": "Bread Fig And Almond",
       "description": "Nulla mollis molestie lorem.",
@@ -3144,7 +3144,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 260,
-      "image": "http://dummyimage.com/237x104.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/237x104.bmp/cc0000/ffffff",
       "productcode": "42507-217",
       "name": "Mushroom - Shitake, Dry",
       "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -3156,7 +3156,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 261,
-      "image": "http://dummyimage.com/114x141.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/114x141.png/ff4444/ffffff",
       "productcode": "0280-1134",
       "name": "Sauce - Mint",
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.",
@@ -3168,7 +3168,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 262,
-      "image": "http://dummyimage.com/225x249.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/225x249.jpg/ff4444/ffffff",
       "productcode": "55154-4779",
       "name": "Compound - Raspberry",
       "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -3180,7 +3180,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 263,
-      "image": "http://dummyimage.com/153x179.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/153x179.bmp/5fa2dd/ffffff",
       "productcode": "63629-1535",
       "name": "Breadfruit",
       "description": "Morbi non lectus.",
@@ -3192,7 +3192,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 264,
-      "image": "http://dummyimage.com/241x174.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/241x174.png/ff4444/ffffff",
       "productcode": "24781-0001",
       "name": "Wine - Carmenere Casillero Del",
       "description": "Suspendisse accumsan tortor quis turpis.",
@@ -3204,7 +3204,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 265,
-      "image": "http://dummyimage.com/236x180.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/236x180.jpg/dddddd/000000",
       "productcode": "0131-1810",
       "name": "Mushroom - Enoki, Fresh",
       "description": "Morbi quis tortor id nulla ultrices aliquet.",
@@ -3216,7 +3216,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 266,
-      "image": "http://dummyimage.com/212x113.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/212x113.png/ff4444/ffffff",
       "productcode": "68084-505",
       "name": "Wine - Beaujolais Villages",
       "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
@@ -3228,7 +3228,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 267,
-      "image": "http://dummyimage.com/199x159.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/199x159.jpg/5fa2dd/ffffff",
       "productcode": "49288-0020",
       "name": "Coriander - Ground",
       "description": "Cras non velit nec nisi vulputate nonummy.",
@@ -3240,7 +3240,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 268,
-      "image": "http://dummyimage.com/140x100.png/dddddd/000000",
+      "image": "https://dummyimage.com/140x100.png/dddddd/000000",
       "productcode": "68472-095",
       "name": "Daves Island Stinger",
       "description": "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.",
@@ -3252,7 +3252,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 269,
-      "image": "http://dummyimage.com/189x238.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/189x238.bmp/ff4444/ffffff",
       "productcode": "0603-4225",
       "name": "Macaroons - Two Bite Choc",
       "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.",
@@ -3264,7 +3264,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 270,
-      "image": "http://dummyimage.com/242x190.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/242x190.bmp/ff4444/ffffff",
       "productcode": "76340-4001",
       "name": "Wine - Conde De Valdemar",
       "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
@@ -3276,7 +3276,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 271,
-      "image": "http://dummyimage.com/181x223.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/181x223.png/5fa2dd/ffffff",
       "productcode": "49349-524",
       "name": "Wine - Chablis 2003 Champs",
       "description": "Curabitur convallis.",
@@ -3288,7 +3288,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 272,
-      "image": "http://dummyimage.com/150x101.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/150x101.png/ff4444/ffffff",
       "productcode": "75990-007",
       "name": "Cardamon Seed / Pod",
       "description": "Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
@@ -3300,7 +3300,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 273,
-      "image": "http://dummyimage.com/160x208.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/160x208.jpg/5fa2dd/ffffff",
       "productcode": "58118-2433",
       "name": "Eggplant - Asian",
       "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -3312,7 +3312,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 274,
-      "image": "http://dummyimage.com/228x195.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/228x195.bmp/ff4444/ffffff",
       "productcode": "70253-532",
       "name": "Mix - Cappucino Cocktail",
       "description": "Nulla justo.",
@@ -3324,7 +3324,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 275,
-      "image": "http://dummyimage.com/102x178.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/102x178.jpg/dddddd/000000",
       "productcode": "52773-241",
       "name": "Onions - Red Pearl",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -3336,7 +3336,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 276,
-      "image": "http://dummyimage.com/240x131.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/240x131.jpg/dddddd/000000",
       "productcode": "43857-0281",
       "name": "Bacardi Breezer - Tropical",
       "description": "Praesent blandit.",
@@ -3348,7 +3348,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 277,
-      "image": "http://dummyimage.com/128x188.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/128x188.jpg/dddddd/000000",
       "productcode": "33261-905",
       "name": "Tomato - Green",
       "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
@@ -3360,7 +3360,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 278,
-      "image": "http://dummyimage.com/172x180.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/172x180.png/5fa2dd/ffffff",
       "productcode": "62011-0070",
       "name": "Beans - Black Bean, Preserved",
       "description": "Aenean lectus. Pellentesque eget nunc.",
@@ -3372,7 +3372,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 279,
-      "image": "http://dummyimage.com/172x184.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/172x184.jpg/dddddd/000000",
       "productcode": "48102-017",
       "name": "Ecolab - Balanced Fusion",
       "description": "Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
@@ -3384,7 +3384,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 280,
-      "image": "http://dummyimage.com/242x213.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/242x213.jpg/dddddd/000000",
       "productcode": "60681-1602",
       "name": "Yeast - Fresh, Fleischman",
       "description": "Duis at velit eu est congue elementum.",
@@ -3396,7 +3396,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 281,
-      "image": "http://dummyimage.com/208x199.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/208x199.bmp/cc0000/ffffff",
       "productcode": "60760-143",
       "name": "Carbonated Water - Strawberry",
       "description": "Sed sagittis.",
@@ -3408,7 +3408,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 282,
-      "image": "http://dummyimage.com/203x173.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/203x173.png/cc0000/ffffff",
       "productcode": "58160-842",
       "name": "Yeast Dry - Fermipan",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
@@ -3420,7 +3420,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 283,
-      "image": "http://dummyimage.com/116x118.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/116x118.png/cc0000/ffffff",
       "productcode": "55111-739",
       "name": "Wine - Semi Dry Riesling Vineland",
       "description": "Etiam vel augue.",
@@ -3432,7 +3432,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 284,
-      "image": "http://dummyimage.com/196x232.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/196x232.bmp/dddddd/000000",
       "productcode": "68094-107",
       "name": "Beer - Maudite",
       "description": "Curabitur gravida nisi at nibh.",
@@ -3444,7 +3444,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 285,
-      "image": "http://dummyimage.com/181x188.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/181x188.png/cc0000/ffffff",
       "productcode": "0378-2076",
       "name": "Chutney Sauce - Mango",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -3456,7 +3456,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 286,
-      "image": "http://dummyimage.com/163x197.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/163x197.png/cc0000/ffffff",
       "productcode": "52125-583",
       "name": "Mushroom - Enoki, Dry",
       "description": "Nam nulla.",
@@ -3468,7 +3468,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 287,
-      "image": "http://dummyimage.com/144x229.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/144x229.bmp/5fa2dd/ffffff",
       "productcode": "60512-2007",
       "name": "Beef - Outside, Round",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
@@ -3480,7 +3480,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 288,
-      "image": "http://dummyimage.com/250x166.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/250x166.jpg/5fa2dd/ffffff",
       "productcode": "16714-691",
       "name": "Table Cloth 62x114 Colour",
       "description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -3492,7 +3492,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 289,
-      "image": "http://dummyimage.com/180x106.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/180x106.bmp/dddddd/000000",
       "productcode": "67046-963",
       "name": "Towel Dispenser",
       "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
@@ -3504,7 +3504,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 290,
-      "image": "http://dummyimage.com/158x125.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/158x125.bmp/cc0000/ffffff",
       "productcode": "60764-008",
       "name": "Wine - Placido Pinot Grigo",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
@@ -3516,7 +3516,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 291,
-      "image": "http://dummyimage.com/236x218.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/236x218.png/ff4444/ffffff",
       "productcode": "52685-457",
       "name": "Lentils - Red, Dry",
       "description": "Suspendisse ornare consequat lectus.",
@@ -3528,7 +3528,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 292,
-      "image": "http://dummyimage.com/221x210.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/221x210.png/cc0000/ffffff",
       "productcode": "33261-547",
       "name": "Pasta - Linguini, Dry",
       "description": "Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -3540,7 +3540,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 293,
-      "image": "http://dummyimage.com/208x234.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/208x234.bmp/dddddd/000000",
       "productcode": "52862-306",
       "name": "Chocolate - Liqueur Cups With Foil",
       "description": "Nullam varius.",
@@ -3552,7 +3552,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 294,
-      "image": "http://dummyimage.com/164x228.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/164x228.bmp/5fa2dd/ffffff",
       "productcode": "31722-202",
       "name": "Smoked Paprika",
       "description": "Nulla justo.",
@@ -3564,7 +3564,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 295,
-      "image": "http://dummyimage.com/215x152.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/215x152.bmp/ff4444/ffffff",
       "productcode": "55154-9668",
       "name": "Cream - 35%",
       "description": "Praesent blandit.",
@@ -3576,7 +3576,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 296,
-      "image": "http://dummyimage.com/190x106.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/190x106.bmp/cc0000/ffffff",
       "productcode": "0268-0827",
       "name": "Cheese - Comte",
       "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
@@ -3588,7 +3588,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 297,
-      "image": "http://dummyimage.com/210x167.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/210x167.bmp/ff4444/ffffff",
       "productcode": "52773-240",
       "name": "Wine - Red, Cabernet Merlot",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
@@ -3600,7 +3600,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 298,
-      "image": "http://dummyimage.com/107x122.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/107x122.bmp/dddddd/000000",
       "productcode": "0054-0123",
       "name": "Numi - Assorted Teas",
       "description": "Aliquam erat volutpat. In congue.",
@@ -3612,7 +3612,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 299,
-      "image": "http://dummyimage.com/189x230.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/189x230.jpg/ff4444/ffffff",
       "productcode": "0407-1414",
       "name": "Spinach - Baby",
       "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
@@ -3624,7 +3624,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 300,
-      "image": "http://dummyimage.com/206x223.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/206x223.jpg/dddddd/000000",
       "productcode": "51531-4189",
       "name": "Island Oasis - Magarita Mix",
       "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -3636,7 +3636,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 301,
-      "image": "http://dummyimage.com/179x127.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/179x127.bmp/ff4444/ffffff",
       "productcode": "24385-289",
       "name": "Cheese - Swiss",
       "description": "Phasellus sit amet erat. Nulla tempus.",
@@ -3648,7 +3648,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 302,
-      "image": "http://dummyimage.com/135x236.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/135x236.png/5fa2dd/ffffff",
       "productcode": "42367-110",
       "name": "Spring Roll Wrappers",
       "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
@@ -3660,7 +3660,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 303,
-      "image": "http://dummyimage.com/212x105.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/212x105.jpg/ff4444/ffffff",
       "productcode": "49288-0234",
       "name": "Energy Drink - Franks Original",
       "description": "Etiam pretium iaculis justo.",
@@ -3672,7 +3672,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 304,
-      "image": "http://dummyimage.com/183x235.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/183x235.jpg/5fa2dd/ffffff",
       "productcode": "48951-1158",
       "name": "Sardines",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum.",
@@ -3684,7 +3684,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 305,
-      "image": "http://dummyimage.com/100x201.png/dddddd/000000",
+      "image": "https://dummyimage.com/100x201.png/dddddd/000000",
       "productcode": "49288-0725",
       "name": "Salmon - Fillets",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -3696,7 +3696,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 306,
-      "image": "http://dummyimage.com/202x115.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/202x115.bmp/dddddd/000000",
       "productcode": "55289-826",
       "name": "Walkers Special Old Whiskey",
       "description": "Vivamus vestibulum sagittis sapien.",
@@ -3708,7 +3708,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 307,
-      "image": "http://dummyimage.com/126x130.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/126x130.jpg/dddddd/000000",
       "productcode": "0603-5688",
       "name": "Sloe Gin - Mcguinness",
       "description": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
@@ -3720,7 +3720,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 308,
-      "image": "http://dummyimage.com/120x196.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/120x196.bmp/dddddd/000000",
       "productcode": "68428-732",
       "name": "Chips Potato Swt Chilli Sour",
       "description": "Maecenas ut massa quis augue luctus tincidunt.",
@@ -3732,7 +3732,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 309,
-      "image": "http://dummyimage.com/112x177.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/112x177.png/ff4444/ffffff",
       "productcode": "43857-0295",
       "name": "Pork - Backs - Boneless",
       "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
@@ -3744,7 +3744,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 310,
-      "image": "http://dummyimage.com/244x125.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/244x125.bmp/ff4444/ffffff",
       "productcode": "61722-040",
       "name": "Gingerale - Diet - Schweppes",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
@@ -3756,7 +3756,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 311,
-      "image": "http://dummyimage.com/177x124.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/177x124.jpg/ff4444/ffffff",
       "productcode": "52533-001",
       "name": "Bread - 10 Grain Parisian",
       "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -3768,7 +3768,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 312,
-      "image": "http://dummyimage.com/114x226.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/114x226.jpg/5fa2dd/ffffff",
       "productcode": "0185-0940",
       "name": "Poppy Seed",
       "description": "Fusce consequat. Nulla nisl. Nunc nisl.",
@@ -3780,7 +3780,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 313,
-      "image": "http://dummyimage.com/208x182.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/208x182.png/5fa2dd/ffffff",
       "productcode": "55319-375",
       "name": "Grapes - Red",
       "description": "Fusce consequat. Nulla nisl.",
@@ -3792,7 +3792,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 314,
-      "image": "http://dummyimage.com/204x222.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/204x222.bmp/5fa2dd/ffffff",
       "productcode": "34645-3008",
       "name": "Wine - Taylors Reserve",
       "description": "Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
@@ -3804,7 +3804,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 315,
-      "image": "http://dummyimage.com/135x117.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/135x117.bmp/5fa2dd/ffffff",
       "productcode": "64117-159",
       "name": "Dragon Fruit",
       "description": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
@@ -3816,7 +3816,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 316,
-      "image": "http://dummyimage.com/248x158.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/248x158.bmp/dddddd/000000",
       "productcode": "63868-934",
       "name": "Soup - Campbells Beef Strogonoff",
       "description": "Fusce consequat. Nulla nisl.",
@@ -3828,7 +3828,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 317,
-      "image": "http://dummyimage.com/172x147.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/172x147.jpg/dddddd/000000",
       "productcode": "0023-0042",
       "name": "Duck - Legs",
       "description": "Aliquam non mauris. Morbi non lectus.",
@@ -3840,7 +3840,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 318,
-      "image": "http://dummyimage.com/169x236.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/169x236.jpg/5fa2dd/ffffff",
       "productcode": "62802-182",
       "name": "Calvados - Boulard",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
@@ -3852,7 +3852,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 319,
-      "image": "http://dummyimage.com/188x179.png/dddddd/000000",
+      "image": "https://dummyimage.com/188x179.png/dddddd/000000",
       "productcode": "15071-604",
       "name": "Tahini Paste",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -3864,7 +3864,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 320,
-      "image": "http://dummyimage.com/192x243.png/dddddd/000000",
+      "image": "https://dummyimage.com/192x243.png/dddddd/000000",
       "productcode": "64024-968",
       "name": "Food Colouring - Green",
       "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
@@ -3876,7 +3876,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 321,
-      "image": "http://dummyimage.com/196x208.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/196x208.bmp/ff4444/ffffff",
       "productcode": "0536-3404",
       "name": "Browning Caramel Glace",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -3888,7 +3888,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 322,
-      "image": "http://dummyimage.com/144x199.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/144x199.png/cc0000/ffffff",
       "productcode": "36987-1840",
       "name": "Dates",
       "description": "Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -3900,7 +3900,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 323,
-      "image": "http://dummyimage.com/192x137.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/192x137.bmp/ff4444/ffffff",
       "productcode": "42361-025",
       "name": "Bread Country Roll",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -3912,7 +3912,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 324,
-      "image": "http://dummyimage.com/193x213.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/193x213.bmp/cc0000/ffffff",
       "productcode": "68745-2030",
       "name": "Oil - Avocado",
       "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -3924,7 +3924,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 325,
-      "image": "http://dummyimage.com/184x241.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/184x241.bmp/5fa2dd/ffffff",
       "productcode": "16590-528",
       "name": "Sauerkraut",
       "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
@@ -3936,7 +3936,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 326,
-      "image": "http://dummyimage.com/146x144.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/146x144.bmp/5fa2dd/ffffff",
       "productcode": "36987-1320",
       "name": "Beef - Striploin Aa",
       "description": "Pellentesque at nulla.",
@@ -3948,7 +3948,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 327,
-      "image": "http://dummyimage.com/143x113.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/143x113.bmp/5fa2dd/ffffff",
       "productcode": "66689-008",
       "name": "Foie Gras",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
@@ -3960,7 +3960,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 328,
-      "image": "http://dummyimage.com/241x215.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/241x215.jpg/5fa2dd/ffffff",
       "productcode": "17518-054",
       "name": "Rum - Dark, Bacardi, Black",
       "description": "Donec ut mauris eget massa tempor convallis.",
@@ -3972,7 +3972,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 329,
-      "image": "http://dummyimage.com/201x181.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/201x181.png/cc0000/ffffff",
       "productcode": "14783-454",
       "name": "Glaze - Apricot",
       "description": "In sagittis dui vel nisl.",
@@ -3984,7 +3984,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 330,
-      "image": "http://dummyimage.com/161x212.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/161x212.jpg/dddddd/000000",
       "productcode": "64764-121",
       "name": "Squash - Guords",
       "description": "Maecenas pulvinar lobortis est. Phasellus sit amet erat.",
@@ -3996,7 +3996,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 331,
-      "image": "http://dummyimage.com/198x128.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/198x128.jpg/cc0000/ffffff",
       "productcode": "58503-046",
       "name": "Milk 2% 500 Ml",
       "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -4008,7 +4008,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 332,
-      "image": "http://dummyimage.com/103x248.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/103x248.jpg/ff4444/ffffff",
       "productcode": "68788-9835",
       "name": "Turnip - White",
       "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
@@ -4020,7 +4020,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 333,
-      "image": "http://dummyimage.com/209x127.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/209x127.jpg/dddddd/000000",
       "productcode": "42507-388",
       "name": "Oil - Sunflower",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -4032,7 +4032,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 334,
-      "image": "http://dummyimage.com/158x147.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/158x147.bmp/ff4444/ffffff",
       "productcode": "36987-2919",
       "name": "Split Peas - Green, Dry",
       "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
@@ -4044,7 +4044,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 335,
-      "image": "http://dummyimage.com/235x152.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/235x152.bmp/dddddd/000000",
       "productcode": "49288-0182",
       "name": "Veal - Round, Eye Of",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -4056,7 +4056,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 336,
-      "image": "http://dummyimage.com/155x131.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/155x131.png/ff4444/ffffff",
       "productcode": "68788-9946",
       "name": "Beef - Top Sirloin",
       "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
@@ -4068,7 +4068,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 337,
-      "image": "http://dummyimage.com/208x186.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/208x186.bmp/5fa2dd/ffffff",
       "productcode": "0338-1138",
       "name": "Bread - Burger",
       "description": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
@@ -4080,7 +4080,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 338,
-      "image": "http://dummyimage.com/248x226.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/248x226.png/5fa2dd/ffffff",
       "productcode": "10812-431",
       "name": "Carrots - Mini, Stem On",
       "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
@@ -4092,7 +4092,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 339,
-      "image": "http://dummyimage.com/168x246.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/168x246.jpg/ff4444/ffffff",
       "productcode": "64616-111",
       "name": "Quail - Whole, Bone - In",
       "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -4104,7 +4104,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 340,
-      "image": "http://dummyimage.com/199x227.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/199x227.bmp/5fa2dd/ffffff",
       "productcode": "48951-1025",
       "name": "Shrimp - Black Tiger 26/30",
       "description": "Maecenas ut massa quis augue luctus tincidunt.",
@@ -4116,7 +4116,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 341,
-      "image": "http://dummyimage.com/169x210.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/169x210.bmp/cc0000/ffffff",
       "productcode": "75921-130",
       "name": "Prunes - Pitted",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum.",
@@ -4128,7 +4128,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 342,
-      "image": "http://dummyimage.com/145x238.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/145x238.jpg/ff4444/ffffff",
       "productcode": "64942-1050",
       "name": "Wine - White, Pelee Island",
       "description": "Cras in purus eu magna vulputate luctus.",
@@ -4140,7 +4140,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 343,
-      "image": "http://dummyimage.com/119x202.png/dddddd/000000",
+      "image": "https://dummyimage.com/119x202.png/dddddd/000000",
       "productcode": "48951-4087",
       "name": "Soup - Campbells, Minestrone",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
@@ -4152,7 +4152,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 344,
-      "image": "http://dummyimage.com/122x155.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/122x155.jpg/5fa2dd/ffffff",
       "productcode": "17271-116",
       "name": "Muskox - French Rack",
       "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -4164,7 +4164,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 345,
-      "image": "http://dummyimage.com/164x188.png/dddddd/000000",
+      "image": "https://dummyimage.com/164x188.png/dddddd/000000",
       "productcode": "66336-581",
       "name": "Soup - Campbellschix Stew",
       "description": "Phasellus id sapien in sapien iaculis congue.",
@@ -4176,7 +4176,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 346,
-      "image": "http://dummyimage.com/134x220.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/134x220.bmp/ff4444/ffffff",
       "productcode": "0615-5584",
       "name": "Fish - Base, Bouillion",
       "description": "Integer a nibh.",
@@ -4188,7 +4188,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 347,
-      "image": "http://dummyimage.com/122x134.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/122x134.jpg/cc0000/ffffff",
       "productcode": "68001-187",
       "name": "Tortillas - Flour, 10",
       "description": "Morbi non lectus.",
@@ -4200,7 +4200,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 348,
-      "image": "http://dummyimage.com/205x168.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/205x168.png/cc0000/ffffff",
       "productcode": "0615-7831",
       "name": "Muffin Hinge 117n",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique.",
@@ -4212,7 +4212,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 349,
-      "image": "http://dummyimage.com/125x118.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/125x118.bmp/ff4444/ffffff",
       "productcode": "67877-248",
       "name": "Juice - Propel Sport",
       "description": "Duis mattis egestas metus.",
@@ -4224,7 +4224,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 350,
-      "image": "http://dummyimage.com/185x148.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/185x148.jpg/5fa2dd/ffffff",
       "productcode": "49035-733",
       "name": "Wine - Penfolds Koonuga Hill",
       "description": "Maecenas ut massa quis augue luctus tincidunt.",
@@ -4236,7 +4236,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 351,
-      "image": "http://dummyimage.com/172x123.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/172x123.jpg/dddddd/000000",
       "productcode": "65044-2016",
       "name": "Appetizer - Shrimp Puff",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -4248,7 +4248,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 352,
-      "image": "http://dummyimage.com/186x217.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/186x217.bmp/dddddd/000000",
       "productcode": "0093-5277",
       "name": "Wine - Fume Blanc Fetzer",
       "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -4260,7 +4260,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 353,
-      "image": "http://dummyimage.com/210x220.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/210x220.jpg/ff4444/ffffff",
       "productcode": "36800-424",
       "name": "Scrubbie - Scotchbrite Hand Pad",
       "description": "Maecenas pulvinar lobortis est.",
@@ -4272,7 +4272,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 354,
-      "image": "http://dummyimage.com/123x242.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/123x242.bmp/5fa2dd/ffffff",
       "productcode": "64980-119",
       "name": "Parsley - Dried",
       "description": "Aliquam erat volutpat. In congue. Etiam justo.",
@@ -4284,7 +4284,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 355,
-      "image": "http://dummyimage.com/198x131.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/198x131.jpg/cc0000/ffffff",
       "productcode": "0603-2110",
       "name": "Peas - Pigeon, Dry",
       "description": "Nulla tellus. In sagittis dui vel nisl.",
@@ -4296,7 +4296,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 356,
-      "image": "http://dummyimage.com/187x123.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/187x123.bmp/ff4444/ffffff",
       "productcode": "61715-103",
       "name": "Thyme - Fresh",
       "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.",
@@ -4308,7 +4308,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 357,
-      "image": "http://dummyimage.com/246x174.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/246x174.jpg/ff4444/ffffff",
       "productcode": "65862-147",
       "name": "Juice - Prune",
       "description": "Nulla tempus.",
@@ -4320,7 +4320,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 358,
-      "image": "http://dummyimage.com/162x197.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/162x197.jpg/5fa2dd/ffffff",
       "productcode": "41520-399",
       "name": "Sponge Cake Mix - Chocolate",
       "description": "Integer a nibh. In quis justo.",
@@ -4332,7 +4332,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 359,
-      "image": "http://dummyimage.com/166x195.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/166x195.bmp/dddddd/000000",
       "productcode": "54868-5171",
       "name": "Ecolab Silver Fusion",
       "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -4344,7 +4344,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 360,
-      "image": "http://dummyimage.com/131x171.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/131x171.jpg/5fa2dd/ffffff",
       "productcode": "51808-207",
       "name": "Pepper - White, Ground",
       "description": "Aliquam erat volutpat. In congue. Etiam justo.",
@@ -4356,7 +4356,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 361,
-      "image": "http://dummyimage.com/183x185.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/183x185.jpg/dddddd/000000",
       "productcode": "17478-705",
       "name": "Compound - Strawberry",
       "description": "Fusce consequat.",
@@ -4368,7 +4368,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 362,
-      "image": "http://dummyimage.com/219x176.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/219x176.jpg/ff4444/ffffff",
       "productcode": "0781-5181",
       "name": "Momiji Oroshi Chili Sauce",
       "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.",
@@ -4380,7 +4380,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 363,
-      "image": "http://dummyimage.com/243x123.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/243x123.jpg/cc0000/ffffff",
       "productcode": "0574-7116",
       "name": "Beer - Alexander Kieths, Pale Ale",
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
@@ -4392,7 +4392,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 364,
-      "image": "http://dummyimage.com/116x106.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/116x106.bmp/cc0000/ffffff",
       "productcode": "60608-012",
       "name": "White Fish - Filets",
       "description": "Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla.",
@@ -4404,7 +4404,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 365,
-      "image": "http://dummyimage.com/107x141.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/107x141.bmp/ff4444/ffffff",
       "productcode": "55714-4444",
       "name": "Wine - Bouchard La Vignee Pinot",
       "description": "Nulla nisl. Nunc nisl.",
@@ -4416,7 +4416,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 366,
-      "image": "http://dummyimage.com/164x110.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/164x110.bmp/5fa2dd/ffffff",
       "productcode": "0264-2301",
       "name": "Fib N9 - Prague Powder",
       "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
@@ -4428,7 +4428,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 367,
-      "image": "http://dummyimage.com/158x168.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/158x168.bmp/dddddd/000000",
       "productcode": "63981-194",
       "name": "Beans - Kidney, Canned",
       "description": "Sed sagittis.",
@@ -4440,7 +4440,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 368,
-      "image": "http://dummyimage.com/118x174.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/118x174.png/5fa2dd/ffffff",
       "productcode": "49035-560",
       "name": "Cassis",
       "description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
@@ -4452,7 +4452,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 369,
-      "image": "http://dummyimage.com/151x104.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/151x104.bmp/cc0000/ffffff",
       "productcode": "65044-5232",
       "name": "Wine - Vineland Estate Semi - Dry",
       "description": "In congue. Etiam justo.",
@@ -4464,7 +4464,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 370,
-      "image": "http://dummyimage.com/170x149.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/170x149.jpg/cc0000/ffffff",
       "productcode": "55154-9667",
       "name": "Transfer Sheets",
       "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
@@ -4476,7 +4476,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 371,
-      "image": "http://dummyimage.com/182x238.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/182x238.png/ff4444/ffffff",
       "productcode": "41250-029",
       "name": "Tortillas - Flour, 12",
       "description": "Sed accumsan felis.",
@@ -4488,7 +4488,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 372,
-      "image": "http://dummyimage.com/108x149.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/108x149.png/cc0000/ffffff",
       "productcode": "56062-619",
       "name": "Bar Energy Chocchip",
       "description": "Cras pellentesque volutpat dui.",
@@ -4500,7 +4500,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 373,
-      "image": "http://dummyimage.com/104x191.png/dddddd/000000",
+      "image": "https://dummyimage.com/104x191.png/dddddd/000000",
       "productcode": "0536-4113",
       "name": "Chick Peas - Dried",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.",
@@ -4512,7 +4512,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 374,
-      "image": "http://dummyimage.com/214x129.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/214x129.jpg/cc0000/ffffff",
       "productcode": "36987-2155",
       "name": "Vinegar - Rice",
       "description": "Phasellus in felis.",
@@ -4524,7 +4524,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 375,
-      "image": "http://dummyimage.com/235x223.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/235x223.png/ff4444/ffffff",
       "productcode": "0409-2585",
       "name": "Wakami Seaweed",
       "description": "Morbi a ipsum.",
@@ -4536,7 +4536,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 376,
-      "image": "http://dummyimage.com/164x135.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/164x135.jpg/dddddd/000000",
       "productcode": "41520-282",
       "name": "Appetizer - Mini Egg Roll, Shrimp",
       "description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
@@ -4548,7 +4548,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 377,
-      "image": "http://dummyimage.com/127x226.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/127x226.jpg/dddddd/000000",
       "productcode": "54868-4593",
       "name": "Shrimp - 16 - 20 Cooked, Peeled",
       "description": "Suspendisse potenti.",
@@ -4560,7 +4560,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 378,
-      "image": "http://dummyimage.com/206x171.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/206x171.png/cc0000/ffffff",
       "productcode": "13985-529",
       "name": "Doilies - 12, Paper",
       "description": "Morbi a ipsum. Integer a nibh. In quis justo.",
@@ -4572,7 +4572,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 379,
-      "image": "http://dummyimage.com/196x109.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/196x109.jpg/dddddd/000000",
       "productcode": "61957-0800",
       "name": "Melon - Cantaloupe",
       "description": "Nulla ut erat id mauris vulputate elementum.",
@@ -4584,7 +4584,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 380,
-      "image": "http://dummyimage.com/179x117.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/179x117.png/5fa2dd/ffffff",
       "productcode": "49981-019",
       "name": "Coffee - Almond Amaretto",
       "description": "Pellentesque eget nunc.",
@@ -4596,7 +4596,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 381,
-      "image": "http://dummyimage.com/183x138.png/dddddd/000000",
+      "image": "https://dummyimage.com/183x138.png/dddddd/000000",
       "productcode": "0378-1700",
       "name": "Soup - Campbells, Minestrone",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.",
@@ -4608,7 +4608,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 382,
-      "image": "http://dummyimage.com/125x250.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/125x250.jpg/5fa2dd/ffffff",
       "productcode": "0093-7425",
       "name": "Bread - Roll, Whole Wheat",
       "description": "In hac habitasse platea dictumst.",
@@ -4620,7 +4620,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 383,
-      "image": "http://dummyimage.com/219x189.png/dddddd/000000",
+      "image": "https://dummyimage.com/219x189.png/dddddd/000000",
       "productcode": "65862-299",
       "name": "Lettuce - Radicchio",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -4632,7 +4632,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 384,
-      "image": "http://dummyimage.com/167x200.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/167x200.jpg/dddddd/000000",
       "productcode": "60681-1285",
       "name": "Seabream Whole Farmed",
       "description": "Morbi vel lectus in quam fringilla rhoncus.",
@@ -4644,7 +4644,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 385,
-      "image": "http://dummyimage.com/174x118.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/174x118.bmp/cc0000/ffffff",
       "productcode": "63261-250",
       "name": "Beef - Rib Roast, Cap On",
       "description": "Ut at dolor quis odio consequat varius. Integer ac leo.",
@@ -4656,7 +4656,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 386,
-      "image": "http://dummyimage.com/231x145.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/231x145.png/5fa2dd/ffffff",
       "productcode": "50114-8500",
       "name": "Sponge Cake Mix - Chocolate",
       "description": "Duis ac nibh.",
@@ -4668,7 +4668,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 387,
-      "image": "http://dummyimage.com/129x243.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/129x243.png/ff4444/ffffff",
       "productcode": "65044-1783",
       "name": "Quail - Jumbo Boneless",
       "description": "Aenean lectus. Pellentesque eget nunc.",
@@ -4680,7 +4680,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 388,
-      "image": "http://dummyimage.com/221x174.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/221x174.bmp/5fa2dd/ffffff",
       "productcode": "63148-270",
       "name": "Bag - Regular Kraft 20 Lb",
       "description": "Suspendisse potenti.",
@@ -4692,7 +4692,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 389,
-      "image": "http://dummyimage.com/232x122.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/232x122.jpg/dddddd/000000",
       "productcode": "50845-0187",
       "name": "Cheese - Ermite Bleu",
       "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -4704,7 +4704,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 390,
-      "image": "http://dummyimage.com/237x158.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/237x158.bmp/ff4444/ffffff",
       "productcode": "54738-905",
       "name": "Quail - Eggs, Fresh",
       "description": "Integer a nibh. In quis justo.",
@@ -4716,7 +4716,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 391,
-      "image": "http://dummyimage.com/161x129.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/161x129.png/cc0000/ffffff",
       "productcode": "50268-686",
       "name": "Alize Sunset",
       "description": "Vivamus vestibulum sagittis sapien.",
@@ -4728,7 +4728,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 392,
-      "image": "http://dummyimage.com/181x240.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/181x240.bmp/cc0000/ffffff",
       "productcode": "54458-932",
       "name": "Truffle Cups - Brown",
       "description": "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
@@ -4740,7 +4740,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 393,
-      "image": "http://dummyimage.com/143x151.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/143x151.jpg/cc0000/ffffff",
       "productcode": "0527-1369",
       "name": "Mushroom - Porcini Frozen",
       "description": "Maecenas tincidunt lacus at velit.",
@@ -4752,7 +4752,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 394,
-      "image": "http://dummyimage.com/111x161.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/111x161.jpg/dddddd/000000",
       "productcode": "14783-335",
       "name": "Pepper - Yellow Bell",
       "description": "Suspendisse potenti.",
@@ -4764,7 +4764,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 395,
-      "image": "http://dummyimage.com/125x117.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/125x117.bmp/dddddd/000000",
       "productcode": "0363-0096",
       "name": "Yeast Dry - Fermipan",
       "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.",
@@ -4776,7 +4776,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 396,
-      "image": "http://dummyimage.com/145x197.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/145x197.jpg/5fa2dd/ffffff",
       "productcode": "41250-032",
       "name": "Grapes - Red",
       "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.",
@@ -4788,7 +4788,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 397,
-      "image": "http://dummyimage.com/197x100.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/197x100.png/5fa2dd/ffffff",
       "productcode": "33261-035",
       "name": "Tequila Rose Cream Liquor",
       "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
@@ -4800,7 +4800,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 398,
-      "image": "http://dummyimage.com/237x183.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/237x183.png/5fa2dd/ffffff",
       "productcode": "50436-9995",
       "name": "Mushroom - Portebello",
       "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
@@ -4812,7 +4812,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 399,
-      "image": "http://dummyimage.com/192x139.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/192x139.png/ff4444/ffffff",
       "productcode": "63739-528",
       "name": "Bread - Crusty Italian Poly",
       "description": "Fusce consequat.",
@@ -4824,7 +4824,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 400,
-      "image": "http://dummyimage.com/190x203.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/190x203.png/ff4444/ffffff",
       "productcode": "54868-4388",
       "name": "Coffee - Egg Nog Capuccino",
       "description": "Morbi porttitor lorem id ligula.",
@@ -4836,7 +4836,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 401,
-      "image": "http://dummyimage.com/238x157.png/dddddd/000000",
+      "image": "https://dummyimage.com/238x157.png/dddddd/000000",
       "productcode": "0409-7953",
       "name": "Steam Pan Full Lid",
       "description": "Suspendisse potenti. In eleifend quam a odio.",
@@ -4848,7 +4848,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 402,
-      "image": "http://dummyimage.com/210x241.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/210x241.bmp/ff4444/ffffff",
       "productcode": "25021-109",
       "name": "Salt And Pepper Mix - Black",
       "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -4860,7 +4860,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 403,
-      "image": "http://dummyimage.com/157x127.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/157x127.png/5fa2dd/ffffff",
       "productcode": "60793-852",
       "name": "Pork - Smoked Kassler",
       "description": "Phasellus sit amet erat.",
@@ -4872,7 +4872,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 404,
-      "image": "http://dummyimage.com/213x174.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/213x174.png/5fa2dd/ffffff",
       "productcode": "67877-220",
       "name": "Cactus Pads",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -4884,7 +4884,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 405,
-      "image": "http://dummyimage.com/126x146.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/126x146.png/cc0000/ffffff",
       "productcode": "45802-182",
       "name": "Sauce - Apple, Unsweetened",
       "description": "Quisque ut erat.",
@@ -4896,7 +4896,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 406,
-      "image": "http://dummyimage.com/115x124.png/dddddd/000000",
+      "image": "https://dummyimage.com/115x124.png/dddddd/000000",
       "productcode": "13537-044",
       "name": "Sea Bass - Whole",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -4908,7 +4908,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 407,
-      "image": "http://dummyimage.com/124x223.png/dddddd/000000",
+      "image": "https://dummyimage.com/124x223.png/dddddd/000000",
       "productcode": "52343-038",
       "name": "Coconut - Creamed, Pure",
       "description": "In hac habitasse platea dictumst.",
@@ -4920,7 +4920,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 408,
-      "image": "http://dummyimage.com/187x101.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/187x101.bmp/5fa2dd/ffffff",
       "productcode": "55648-765",
       "name": "Cactus Pads",
       "description": "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.",
@@ -4932,7 +4932,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 409,
-      "image": "http://dummyimage.com/117x165.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/117x165.jpg/dddddd/000000",
       "productcode": "63824-192",
       "name": "Yokaline",
       "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
@@ -4944,7 +4944,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 410,
-      "image": "http://dummyimage.com/229x143.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/229x143.jpg/5fa2dd/ffffff",
       "productcode": "0904-3535",
       "name": "Mustard - Dry, Powder",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
@@ -4956,7 +4956,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 411,
-      "image": "http://dummyimage.com/247x131.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/247x131.bmp/dddddd/000000",
       "productcode": "49349-205",
       "name": "Potatoes - Idaho 80 Count",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -4968,7 +4968,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 412,
-      "image": "http://dummyimage.com/245x168.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/245x168.jpg/ff4444/ffffff",
       "productcode": "44567-701",
       "name": "Wine - Conde De Valdemar",
       "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -4980,7 +4980,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 413,
-      "image": "http://dummyimage.com/102x102.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/102x102.jpg/cc0000/ffffff",
       "productcode": "49349-480",
       "name": "Energy Drink - Redbull 355ml",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
@@ -4992,7 +4992,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 414,
-      "image": "http://dummyimage.com/240x162.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/240x162.jpg/5fa2dd/ffffff",
       "productcode": "61727-308",
       "name": "Nut - Macadamia",
       "description": "Proin interdum mauris non ligula pellentesque ultrices.",
@@ -5004,7 +5004,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 415,
-      "image": "http://dummyimage.com/204x175.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/204x175.png/cc0000/ffffff",
       "productcode": "54868-5814",
       "name": "Magnotta - Bel Paese White",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -5016,7 +5016,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 416,
-      "image": "http://dummyimage.com/239x178.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/239x178.bmp/cc0000/ffffff",
       "productcode": "0378-5041",
       "name": "Energy Drink Red Bull",
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -5028,7 +5028,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 417,
-      "image": "http://dummyimage.com/197x124.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/197x124.jpg/cc0000/ffffff",
       "productcode": "0555-1022",
       "name": "Stock - Fish",
       "description": "Phasellus in felis. Donec semper sapien a libero.",
@@ -5040,7 +5040,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 418,
-      "image": "http://dummyimage.com/250x248.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/250x248.png/cc0000/ffffff",
       "productcode": "49502-902",
       "name": "Smoked Tongue",
       "description": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
@@ -5052,7 +5052,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 419,
-      "image": "http://dummyimage.com/214x202.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/214x202.jpg/5fa2dd/ffffff",
       "productcode": "21695-143",
       "name": "Sauce - Balsamic Viniagrette",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
@@ -5064,7 +5064,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 420,
-      "image": "http://dummyimage.com/128x110.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/128x110.png/ff4444/ffffff",
       "productcode": "55648-422",
       "name": "Energy Drink Bawls",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
@@ -5076,7 +5076,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 421,
-      "image": "http://dummyimage.com/117x171.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/117x171.bmp/5fa2dd/ffffff",
       "productcode": "65923-008",
       "name": "Tea - Black Currant",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.",
@@ -5088,7 +5088,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 422,
-      "image": "http://dummyimage.com/197x126.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/197x126.jpg/ff4444/ffffff",
       "productcode": "24987-240",
       "name": "Water - Green Tea Refresher",
       "description": "Duis ac nibh.",
@@ -5100,7 +5100,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 423,
-      "image": "http://dummyimage.com/170x128.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/170x128.jpg/dddddd/000000",
       "productcode": "55316-977",
       "name": "Pie Pecan",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.",
@@ -5112,7 +5112,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 424,
-      "image": "http://dummyimage.com/126x212.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/126x212.bmp/ff4444/ffffff",
       "productcode": "37012-731",
       "name": "Hagen Daza - Dk Choocolate",
       "description": "Sed ante.",
@@ -5124,7 +5124,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 425,
-      "image": "http://dummyimage.com/120x103.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/120x103.png/ff4444/ffffff",
       "productcode": "62007-105",
       "name": "Chocolate - Semi Sweet, Calets",
       "description": "Morbi vel lectus in quam fringilla rhoncus.",
@@ -5136,7 +5136,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 426,
-      "image": "http://dummyimage.com/227x177.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/227x177.jpg/5fa2dd/ffffff",
       "productcode": "0615-7694",
       "name": "Flour - Bran, Red",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -5148,7 +5148,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 427,
-      "image": "http://dummyimage.com/173x204.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/173x204.jpg/5fa2dd/ffffff",
       "productcode": "42254-011",
       "name": "Wine - Magnotta, Merlot Sr Vqa",
       "description": "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -5160,7 +5160,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 428,
-      "image": "http://dummyimage.com/240x101.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/240x101.bmp/dddddd/000000",
       "productcode": "0268-1472",
       "name": "Venison - Racks Frenched",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -5172,7 +5172,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 429,
-      "image": "http://dummyimage.com/145x247.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/145x247.jpg/cc0000/ffffff",
       "productcode": "10014-001",
       "name": "Lettuce - Lolla Rosa",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -5184,7 +5184,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 430,
-      "image": "http://dummyimage.com/209x194.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/209x194.jpg/cc0000/ffffff",
       "productcode": "65044-2565",
       "name": "Lamb - Shanks",
       "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
@@ -5196,7 +5196,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 431,
-      "image": "http://dummyimage.com/107x131.png/dddddd/000000",
+      "image": "https://dummyimage.com/107x131.png/dddddd/000000",
       "productcode": "61715-082",
       "name": "Beer - Molson Excel",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -5208,7 +5208,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 432,
-      "image": "http://dummyimage.com/107x218.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/107x218.jpg/5fa2dd/ffffff",
       "productcode": "51346-212",
       "name": "Cream - 35%",
       "description": "Nulla mollis molestie lorem. Quisque ut erat.",
@@ -5220,7 +5220,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 433,
-      "image": "http://dummyimage.com/140x149.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/140x149.bmp/ff4444/ffffff",
       "productcode": "65862-161",
       "name": "Cheese Cloth No 100",
       "description": "Donec dapibus. Duis at velit eu est congue elementum.",
@@ -5232,7 +5232,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 434,
-      "image": "http://dummyimage.com/109x110.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/109x110.bmp/cc0000/ffffff",
       "productcode": "50845-0050",
       "name": "Vector Energy Bar",
       "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
@@ -5244,7 +5244,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 435,
-      "image": "http://dummyimage.com/126x235.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/126x235.jpg/ff4444/ffffff",
       "productcode": "54868-4556",
       "name": "Sprite - 355 Ml",
       "description": "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
@@ -5256,7 +5256,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 436,
-      "image": "http://dummyimage.com/114x184.png/dddddd/000000",
+      "image": "https://dummyimage.com/114x184.png/dddddd/000000",
       "productcode": "37808-206",
       "name": "Rice - Sushi",
       "description": "Ut tellus.",
@@ -5268,7 +5268,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 437,
-      "image": "http://dummyimage.com/184x218.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/184x218.bmp/cc0000/ffffff",
       "productcode": "36987-2822",
       "name": "Celery",
       "description": "Aliquam non mauris. Morbi non lectus.",
@@ -5280,7 +5280,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 438,
-      "image": "http://dummyimage.com/228x136.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/228x136.jpg/ff4444/ffffff",
       "productcode": "55154-5462",
       "name": "Water - San Pellegrino",
       "description": "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
@@ -5292,7 +5292,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 439,
-      "image": "http://dummyimage.com/153x131.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/153x131.jpg/5fa2dd/ffffff",
       "productcode": "11509-0411",
       "name": "Pepsi - Diet, 355 Ml",
       "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
@@ -5304,7 +5304,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 440,
-      "image": "http://dummyimage.com/199x127.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/199x127.jpg/cc0000/ffffff",
       "productcode": "44946-1012",
       "name": "Bag - Clear 7 Lb",
       "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -5316,7 +5316,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 441,
-      "image": "http://dummyimage.com/158x237.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/158x237.png/5fa2dd/ffffff",
       "productcode": "0179-0113",
       "name": "Skirt - 24 Foot",
       "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -5328,7 +5328,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 442,
-      "image": "http://dummyimage.com/236x137.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/236x137.jpg/5fa2dd/ffffff",
       "productcode": "0173-0753",
       "name": "Wine - Red, Cooking",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
@@ -5340,7 +5340,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 443,
-      "image": "http://dummyimage.com/165x234.png/dddddd/000000",
+      "image": "https://dummyimage.com/165x234.png/dddddd/000000",
       "productcode": "52069-104",
       "name": "Cheese - Romano, Grated",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
@@ -5352,7 +5352,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 444,
-      "image": "http://dummyimage.com/200x122.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/200x122.jpg/cc0000/ffffff",
       "productcode": "59021-008",
       "name": "Puree - Kiwi",
       "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
@@ -5364,7 +5364,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 445,
-      "image": "http://dummyimage.com/169x193.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/169x193.jpg/ff4444/ffffff",
       "productcode": "41250-247",
       "name": "Chicken - Wings, Tip Off",
       "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
@@ -5376,7 +5376,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 446,
-      "image": "http://dummyimage.com/149x140.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/149x140.jpg/dddddd/000000",
       "productcode": "51079-051",
       "name": "Bread - Pullman, Sliced",
       "description": "Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
@@ -5388,7 +5388,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 447,
-      "image": "http://dummyimage.com/200x122.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/200x122.png/ff4444/ffffff",
       "productcode": "36987-3047",
       "name": "Trout - Rainbow, Fresh",
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
@@ -5400,7 +5400,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 448,
-      "image": "http://dummyimage.com/227x216.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/227x216.png/5fa2dd/ffffff",
       "productcode": "55154-4426",
       "name": "Sausage - Blood Pudding",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -5412,7 +5412,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 449,
-      "image": "http://dummyimage.com/145x132.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/145x132.jpg/5fa2dd/ffffff",
       "productcode": "50991-716",
       "name": "Oxtail - Cut",
       "description": "Phasellus id sapien in sapien iaculis congue.",
@@ -5424,7 +5424,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 450,
-      "image": "http://dummyimage.com/105x171.png/dddddd/000000",
+      "image": "https://dummyimage.com/105x171.png/dddddd/000000",
       "productcode": "55111-270",
       "name": "Wine - Baron De Rothschild",
       "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
@@ -5436,7 +5436,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 451,
-      "image": "http://dummyimage.com/213x225.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/213x225.bmp/5fa2dd/ffffff",
       "productcode": "15127-385",
       "name": "Beef - Tenderloin - Aa",
       "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
@@ -5448,7 +5448,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 452,
-      "image": "http://dummyimage.com/224x114.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/224x114.jpg/ff4444/ffffff",
       "productcode": "0440-7559",
       "name": "Filter - Coffee",
       "description": "Proin risus.",
@@ -5460,7 +5460,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 453,
-      "image": "http://dummyimage.com/159x157.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/159x157.bmp/dddddd/000000",
       "productcode": "31722-375",
       "name": "Sauce - Roasted Red Pepper",
       "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
@@ -5472,7 +5472,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 454,
-      "image": "http://dummyimage.com/180x230.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/180x230.png/cc0000/ffffff",
       "productcode": "57520-0271",
       "name": "Bread - French Stick",
       "description": "In blandit ultrices enim.",
@@ -5484,7 +5484,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 455,
-      "image": "http://dummyimage.com/106x230.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/106x230.bmp/5fa2dd/ffffff",
       "productcode": "53499-5971",
       "name": "Frangelico",
       "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.",
@@ -5496,7 +5496,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 456,
-      "image": "http://dummyimage.com/186x193.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/186x193.bmp/dddddd/000000",
       "productcode": "75878-002",
       "name": "Chervil - Fresh",
       "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -5508,7 +5508,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 457,
-      "image": "http://dummyimage.com/218x221.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/218x221.jpg/cc0000/ffffff",
       "productcode": "11523-4140",
       "name": "Ostrich - Prime Cut",
       "description": "Integer tincidunt ante vel ipsum.",
@@ -5520,7 +5520,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 458,
-      "image": "http://dummyimage.com/229x209.png/dddddd/000000",
+      "image": "https://dummyimage.com/229x209.png/dddddd/000000",
       "productcode": "40046-0038",
       "name": "Apple - Delicious, Red",
       "description": "Proin risus.",
@@ -5532,7 +5532,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 459,
-      "image": "http://dummyimage.com/245x184.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/245x184.jpg/ff4444/ffffff",
       "productcode": "43547-320",
       "name": "Beef - Bones, Cut - Up",
       "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
@@ -5544,7 +5544,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 460,
-      "image": "http://dummyimage.com/159x138.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/159x138.jpg/cc0000/ffffff",
       "productcode": "66854-026",
       "name": "Yogurt - Strawberry, 175 Gr",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.",
@@ -5556,7 +5556,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 461,
-      "image": "http://dummyimage.com/143x149.png/dddddd/000000",
+      "image": "https://dummyimage.com/143x149.png/dddddd/000000",
       "productcode": "56153-003",
       "name": "Beef - Ox Tongue, Pickled",
       "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
@@ -5568,7 +5568,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 462,
-      "image": "http://dummyimage.com/138x164.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/138x164.png/cc0000/ffffff",
       "productcode": "61722-020",
       "name": "Scallops 60/80 Iqf",
       "description": "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.",
@@ -5580,7 +5580,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 463,
-      "image": "http://dummyimage.com/205x218.png/dddddd/000000",
+      "image": "https://dummyimage.com/205x218.png/dddddd/000000",
       "productcode": "21695-771",
       "name": "Coffee Cup 12oz 5342cd",
       "description": "Mauris lacinia sapien quis libero.",
@@ -5592,7 +5592,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 464,
-      "image": "http://dummyimage.com/119x102.png/dddddd/000000",
+      "image": "https://dummyimage.com/119x102.png/dddddd/000000",
       "productcode": "58468-0190",
       "name": "Chocolate - Chips Compound",
       "description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
@@ -5604,7 +5604,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 465,
-      "image": "http://dummyimage.com/131x221.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/131x221.png/cc0000/ffffff",
       "productcode": "42254-319",
       "name": "Lettuce - Radicchio",
       "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
@@ -5616,7 +5616,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 466,
-      "image": "http://dummyimage.com/168x144.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/168x144.bmp/cc0000/ffffff",
       "productcode": "63459-544",
       "name": "Coffee - Dark Roast",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.",
@@ -5628,7 +5628,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 467,
-      "image": "http://dummyimage.com/164x161.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/164x161.jpg/5fa2dd/ffffff",
       "productcode": "63629-4514",
       "name": "Wasabi Powder",
       "description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
@@ -5640,7 +5640,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 468,
-      "image": "http://dummyimage.com/170x227.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/170x227.bmp/dddddd/000000",
       "productcode": "49349-728",
       "name": "Lettuce - Escarole",
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
@@ -5652,7 +5652,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 469,
-      "image": "http://dummyimage.com/232x108.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/232x108.bmp/5fa2dd/ffffff",
       "productcode": "61919-039",
       "name": "Pepper - Green",
       "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
@@ -5664,7 +5664,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 470,
-      "image": "http://dummyimage.com/219x233.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/219x233.png/cc0000/ffffff",
       "productcode": "13668-133",
       "name": "Tea - Orange Pekoe",
       "description": "Vivamus tortor.",
@@ -5676,7 +5676,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 471,
-      "image": "http://dummyimage.com/178x201.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/178x201.png/5fa2dd/ffffff",
       "productcode": "51672-4037",
       "name": "Soup - Campbells - Tomato",
       "description": "Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
@@ -5688,7 +5688,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 472,
-      "image": "http://dummyimage.com/158x193.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/158x193.jpg/dddddd/000000",
       "productcode": "60512-9077",
       "name": "Wine - Gato Negro Cabernet",
       "description": "Pellentesque at nulla.",
@@ -5700,7 +5700,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 473,
-      "image": "http://dummyimage.com/169x222.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/169x222.jpg/5fa2dd/ffffff",
       "productcode": "47242-0211",
       "name": "Baking Powder",
       "description": "Cras non velit nec nisi vulputate nonummy.",
@@ -5712,7 +5712,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 474,
-      "image": "http://dummyimage.com/189x120.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/189x120.bmp/dddddd/000000",
       "productcode": "49349-786",
       "name": "Sherbet - Raspberry",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
@@ -5724,7 +5724,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 475,
-      "image": "http://dummyimage.com/248x165.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/248x165.png/ff4444/ffffff",
       "productcode": "55045-1594",
       "name": "Squeeze Bottle",
       "description": "Suspendisse potenti. Nullam porttitor lacus at turpis.",
@@ -5736,7 +5736,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 476,
-      "image": "http://dummyimage.com/152x136.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/152x136.bmp/dddddd/000000",
       "productcode": "43269-714",
       "name": "Table Cloth 90x90 White",
       "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -5748,7 +5748,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 477,
-      "image": "http://dummyimage.com/215x119.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/215x119.png/cc0000/ffffff",
       "productcode": "62185-0005",
       "name": "Napkin - Beverge, White 2 - Ply",
       "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -5760,7 +5760,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 478,
-      "image": "http://dummyimage.com/215x168.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/215x168.png/5fa2dd/ffffff",
       "productcode": "36987-1299",
       "name": "Beans - Long, Chinese",
       "description": "Etiam vel augue. Vestibulum rutrum rutrum neque.",
@@ -5772,7 +5772,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 479,
-      "image": "http://dummyimage.com/153x140.png/dddddd/000000",
+      "image": "https://dummyimage.com/153x140.png/dddddd/000000",
       "productcode": "23155-056",
       "name": "Cheese Cheddar Processed",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -5784,7 +5784,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 480,
-      "image": "http://dummyimage.com/205x106.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/205x106.png/ff4444/ffffff",
       "productcode": "13668-166",
       "name": "Tomatoes Tear Drop Yellow",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -5796,7 +5796,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 481,
-      "image": "http://dummyimage.com/162x110.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/162x110.png/cc0000/ffffff",
       "productcode": "0268-0891",
       "name": "Mushroom - Trumpet, Dry",
       "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
@@ -5808,7 +5808,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 482,
-      "image": "http://dummyimage.com/232x160.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/232x160.jpg/5fa2dd/ffffff",
       "productcode": "0517-7410",
       "name": "Coffee Cup 16oz Foam",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.",
@@ -5820,7 +5820,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 483,
-      "image": "http://dummyimage.com/199x201.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/199x201.jpg/cc0000/ffffff",
       "productcode": "50268-728",
       "name": "Rabbit - Legs",
       "description": "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
@@ -5832,7 +5832,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 484,
-      "image": "http://dummyimage.com/142x216.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/142x216.png/cc0000/ffffff",
       "productcode": "59115-146",
       "name": "Pepper - Black, Ground",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -5844,7 +5844,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 485,
-      "image": "http://dummyimage.com/245x103.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/245x103.jpg/5fa2dd/ffffff",
       "productcode": "63629-4010",
       "name": "Tray - 16in Rnd Blk",
       "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
@@ -5856,7 +5856,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 486,
-      "image": "http://dummyimage.com/223x139.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/223x139.png/ff4444/ffffff",
       "productcode": "11673-222",
       "name": "Plate Pie Foil",
       "description": "Duis ac nibh.",
@@ -5868,7 +5868,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 487,
-      "image": "http://dummyimage.com/232x223.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/232x223.bmp/dddddd/000000",
       "productcode": "54473-166",
       "name": "Cheese - St. Paulin",
       "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
@@ -5880,7 +5880,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 488,
-      "image": "http://dummyimage.com/123x132.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/123x132.bmp/5fa2dd/ffffff",
       "productcode": "42291-689",
       "name": "Sorrel - Fresh",
       "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
@@ -5892,7 +5892,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 489,
-      "image": "http://dummyimage.com/195x188.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/195x188.bmp/cc0000/ffffff",
       "productcode": "65044-1662",
       "name": "Lemon Grass",
       "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
@@ -5904,7 +5904,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 490,
-      "image": "http://dummyimage.com/246x225.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/246x225.png/5fa2dd/ffffff",
       "productcode": "36987-1058",
       "name": "Syrup - Kahlua Chocolate",
       "description": "Suspendisse accumsan tortor quis turpis.",
@@ -5916,7 +5916,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 491,
-      "image": "http://dummyimage.com/243x234.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/243x234.png/cc0000/ffffff",
       "productcode": "36800-234",
       "name": "Sprouts Dikon",
       "description": "Praesent blandit lacinia erat.",
@@ -5928,7 +5928,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 492,
-      "image": "http://dummyimage.com/176x126.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/176x126.bmp/5fa2dd/ffffff",
       "productcode": "0781-1971",
       "name": "C - Plus, Orange",
       "description": "Fusce consequat. Nulla nisl.",
@@ -5940,7 +5940,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 493,
-      "image": "http://dummyimage.com/151x151.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/151x151.jpg/dddddd/000000",
       "productcode": "66758-041",
       "name": "Chicken - Thigh, Bone In",
       "description": "Nunc nisl.",
@@ -5952,7 +5952,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 494,
-      "image": "http://dummyimage.com/145x107.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/145x107.jpg/cc0000/ffffff",
       "productcode": "0168-0332",
       "name": "Turkey - Whole, Fresh",
       "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -5964,7 +5964,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 495,
-      "image": "http://dummyimage.com/112x220.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/112x220.bmp/5fa2dd/ffffff",
       "productcode": "10191-1243",
       "name": "Apple - Delicious, Red",
       "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
@@ -5976,7 +5976,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 496,
-      "image": "http://dummyimage.com/112x167.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/112x167.png/cc0000/ffffff",
       "productcode": "37012-851",
       "name": "Pepper - Sorrano",
       "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
@@ -5988,7 +5988,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 497,
-      "image": "http://dummyimage.com/148x123.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/148x123.bmp/5fa2dd/ffffff",
       "productcode": "61047-813",
       "name": "Cheese - Brie Roitelet",
       "description": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -6000,7 +6000,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 498,
-      "image": "http://dummyimage.com/202x223.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/202x223.jpg/5fa2dd/ffffff",
       "productcode": "52533-001",
       "name": "Loaf Pan - 2 Lb, Foil",
       "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
@@ -6012,7 +6012,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 499,
-      "image": "http://dummyimage.com/179x217.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/179x217.bmp/5fa2dd/ffffff",
       "productcode": "37000-131",
       "name": "Steel Wool S.o.s",
       "description": "Quisque ut erat.",
@@ -6024,7 +6024,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 500,
-      "image": "http://dummyimage.com/115x194.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/115x194.png/cc0000/ffffff",
       "productcode": "63323-763",
       "name": "Absolut Citron",
       "description": "Praesent blandit.",
@@ -6036,7 +6036,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 501,
-      "image": "http://dummyimage.com/110x198.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/110x198.jpg/cc0000/ffffff",
       "productcode": "63981-604",
       "name": "Pepper - Red Thai",
       "description": "Quisque porta volutpat erat.",
@@ -6048,7 +6048,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 502,
-      "image": "http://dummyimage.com/162x241.png/dddddd/000000",
+      "image": "https://dummyimage.com/162x241.png/dddddd/000000",
       "productcode": "0051-0021",
       "name": "Pork - Tenderloin, Fresh",
       "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -6060,7 +6060,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 503,
-      "image": "http://dummyimage.com/191x108.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/191x108.bmp/ff4444/ffffff",
       "productcode": "65954-547",
       "name": "Hagen Daza - Dk Choocolate",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -6072,7 +6072,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 504,
-      "image": "http://dummyimage.com/217x177.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/217x177.jpg/dddddd/000000",
       "productcode": "21695-720",
       "name": "Chicken - Tenderloin",
       "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
@@ -6084,7 +6084,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 505,
-      "image": "http://dummyimage.com/250x172.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/250x172.jpg/5fa2dd/ffffff",
       "productcode": "47219-301",
       "name": "Star Fruit",
       "description": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
@@ -6096,7 +6096,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 506,
-      "image": "http://dummyimage.com/135x170.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/135x170.jpg/5fa2dd/ffffff",
       "productcode": "49035-240",
       "name": "Tomatoes - Vine Ripe, Yellow",
       "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
@@ -6108,7 +6108,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 507,
-      "image": "http://dummyimage.com/248x121.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/248x121.png/5fa2dd/ffffff",
       "productcode": "0904-6019",
       "name": "Dish Towel",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -6120,7 +6120,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 508,
-      "image": "http://dummyimage.com/199x110.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/199x110.bmp/5fa2dd/ffffff",
       "productcode": "42876-003",
       "name": "Cookies Cereal Nut",
       "description": "Etiam justo. Etiam pretium iaculis justo.",
@@ -6132,7 +6132,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 509,
-      "image": "http://dummyimage.com/112x198.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/112x198.jpg/cc0000/ffffff",
       "productcode": "63736-238",
       "name": "Curry Paste - Green Masala",
       "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -6144,7 +6144,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 510,
-      "image": "http://dummyimage.com/158x128.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/158x128.png/ff4444/ffffff",
       "productcode": "54569-0552",
       "name": "Southern Comfort",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -6156,7 +6156,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 511,
-      "image": "http://dummyimage.com/163x118.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/163x118.bmp/ff4444/ffffff",
       "productcode": "45167-040",
       "name": "Tofu - Soft",
       "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
@@ -6168,7 +6168,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 512,
-      "image": "http://dummyimage.com/237x194.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/237x194.bmp/ff4444/ffffff",
       "productcode": "68428-046",
       "name": "Bag - Regular Kraft 20 Lb",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -6180,7 +6180,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 513,
-      "image": "http://dummyimage.com/119x111.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/119x111.jpg/ff4444/ffffff",
       "productcode": "60977-141",
       "name": "Wine - Trimbach Pinot Blanc",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -6192,7 +6192,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 514,
-      "image": "http://dummyimage.com/228x219.png/dddddd/000000",
+      "image": "https://dummyimage.com/228x219.png/dddddd/000000",
       "productcode": "68016-216",
       "name": "English Muffin",
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
@@ -6204,7 +6204,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 515,
-      "image": "http://dummyimage.com/206x248.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/206x248.jpg/cc0000/ffffff",
       "productcode": "55714-4426",
       "name": "Wine - Ej Gallo Sierra Valley",
       "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -6216,7 +6216,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 516,
-      "image": "http://dummyimage.com/118x236.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/118x236.png/ff4444/ffffff",
       "productcode": "68703-081",
       "name": "Salmon - Atlantic, No Skin",
       "description": "Nulla facilisi.",
@@ -6228,7 +6228,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 517,
-      "image": "http://dummyimage.com/200x139.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/200x139.png/ff4444/ffffff",
       "productcode": "53389-520",
       "name": "Potatoes - Yukon Gold 5 Oz",
       "description": "Cras in purus eu magna vulputate luctus.",
@@ -6240,7 +6240,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 518,
-      "image": "http://dummyimage.com/114x230.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/114x230.bmp/5fa2dd/ffffff",
       "productcode": "21695-735",
       "name": "Carrots - Mini, Stem On",
       "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -6252,7 +6252,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 519,
-      "image": "http://dummyimage.com/204x117.png/dddddd/000000",
+      "image": "https://dummyimage.com/204x117.png/dddddd/000000",
       "productcode": "0268-0945",
       "name": "English Muffin",
       "description": "Maecenas ut massa quis augue luctus tincidunt.",
@@ -6264,7 +6264,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 520,
-      "image": "http://dummyimage.com/181x212.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/181x212.png/ff4444/ffffff",
       "productcode": "62106-004",
       "name": "Miso - Soy Bean Paste",
       "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
@@ -6276,7 +6276,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 521,
-      "image": "http://dummyimage.com/106x147.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/106x147.png/cc0000/ffffff",
       "productcode": "0603-3214",
       "name": "Milk - 1%",
       "description": "In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -6288,7 +6288,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 522,
-      "image": "http://dummyimage.com/182x167.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/182x167.png/ff4444/ffffff",
       "productcode": "0409-6141",
       "name": "Soup - Clam Chowder, Dry Mix",
       "description": "Duis mattis egestas metus.",
@@ -6300,7 +6300,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 523,
-      "image": "http://dummyimage.com/159x222.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/159x222.jpg/dddddd/000000",
       "productcode": "0088-1111",
       "name": "Cheese - St. Paulin",
       "description": "Nulla mollis molestie lorem.",
@@ -6312,7 +6312,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 524,
-      "image": "http://dummyimage.com/247x201.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/247x201.bmp/dddddd/000000",
       "productcode": "36987-1956",
       "name": "Milk - Condensed",
       "description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
@@ -6324,7 +6324,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 525,
-      "image": "http://dummyimage.com/137x211.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/137x211.png/cc0000/ffffff",
       "productcode": "45802-206",
       "name": "Pickle - Dill",
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -6336,7 +6336,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 526,
-      "image": "http://dummyimage.com/242x202.png/dddddd/000000",
+      "image": "https://dummyimage.com/242x202.png/dddddd/000000",
       "productcode": "52069-104",
       "name": "Tomatoes - Hot House",
       "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
@@ -6348,7 +6348,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 527,
-      "image": "http://dummyimage.com/112x202.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/112x202.bmp/cc0000/ffffff",
       "productcode": "11559-736",
       "name": "Brownies - Two Bite, Chocolate",
       "description": "Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
@@ -6360,7 +6360,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 528,
-      "image": "http://dummyimage.com/223x231.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/223x231.bmp/5fa2dd/ffffff",
       "productcode": "0363-6711",
       "name": "Wine - Vovray Sec Domaine Huet",
       "description": "Integer ac leo. Pellentesque ultrices mattis odio.",
@@ -6372,7 +6372,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 529,
-      "image": "http://dummyimage.com/169x202.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/169x202.jpg/cc0000/ffffff",
       "productcode": "48951-9016",
       "name": "Cheese - Goat With Herbs",
       "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
@@ -6384,7 +6384,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 530,
-      "image": "http://dummyimage.com/104x147.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/104x147.bmp/5fa2dd/ffffff",
       "productcode": "54371-471",
       "name": "Mustard - Dijon",
       "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -6396,7 +6396,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 531,
-      "image": "http://dummyimage.com/197x198.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/197x198.jpg/cc0000/ffffff",
       "productcode": "11509-0031",
       "name": "Creme De Cacao White",
       "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
@@ -6408,7 +6408,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 532,
-      "image": "http://dummyimage.com/202x202.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/202x202.bmp/cc0000/ffffff",
       "productcode": "52125-067",
       "name": "Yeast Dry - Fleischman",
       "description": "Vestibulum rutrum rutrum neque.",
@@ -6420,7 +6420,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 533,
-      "image": "http://dummyimage.com/165x196.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/165x196.jpg/ff4444/ffffff",
       "productcode": "76270-109",
       "name": "Quail - Whole, Bone - In",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -6432,7 +6432,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 534,
-      "image": "http://dummyimage.com/214x157.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/214x157.png/5fa2dd/ffffff",
       "productcode": "41520-527",
       "name": "Chocolate Bar - Smarties",
       "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
@@ -6444,7 +6444,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 535,
-      "image": "http://dummyimage.com/169x210.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/169x210.jpg/ff4444/ffffff",
       "productcode": "52389-642",
       "name": "Milk - Homo",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum.",
@@ -6456,7 +6456,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 536,
-      "image": "http://dummyimage.com/198x221.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/198x221.png/ff4444/ffffff",
       "productcode": "0074-6114",
       "name": "Cherries - Frozen",
       "description": "Pellentesque at nulla.",
@@ -6468,7 +6468,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 537,
-      "image": "http://dummyimage.com/115x142.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/115x142.png/5fa2dd/ffffff",
       "productcode": "65862-249",
       "name": "Steampan - Half Size Shallow",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -6480,7 +6480,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 538,
-      "image": "http://dummyimage.com/138x150.png/dddddd/000000",
+      "image": "https://dummyimage.com/138x150.png/dddddd/000000",
       "productcode": "35356-033",
       "name": "Cassis",
       "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
@@ -6492,7 +6492,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 539,
-      "image": "http://dummyimage.com/155x175.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/155x175.bmp/dddddd/000000",
       "productcode": "43353-936",
       "name": "Calypso - Strawberry Lemonade",
       "description": "In eleifend quam a odio. In hac habitasse platea dictumst.",
@@ -6504,7 +6504,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 540,
-      "image": "http://dummyimage.com/144x181.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/144x181.png/ff4444/ffffff",
       "productcode": "52959-852",
       "name": "Mushroom - Portebello",
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -6516,7 +6516,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 541,
-      "image": "http://dummyimage.com/201x111.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/201x111.png/ff4444/ffffff",
       "productcode": "41250-851",
       "name": "Appetizer - Escargot Puff",
       "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.",
@@ -6528,7 +6528,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 542,
-      "image": "http://dummyimage.com/246x115.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/246x115.bmp/5fa2dd/ffffff",
       "productcode": "52125-796",
       "name": "Lettuce - Belgian Endive",
       "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
@@ -6540,7 +6540,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 543,
-      "image": "http://dummyimage.com/244x212.png/dddddd/000000",
+      "image": "https://dummyimage.com/244x212.png/dddddd/000000",
       "productcode": "24236-303",
       "name": "Star Anise, Whole",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.",
@@ -6552,7 +6552,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 544,
-      "image": "http://dummyimage.com/135x221.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/135x221.png/5fa2dd/ffffff",
       "productcode": "17089-451",
       "name": "Bread - 10 Grain",
       "description": "Duis mattis egestas metus.",
@@ -6564,7 +6564,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 545,
-      "image": "http://dummyimage.com/104x234.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/104x234.png/ff4444/ffffff",
       "productcode": "0179-0094",
       "name": "Bread - Rye",
       "description": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
@@ -6576,7 +6576,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 546,
-      "image": "http://dummyimage.com/126x125.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/126x125.bmp/cc0000/ffffff",
       "productcode": "61722-166",
       "name": "Apricots Fresh",
       "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -6588,7 +6588,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 547,
-      "image": "http://dummyimage.com/197x201.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/197x201.bmp/ff4444/ffffff",
       "productcode": "65044-0847",
       "name": "Sultanas",
       "description": "Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
@@ -6600,7 +6600,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 548,
-      "image": "http://dummyimage.com/206x156.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/206x156.png/5fa2dd/ffffff",
       "productcode": "24385-305",
       "name": "Wine - Marlbourough Sauv Blanc",
       "description": "Pellentesque eget nunc.",
@@ -6612,7 +6612,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 549,
-      "image": "http://dummyimage.com/198x144.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/198x144.bmp/5fa2dd/ffffff",
       "productcode": "36987-2271",
       "name": "Veal - Inside",
       "description": "In eleifend quam a odio. In hac habitasse platea dictumst.",
@@ -6624,7 +6624,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 550,
-      "image": "http://dummyimage.com/123x181.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/123x181.jpg/dddddd/000000",
       "productcode": "13630-0027",
       "name": "Oil - Avocado",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -6636,7 +6636,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 551,
-      "image": "http://dummyimage.com/212x175.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/212x175.bmp/dddddd/000000",
       "productcode": "21695-615",
       "name": "Tomatoes - Orange",
       "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna.",
@@ -6648,7 +6648,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 552,
-      "image": "http://dummyimage.com/198x201.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/198x201.jpg/5fa2dd/ffffff",
       "productcode": "42221-0009",
       "name": "Maintenance Removal Charge",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
@@ -6660,7 +6660,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 553,
-      "image": "http://dummyimage.com/248x220.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/248x220.jpg/cc0000/ffffff",
       "productcode": "49884-404",
       "name": "Soap - Pine Sol Floor Cleaner",
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus.",
@@ -6672,7 +6672,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 554,
-      "image": "http://dummyimage.com/110x146.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/110x146.png/cc0000/ffffff",
       "productcode": "64778-0216",
       "name": "Nougat - Paste / Cream",
       "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
@@ -6684,7 +6684,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 555,
-      "image": "http://dummyimage.com/190x165.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/190x165.png/5fa2dd/ffffff",
       "productcode": "0869-0072",
       "name": "Soup - Campbells Chicken",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -6696,7 +6696,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 556,
-      "image": "http://dummyimage.com/105x242.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/105x242.bmp/5fa2dd/ffffff",
       "productcode": "49035-612",
       "name": "Wine - Red, Antinori Santa",
       "description": "Fusce posuere felis sed lacus.",
@@ -6708,7 +6708,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 557,
-      "image": "http://dummyimage.com/118x201.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/118x201.png/ff4444/ffffff",
       "productcode": "52125-389",
       "name": "Tumeric",
       "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -6720,7 +6720,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 558,
-      "image": "http://dummyimage.com/218x123.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/218x123.bmp/ff4444/ffffff",
       "productcode": "55154-5436",
       "name": "Salt - Table",
       "description": "Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
@@ -6732,7 +6732,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 559,
-      "image": "http://dummyimage.com/159x138.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/159x138.bmp/dddddd/000000",
       "productcode": "37000-334",
       "name": "Mushroom - Lg - Cello",
       "description": "Proin risus.",
@@ -6744,7 +6744,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 560,
-      "image": "http://dummyimage.com/167x206.png/dddddd/000000",
+      "image": "https://dummyimage.com/167x206.png/dddddd/000000",
       "productcode": "36987-2276",
       "name": "Cookie Dough - Peanut Butter",
       "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
@@ -6756,7 +6756,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 561,
-      "image": "http://dummyimage.com/150x215.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/150x215.bmp/cc0000/ffffff",
       "productcode": "11822-0734",
       "name": "Wine - Sicilia Igt Nero Avola",
       "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
@@ -6768,7 +6768,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 562,
-      "image": "http://dummyimage.com/193x238.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/193x238.bmp/cc0000/ffffff",
       "productcode": "0113-0546",
       "name": "Cheese - Boursin, Garlic / Herbs",
       "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
@@ -6780,7 +6780,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 563,
-      "image": "http://dummyimage.com/156x177.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/156x177.jpg/dddddd/000000",
       "productcode": "63629-1740",
       "name": "Pasta - Elbows, Macaroni, Dry",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum.",
@@ -6792,7 +6792,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 564,
-      "image": "http://dummyimage.com/160x243.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/160x243.bmp/cc0000/ffffff",
       "productcode": "0941-0430",
       "name": "Couscous",
       "description": "Proin risus.",
@@ -6804,7 +6804,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 565,
-      "image": "http://dummyimage.com/124x152.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/124x152.png/5fa2dd/ffffff",
       "productcode": "0023-8694",
       "name": "Pork - Ground",
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -6816,7 +6816,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 566,
-      "image": "http://dummyimage.com/190x219.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/190x219.png/ff4444/ffffff",
       "productcode": "54569-2655",
       "name": "Soup - Campbells Tomato Ravioli",
       "description": "Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
@@ -6828,7 +6828,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 567,
-      "image": "http://dummyimage.com/152x130.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/152x130.png/cc0000/ffffff",
       "productcode": "51531-2824",
       "name": "Chocolate Liqueur - Godet White",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -6840,7 +6840,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 568,
-      "image": "http://dummyimage.com/191x244.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/191x244.jpg/ff4444/ffffff",
       "productcode": "22431-582",
       "name": "Bread - Roll, Soft White Round",
       "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
@@ -6852,7 +6852,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 569,
-      "image": "http://dummyimage.com/212x174.png/dddddd/000000",
+      "image": "https://dummyimage.com/212x174.png/dddddd/000000",
       "productcode": "60512-9082",
       "name": "Soup Campbells - Tomato Bisque",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -6864,7 +6864,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 570,
-      "image": "http://dummyimage.com/134x160.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/134x160.png/5fa2dd/ffffff",
       "productcode": "50222-501",
       "name": "Cookie Dough - Oatmeal Rasin",
       "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.",
@@ -6876,7 +6876,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 571,
-      "image": "http://dummyimage.com/233x124.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/233x124.jpg/5fa2dd/ffffff",
       "productcode": "55154-4956",
       "name": "Sausage - Breakfast",
       "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
@@ -6888,7 +6888,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 572,
-      "image": "http://dummyimage.com/235x144.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/235x144.bmp/5fa2dd/ffffff",
       "productcode": "42291-720",
       "name": "Turkey Tenderloin Frozen",
       "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
@@ -6900,7 +6900,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 573,
-      "image": "http://dummyimage.com/211x112.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/211x112.bmp/cc0000/ffffff",
       "productcode": "57373-103",
       "name": "Energy Drink - Redbull 355ml",
       "description": "Maecenas rhoncus aliquam lacus.",
@@ -6912,7 +6912,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 574,
-      "image": "http://dummyimage.com/178x114.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/178x114.bmp/ff4444/ffffff",
       "productcode": "62011-0144",
       "name": "Crab - Imitation Flakes",
       "description": "Nulla tellus. In sagittis dui vel nisl.",
@@ -6924,7 +6924,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 575,
-      "image": "http://dummyimage.com/221x188.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/221x188.bmp/cc0000/ffffff",
       "productcode": "36987-1893",
       "name": "Wine - Rosso Toscano Igt",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -6936,7 +6936,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 576,
-      "image": "http://dummyimage.com/167x195.png/dddddd/000000",
+      "image": "https://dummyimage.com/167x195.png/dddddd/000000",
       "productcode": "55758-305",
       "name": "Vinegar - Balsamic",
       "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
@@ -6948,7 +6948,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 577,
-      "image": "http://dummyimage.com/232x208.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/232x208.png/ff4444/ffffff",
       "productcode": "0093-4821",
       "name": "Cheese - Stilton",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -6960,7 +6960,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 578,
-      "image": "http://dummyimage.com/146x147.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/146x147.bmp/ff4444/ffffff",
       "productcode": "52410-3065",
       "name": "Lemon Grass",
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
@@ -6972,7 +6972,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 579,
-      "image": "http://dummyimage.com/186x103.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/186x103.bmp/cc0000/ffffff",
       "productcode": "49288-0108",
       "name": "Cherries - Maraschino,jar",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -6984,7 +6984,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 580,
-      "image": "http://dummyimage.com/225x200.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/225x200.bmp/dddddd/000000",
       "productcode": "64117-867",
       "name": "Sauce - Sesame Thai Dressing",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -6996,7 +6996,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 581,
-      "image": "http://dummyimage.com/231x141.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/231x141.bmp/cc0000/ffffff",
       "productcode": "0781-3206",
       "name": "Cabbage - Savoy",
       "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
@@ -7008,7 +7008,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 582,
-      "image": "http://dummyimage.com/170x115.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/170x115.jpg/5fa2dd/ffffff",
       "productcode": "58118-1064",
       "name": "Oil - Truffle, White",
       "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -7020,7 +7020,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 583,
-      "image": "http://dummyimage.com/180x234.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/180x234.bmp/ff4444/ffffff",
       "productcode": "58488-004",
       "name": "Tea - Herbal I Love Lemon",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -7032,7 +7032,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 584,
-      "image": "http://dummyimage.com/189x135.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/189x135.png/5fa2dd/ffffff",
       "productcode": "0056-0189",
       "name": "Cherries - Bing, Canned",
       "description": "Nunc nisl.",
@@ -7044,7 +7044,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 585,
-      "image": "http://dummyimage.com/217x151.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/217x151.png/ff4444/ffffff",
       "productcode": "59886-315",
       "name": "Wine - Shiraz Wolf Blass Premium",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -7056,7 +7056,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 586,
-      "image": "http://dummyimage.com/219x240.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/219x240.bmp/cc0000/ffffff",
       "productcode": "43269-832",
       "name": "Salt - Table",
       "description": "Donec vitae nisi.",
@@ -7068,7 +7068,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 587,
-      "image": "http://dummyimage.com/144x135.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/144x135.jpg/cc0000/ffffff",
       "productcode": "16590-017",
       "name": "Pike - Frozen Fillet",
       "description": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
@@ -7080,7 +7080,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 588,
-      "image": "http://dummyimage.com/130x148.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/130x148.bmp/cc0000/ffffff",
       "productcode": "49643-015",
       "name": "Liquid Aminios Acid - Braggs",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum.",
@@ -7092,7 +7092,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 589,
-      "image": "http://dummyimage.com/229x186.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/229x186.jpg/ff4444/ffffff",
       "productcode": "16590-255",
       "name": "Veal - Chops, Split, Frenched",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -7104,7 +7104,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 590,
-      "image": "http://dummyimage.com/184x222.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/184x222.bmp/5fa2dd/ffffff",
       "productcode": "63304-162",
       "name": "Mushroom - Porcini, Dry",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -7116,7 +7116,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 591,
-      "image": "http://dummyimage.com/130x129.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/130x129.jpg/5fa2dd/ffffff",
       "productcode": "0409-2102",
       "name": "Soup Campbells - Tomato Bisque",
       "description": "Donec quis orci eget orci vehicula condimentum.",
@@ -7128,7 +7128,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 592,
-      "image": "http://dummyimage.com/204x105.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/204x105.bmp/dddddd/000000",
       "productcode": "76045-006",
       "name": "Tobasco Sauce",
       "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
@@ -7140,7 +7140,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 593,
-      "image": "http://dummyimage.com/114x164.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/114x164.bmp/cc0000/ffffff",
       "productcode": "43598-203",
       "name": "Cup Translucent 9 Oz",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
@@ -7152,7 +7152,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 594,
-      "image": "http://dummyimage.com/102x135.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/102x135.png/cc0000/ffffff",
       "productcode": "11673-442",
       "name": "Wine - Red, Pinot Noir, Chateau",
       "description": "Morbi a ipsum. Integer a nibh.",
@@ -7164,7 +7164,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 595,
-      "image": "http://dummyimage.com/138x116.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/138x116.bmp/ff4444/ffffff",
       "productcode": "37808-289",
       "name": "Flower - Commercial Spider",
       "description": "Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
@@ -7176,7 +7176,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 596,
-      "image": "http://dummyimage.com/203x147.png/dddddd/000000",
+      "image": "https://dummyimage.com/203x147.png/dddddd/000000",
       "productcode": "48951-4084",
       "name": "Lamb - Racks, Frenched",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -7188,7 +7188,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 597,
-      "image": "http://dummyimage.com/188x143.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/188x143.bmp/dddddd/000000",
       "productcode": "68180-780",
       "name": "Seaweed Green Sheets",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -7200,7 +7200,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 598,
-      "image": "http://dummyimage.com/111x220.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/111x220.png/5fa2dd/ffffff",
       "productcode": "33261-740",
       "name": "Brownies - Two Bite, Chocolate",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -7212,7 +7212,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 599,
-      "image": "http://dummyimage.com/250x188.png/dddddd/000000",
+      "image": "https://dummyimage.com/250x188.png/dddddd/000000",
       "productcode": "76045-006",
       "name": "Wine - Chateau Bonnet",
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
@@ -7224,7 +7224,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 600,
-      "image": "http://dummyimage.com/143x106.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/143x106.jpg/dddddd/000000",
       "productcode": "55154-5732",
       "name": "Muffin - Mix - Mango Sour Cherry",
       "description": "Nulla mollis molestie lorem.",
@@ -7236,7 +7236,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 601,
-      "image": "http://dummyimage.com/212x138.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/212x138.png/ff4444/ffffff",
       "productcode": "55154-2709",
       "name": "Beef Flat Iron Steak",
       "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -7248,7 +7248,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 602,
-      "image": "http://dummyimage.com/157x157.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/157x157.jpg/dddddd/000000",
       "productcode": "63941-390",
       "name": "Chestnuts - Whole,canned",
       "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
@@ -7260,7 +7260,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 603,
-      "image": "http://dummyimage.com/244x183.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/244x183.bmp/cc0000/ffffff",
       "productcode": "59667-0080",
       "name": "Pasta - Lasagna, Dry",
       "description": "Etiam pretium iaculis justo.",
@@ -7272,7 +7272,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 604,
-      "image": "http://dummyimage.com/186x135.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/186x135.jpg/dddddd/000000",
       "productcode": "67296-0602",
       "name": "C - Plus, Orange",
       "description": "Nullam molestie nibh in lectus. Pellentesque at nulla.",
@@ -7284,7 +7284,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 605,
-      "image": "http://dummyimage.com/213x224.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/213x224.bmp/ff4444/ffffff",
       "productcode": "49288-0596",
       "name": "Appetizer - Cheese Bites",
       "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
@@ -7296,7 +7296,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 606,
-      "image": "http://dummyimage.com/146x190.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/146x190.jpg/5fa2dd/ffffff",
       "productcode": "49483-272",
       "name": "Berry Brulee",
       "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
@@ -7308,7 +7308,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 607,
-      "image": "http://dummyimage.com/226x130.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/226x130.jpg/ff4444/ffffff",
       "productcode": "54868-5077",
       "name": "Lamb Rack Frenched Australian",
       "description": "In eleifend quam a odio.",
@@ -7320,7 +7320,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 608,
-      "image": "http://dummyimage.com/155x107.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/155x107.png/cc0000/ffffff",
       "productcode": "0944-2656",
       "name": "Pork - Smoked Back Bacon",
       "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -7332,7 +7332,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 609,
-      "image": "http://dummyimage.com/171x131.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/171x131.bmp/5fa2dd/ffffff",
       "productcode": "64305-006",
       "name": "Marjoram - Dried, Rubbed",
       "description": "Nulla tellus. In sagittis dui vel nisl.",
@@ -7344,7 +7344,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 610,
-      "image": "http://dummyimage.com/109x117.png/dddddd/000000",
+      "image": "https://dummyimage.com/109x117.png/dddddd/000000",
       "productcode": "69138-783",
       "name": "Aspic - Amber",
       "description": "Donec posuere metus vitae ipsum. Aliquam non mauris.",
@@ -7356,7 +7356,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 611,
-      "image": "http://dummyimage.com/211x234.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/211x234.jpg/cc0000/ffffff",
       "productcode": "52125-123",
       "name": "Onion Powder",
       "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.",
@@ -7368,7 +7368,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 612,
-      "image": "http://dummyimage.com/237x101.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/237x101.jpg/cc0000/ffffff",
       "productcode": "50410-020",
       "name": "Caviar - Salmon",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
@@ -7380,7 +7380,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 613,
-      "image": "http://dummyimage.com/244x241.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/244x241.bmp/cc0000/ffffff",
       "productcode": "0007-3230",
       "name": "Veal Inside - Provimi",
       "description": "Integer a nibh. In quis justo.",
@@ -7392,7 +7392,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 614,
-      "image": "http://dummyimage.com/111x233.png/dddddd/000000",
+      "image": "https://dummyimage.com/111x233.png/dddddd/000000",
       "productcode": "43063-007",
       "name": "Muffin - Carrot Individual Wrap",
       "description": "Morbi a ipsum. Integer a nibh.",
@@ -7404,7 +7404,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 615,
-      "image": "http://dummyimage.com/166x205.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/166x205.bmp/dddddd/000000",
       "productcode": "51531-9071",
       "name": "Cheese - Pont Couvert",
       "description": "Etiam faucibus cursus urna.",
@@ -7416,7 +7416,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 616,
-      "image": "http://dummyimage.com/150x204.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/150x204.jpg/cc0000/ffffff",
       "productcode": "62032-523",
       "name": "Spoon - Soup, Plastic",
       "description": "Nunc nisl.",
@@ -7428,7 +7428,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 617,
-      "image": "http://dummyimage.com/222x165.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/222x165.png/5fa2dd/ffffff",
       "productcode": "0009-0094",
       "name": "Tarragon - Fresh",
       "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
@@ -7440,7 +7440,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 618,
-      "image": "http://dummyimage.com/225x247.png/dddddd/000000",
+      "image": "https://dummyimage.com/225x247.png/dddddd/000000",
       "productcode": "52343-021",
       "name": "Chambord Royal",
       "description": "Curabitur in libero ut massa volutpat convallis.",
@@ -7452,7 +7452,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 619,
-      "image": "http://dummyimage.com/103x154.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/103x154.bmp/dddddd/000000",
       "productcode": "66336-085",
       "name": "Flavouring Vanilla Artificial",
       "description": "Nunc purus.",
@@ -7464,7 +7464,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 620,
-      "image": "http://dummyimage.com/114x125.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/114x125.bmp/5fa2dd/ffffff",
       "productcode": "57664-116",
       "name": "Beer - Heinekin",
       "description": "Etiam faucibus cursus urna. Ut tellus.",
@@ -7476,7 +7476,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 621,
-      "image": "http://dummyimage.com/249x138.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/249x138.bmp/5fa2dd/ffffff",
       "productcode": "56062-409",
       "name": "Fennel",
       "description": "Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
@@ -7488,7 +7488,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 622,
-      "image": "http://dummyimage.com/243x135.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/243x135.jpg/dddddd/000000",
       "productcode": "0615-7706",
       "name": "Flour - Strong",
       "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
@@ -7500,7 +7500,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 623,
-      "image": "http://dummyimage.com/219x207.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/219x207.png/cc0000/ffffff",
       "productcode": "11523-4329",
       "name": "Cassis",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -7512,7 +7512,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 624,
-      "image": "http://dummyimage.com/204x227.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/204x227.png/ff4444/ffffff",
       "productcode": "13630-0020",
       "name": "Cheese - Cheddar With Claret",
       "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.",
@@ -7524,7 +7524,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 625,
-      "image": "http://dummyimage.com/160x113.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/160x113.jpg/cc0000/ffffff",
       "productcode": "51672-4065",
       "name": "Flower - Potmums",
       "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.",
@@ -7536,7 +7536,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 626,
-      "image": "http://dummyimage.com/188x109.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/188x109.jpg/5fa2dd/ffffff",
       "productcode": "21130-798",
       "name": "Lamb - Loin Chops",
       "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -7548,7 +7548,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 627,
-      "image": "http://dummyimage.com/229x190.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/229x190.jpg/ff4444/ffffff",
       "productcode": "49349-891",
       "name": "Cocktail Napkin Blue",
       "description": "Suspendisse potenti. In eleifend quam a odio.",
@@ -7560,7 +7560,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 628,
-      "image": "http://dummyimage.com/241x250.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/241x250.bmp/ff4444/ffffff",
       "productcode": "60429-332",
       "name": "Nantucket Orange Juice",
       "description": "Integer non velit.",
@@ -7572,7 +7572,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 629,
-      "image": "http://dummyimage.com/106x114.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/106x114.png/5fa2dd/ffffff",
       "productcode": "10596-704",
       "name": "Transfer Sheets",
       "description": "Integer ac neque. Duis bibendum.",
@@ -7584,7 +7584,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 630,
-      "image": "http://dummyimage.com/209x107.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/209x107.jpg/ff4444/ffffff",
       "productcode": "0268-1152",
       "name": "Sultanas",
       "description": "Duis consequat dui nec nisi volutpat eleifend.",
@@ -7596,7 +7596,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 631,
-      "image": "http://dummyimage.com/117x249.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/117x249.bmp/dddddd/000000",
       "productcode": "58232-0654",
       "name": "Cheese - Havarti, Roasted Garlic",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -7608,7 +7608,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 632,
-      "image": "http://dummyimage.com/197x169.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/197x169.bmp/ff4444/ffffff",
       "productcode": "11523-7277",
       "name": "Lemonade - Pineapple Passion",
       "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -7620,7 +7620,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 633,
-      "image": "http://dummyimage.com/249x179.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/249x179.jpg/dddddd/000000",
       "productcode": "49288-0943",
       "name": "Oats Large Flake",
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
@@ -7632,7 +7632,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 634,
-      "image": "http://dummyimage.com/123x233.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/123x233.png/5fa2dd/ffffff",
       "productcode": "65841-680",
       "name": "Tarts Assorted",
       "description": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
@@ -7644,7 +7644,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 635,
-      "image": "http://dummyimage.com/222x132.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/222x132.jpg/cc0000/ffffff",
       "productcode": "63629-3979",
       "name": "Pork - Bones",
       "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -7656,7 +7656,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 636,
-      "image": "http://dummyimage.com/234x170.png/dddddd/000000",
+      "image": "https://dummyimage.com/234x170.png/dddddd/000000",
       "productcode": "43742-0423",
       "name": "Tarragon - Primerba, Paste",
       "description": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
@@ -7668,7 +7668,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 637,
-      "image": "http://dummyimage.com/162x246.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/162x246.png/5fa2dd/ffffff",
       "productcode": "0781-2865",
       "name": "Table Cloth 54x72 Colour",
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -7680,7 +7680,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 638,
-      "image": "http://dummyimage.com/149x149.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/149x149.jpg/dddddd/000000",
       "productcode": "37205-134",
       "name": "Daikon Radish",
       "description": "Cras non velit nec nisi vulputate nonummy.",
@@ -7692,7 +7692,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 639,
-      "image": "http://dummyimage.com/172x173.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/172x173.bmp/cc0000/ffffff",
       "productcode": "0078-0527",
       "name": "Beans - Butter Lrg Lima",
       "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
@@ -7704,7 +7704,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 640,
-      "image": "http://dummyimage.com/142x134.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/142x134.jpg/ff4444/ffffff",
       "productcode": "36987-3085",
       "name": "Cup - Translucent 7 Oz Clear",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
@@ -7716,7 +7716,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 641,
-      "image": "http://dummyimage.com/244x229.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/244x229.png/ff4444/ffffff",
       "productcode": "49288-0154",
       "name": "Pasta - Bauletti, Chicken White",
       "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
@@ -7728,7 +7728,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 642,
-      "image": "http://dummyimage.com/102x129.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/102x129.png/5fa2dd/ffffff",
       "productcode": "52960-201",
       "name": "Oregano - Fresh",
       "description": "Donec ut mauris eget massa tempor convallis.",
@@ -7740,7 +7740,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 643,
-      "image": "http://dummyimage.com/193x169.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/193x169.bmp/5fa2dd/ffffff",
       "productcode": "68026-103",
       "name": "Wine - Conde De Valdemar",
       "description": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
@@ -7752,7 +7752,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 644,
-      "image": "http://dummyimage.com/188x149.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/188x149.bmp/5fa2dd/ffffff",
       "productcode": "55289-098",
       "name": "Dried Apple",
       "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -7764,7 +7764,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 645,
-      "image": "http://dummyimage.com/178x168.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/178x168.jpg/ff4444/ffffff",
       "productcode": "0409-7883",
       "name": "Ecolab Silver Fusion",
       "description": "Integer a nibh. In quis justo.",
@@ -7776,7 +7776,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 646,
-      "image": "http://dummyimage.com/195x172.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/195x172.jpg/cc0000/ffffff",
       "productcode": "49288-0399",
       "name": "Beef - Roasted, Cooked",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
@@ -7788,7 +7788,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 647,
-      "image": "http://dummyimage.com/220x135.png/dddddd/000000",
+      "image": "https://dummyimage.com/220x135.png/dddddd/000000",
       "productcode": "54799-432",
       "name": "Cheese - Mozzarella, Shredded",
       "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -7800,7 +7800,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 648,
-      "image": "http://dummyimage.com/164x186.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/164x186.jpg/5fa2dd/ffffff",
       "productcode": "0363-0491",
       "name": "Carbonated Water - Orange",
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
@@ -7812,7 +7812,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 649,
-      "image": "http://dummyimage.com/173x136.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/173x136.bmp/5fa2dd/ffffff",
       "productcode": "64117-259",
       "name": "Beer - Mcauslan Apricot",
       "description": "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
@@ -7824,7 +7824,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 650,
-      "image": "http://dummyimage.com/103x174.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/103x174.jpg/cc0000/ffffff",
       "productcode": "50227-0511",
       "name": "Pork Salted Bellies",
       "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
@@ -7836,7 +7836,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 651,
-      "image": "http://dummyimage.com/114x187.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/114x187.jpg/dddddd/000000",
       "productcode": "0113-0866",
       "name": "Coffee - Irish Cream",
       "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
@@ -7848,7 +7848,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 652,
-      "image": "http://dummyimage.com/104x104.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/104x104.bmp/ff4444/ffffff",
       "productcode": "68400-113",
       "name": "Rolled Oats",
       "description": "In sagittis dui vel nisl. Duis ac nibh.",
@@ -7860,7 +7860,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 653,
-      "image": "http://dummyimage.com/204x222.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/204x222.jpg/5fa2dd/ffffff",
       "productcode": "50458-167",
       "name": "Crackers - Trio",
       "description": "Fusce consequat. Nulla nisl.",
@@ -7872,7 +7872,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 654,
-      "image": "http://dummyimage.com/166x167.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/166x167.bmp/dddddd/000000",
       "productcode": "58118-1343",
       "name": "Nantucket - Kiwi Berry Cktl.",
       "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
@@ -7884,7 +7884,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 655,
-      "image": "http://dummyimage.com/162x160.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/162x160.jpg/5fa2dd/ffffff",
       "productcode": "51621-030",
       "name": "Bread - Triangle White",
       "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
@@ -7896,7 +7896,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 656,
-      "image": "http://dummyimage.com/179x170.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/179x170.png/5fa2dd/ffffff",
       "productcode": "0135-0505",
       "name": "Apple - Fuji",
       "description": "Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
@@ -7908,7 +7908,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 657,
-      "image": "http://dummyimage.com/172x156.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/172x156.bmp/cc0000/ffffff",
       "productcode": "15231-100",
       "name": "Sausage - Chorizo",
       "description": "Nam nulla.",
@@ -7920,7 +7920,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 658,
-      "image": "http://dummyimage.com/216x241.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/216x241.png/cc0000/ffffff",
       "productcode": "0078-0360",
       "name": "Cleaner - Lime Away",
       "description": "Morbi vel lectus in quam fringilla rhoncus.",
@@ -7932,7 +7932,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 659,
-      "image": "http://dummyimage.com/175x152.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/175x152.jpg/5fa2dd/ffffff",
       "productcode": "58232-0749",
       "name": "Beef - Bones, Cut - Up",
       "description": "Suspendisse accumsan tortor quis turpis. Sed ante.",
@@ -7944,7 +7944,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 660,
-      "image": "http://dummyimage.com/206x105.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/206x105.jpg/5fa2dd/ffffff",
       "productcode": "57955-5149",
       "name": "Sauce - Alfredo",
       "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -7956,7 +7956,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 661,
-      "image": "http://dummyimage.com/119x195.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/119x195.jpg/ff4444/ffffff",
       "productcode": "0378-5123",
       "name": "Flour - Corn, Fine",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -7968,7 +7968,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 662,
-      "image": "http://dummyimage.com/150x102.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/150x102.bmp/ff4444/ffffff",
       "productcode": "52125-826",
       "name": "Pepper - Yellow Bell",
       "description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
@@ -7980,7 +7980,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 663,
-      "image": "http://dummyimage.com/228x155.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/228x155.png/cc0000/ffffff",
       "productcode": "51060-027",
       "name": "Snapple - Mango Maddness",
       "description": "Phasellus sit amet erat. Nulla tempus.",
@@ -7992,7 +7992,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 664,
-      "image": "http://dummyimage.com/231x228.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/231x228.jpg/5fa2dd/ffffff",
       "productcode": "68807-301",
       "name": "Heavy Duty Dust Pan",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.",
@@ -8004,7 +8004,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 665,
-      "image": "http://dummyimage.com/201x220.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/201x220.jpg/dddddd/000000",
       "productcode": "42411-020",
       "name": "Paper - Brown Paper Mini Cups",
       "description": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -8016,7 +8016,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 666,
-      "image": "http://dummyimage.com/168x173.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/168x173.bmp/5fa2dd/ffffff",
       "productcode": "54532-0016",
       "name": "Artichoke - Bottom, Canned",
       "description": "Etiam justo. Etiam pretium iaculis justo.",
@@ -8028,7 +8028,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 667,
-      "image": "http://dummyimage.com/122x227.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/122x227.png/cc0000/ffffff",
       "productcode": "53346-1301",
       "name": "Cheese - Colby",
       "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -8040,7 +8040,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 668,
-      "image": "http://dummyimage.com/224x118.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/224x118.jpg/ff4444/ffffff",
       "productcode": "0904-3141",
       "name": "Cookies Cereal Nut",
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
@@ -8052,7 +8052,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 669,
-      "image": "http://dummyimage.com/148x236.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/148x236.bmp/dddddd/000000",
       "productcode": "55154-5406",
       "name": "Dome Lid Clear P92008h",
       "description": "Donec dapibus.",
@@ -8064,7 +8064,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 670,
-      "image": "http://dummyimage.com/184x237.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/184x237.jpg/ff4444/ffffff",
       "productcode": "41163-109",
       "name": "Beef - Sushi Flat Iron Steak",
       "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
@@ -8076,7 +8076,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 671,
-      "image": "http://dummyimage.com/102x120.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/102x120.jpg/dddddd/000000",
       "productcode": "52125-635",
       "name": "Wine - Piper Heidsieck Brut",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
@@ -8088,7 +8088,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 672,
-      "image": "http://dummyimage.com/162x150.png/dddddd/000000",
+      "image": "https://dummyimage.com/162x150.png/dddddd/000000",
       "productcode": "0456-0459",
       "name": "Wine - Sauvignon Blanc",
       "description": "Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.",
@@ -8100,7 +8100,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 673,
-      "image": "http://dummyimage.com/109x190.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/109x190.jpg/cc0000/ffffff",
       "productcode": "43097-575",
       "name": "Pepper - White, Whole",
       "description": "Duis at velit eu est congue elementum.",
@@ -8112,7 +8112,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 674,
-      "image": "http://dummyimage.com/177x137.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/177x137.bmp/ff4444/ffffff",
       "productcode": "10742-8148",
       "name": "Rice - Long Grain",
       "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
@@ -8124,7 +8124,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 675,
-      "image": "http://dummyimage.com/163x139.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/163x139.png/5fa2dd/ffffff",
       "productcode": "54569-5382",
       "name": "Lamb - Shanks",
       "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
@@ -8136,7 +8136,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 676,
-      "image": "http://dummyimage.com/210x181.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/210x181.bmp/dddddd/000000",
       "productcode": "35356-711",
       "name": "Wine - Saint - Bris 2002, Sauv",
       "description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
@@ -8148,7 +8148,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 677,
-      "image": "http://dummyimage.com/200x114.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/200x114.bmp/5fa2dd/ffffff",
       "productcode": "62072-456",
       "name": "Wine - Chardonnay South",
       "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -8160,7 +8160,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 678,
-      "image": "http://dummyimage.com/195x123.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/195x123.jpg/dddddd/000000",
       "productcode": "49288-0730",
       "name": "Tomatoes Tear Drop",
       "description": "Donec vitae nisi.",
@@ -8172,7 +8172,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 679,
-      "image": "http://dummyimage.com/220x115.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/220x115.png/5fa2dd/ffffff",
       "productcode": "37205-328",
       "name": "Soup - Base Broth Chix",
       "description": "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
@@ -8184,7 +8184,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 680,
-      "image": "http://dummyimage.com/236x136.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/236x136.bmp/ff4444/ffffff",
       "productcode": "65649-551",
       "name": "Tuna - Canned, Flaked, Light",
       "description": "Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -8196,7 +8196,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 681,
-      "image": "http://dummyimage.com/206x152.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/206x152.jpg/ff4444/ffffff",
       "productcode": "0085-1388",
       "name": "Beer - Paulaner Hefeweisse",
       "description": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -8208,7 +8208,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 682,
-      "image": "http://dummyimage.com/173x179.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/173x179.jpg/dddddd/000000",
       "productcode": "42507-720",
       "name": "Squid U5 - Thailand",
       "description": "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.",
@@ -8220,7 +8220,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 683,
-      "image": "http://dummyimage.com/210x210.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/210x210.bmp/cc0000/ffffff",
       "productcode": "21130-104",
       "name": "Lamb - Shanks",
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
@@ -8232,7 +8232,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 684,
-      "image": "http://dummyimage.com/166x138.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/166x138.bmp/cc0000/ffffff",
       "productcode": "0179-0067",
       "name": "Chocolate - Semi Sweet, Calets",
       "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
@@ -8244,7 +8244,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 685,
-      "image": "http://dummyimage.com/165x210.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/165x210.bmp/dddddd/000000",
       "productcode": "64011-009",
       "name": "Coffee - Decaffeinato Coffee",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
@@ -8256,7 +8256,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 686,
-      "image": "http://dummyimage.com/228x197.png/dddddd/000000",
+      "image": "https://dummyimage.com/228x197.png/dddddd/000000",
       "productcode": "49726-019",
       "name": "Smoked Paprika",
       "description": "Proin risus. Praesent lectus.",
@@ -8268,7 +8268,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 687,
-      "image": "http://dummyimage.com/115x166.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/115x166.bmp/dddddd/000000",
       "productcode": "62206-4780",
       "name": "Wine - White, Riesling, Henry Of",
       "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
@@ -8280,7 +8280,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 688,
-      "image": "http://dummyimage.com/157x198.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/157x198.png/cc0000/ffffff",
       "productcode": "58443-0018",
       "name": "Bagelers - Cinn / Brown",
       "description": "Integer non velit.",
@@ -8292,7 +8292,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 689,
-      "image": "http://dummyimage.com/241x177.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/241x177.bmp/ff4444/ffffff",
       "productcode": "61957-0050",
       "name": "Soup V8 Roasted Red Pepper",
       "description": "Morbi non quam nec dui luctus rutrum.",
@@ -8304,7 +8304,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 690,
-      "image": "http://dummyimage.com/241x182.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/241x182.png/5fa2dd/ffffff",
       "productcode": "42747-221",
       "name": "Beef - Bones, Marrow",
       "description": "Fusce consequat. Nulla nisl. Nunc nisl.",
@@ -8316,7 +8316,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 691,
-      "image": "http://dummyimage.com/112x132.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/112x132.bmp/5fa2dd/ffffff",
       "productcode": "0310-0325",
       "name": "Pasta - Lasagne, Fresh",
       "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -8328,7 +8328,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 692,
-      "image": "http://dummyimage.com/222x204.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/222x204.jpg/ff4444/ffffff",
       "productcode": "54365-145",
       "name": "Contreau",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -8340,7 +8340,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 693,
-      "image": "http://dummyimage.com/127x193.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/127x193.jpg/dddddd/000000",
       "productcode": "11673-852",
       "name": "Rice - Brown",
       "description": "Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
@@ -8352,7 +8352,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 694,
-      "image": "http://dummyimage.com/231x149.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/231x149.png/ff4444/ffffff",
       "productcode": "54569-1124",
       "name": "Potatoes - Mini White 3 Oz",
       "description": "Nullam varius.",
@@ -8364,7 +8364,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 695,
-      "image": "http://dummyimage.com/223x116.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/223x116.bmp/cc0000/ffffff",
       "productcode": "54868-4904",
       "name": "Gingerale - Schweppes, 355 Ml",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -8376,7 +8376,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 696,
-      "image": "http://dummyimage.com/191x246.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/191x246.bmp/5fa2dd/ffffff",
       "productcode": "59762-5030",
       "name": "Tea Leaves - Oolong",
       "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -8388,7 +8388,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 697,
-      "image": "http://dummyimage.com/160x203.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/160x203.png/5fa2dd/ffffff",
       "productcode": "53808-0735",
       "name": "Tumeric",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -8400,7 +8400,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 698,
-      "image": "http://dummyimage.com/162x211.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/162x211.bmp/ff4444/ffffff",
       "productcode": "63629-5008",
       "name": "Yogurt - Assorted Pack",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
@@ -8412,7 +8412,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 699,
-      "image": "http://dummyimage.com/135x210.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/135x210.png/cc0000/ffffff",
       "productcode": "64679-630",
       "name": "Miso - Soy Bean Paste",
       "description": "Nulla mollis molestie lorem. Quisque ut erat.",
@@ -8424,7 +8424,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 700,
-      "image": "http://dummyimage.com/142x165.png/dddddd/000000",
+      "image": "https://dummyimage.com/142x165.png/dddddd/000000",
       "productcode": "64942-1164",
       "name": "Pepper - White, Whole",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
@@ -8436,7 +8436,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 701,
-      "image": "http://dummyimage.com/104x188.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/104x188.jpg/ff4444/ffffff",
       "productcode": "60429-570",
       "name": "Tequila Rose Cream Liquor",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
@@ -8448,7 +8448,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 702,
-      "image": "http://dummyimage.com/160x217.png/dddddd/000000",
+      "image": "https://dummyimage.com/160x217.png/dddddd/000000",
       "productcode": "68084-372",
       "name": "Oil - Olive Bertolli",
       "description": "Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
@@ -8460,7 +8460,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 703,
-      "image": "http://dummyimage.com/203x136.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/203x136.bmp/cc0000/ffffff",
       "productcode": "55910-888",
       "name": "Wine - Niagara Peninsula Vqa",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -8472,7 +8472,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 704,
-      "image": "http://dummyimage.com/100x201.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/100x201.jpg/cc0000/ffffff",
       "productcode": "63868-364",
       "name": "Spice - Greek 1 Step",
       "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -8484,7 +8484,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 705,
-      "image": "http://dummyimage.com/227x240.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/227x240.png/ff4444/ffffff",
       "productcode": "41163-620",
       "name": "Dried Apple",
       "description": "Cras non velit nec nisi vulputate nonummy.",
@@ -8496,7 +8496,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 706,
-      "image": "http://dummyimage.com/250x228.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/250x228.bmp/5fa2dd/ffffff",
       "productcode": "61578-204",
       "name": "Chicken - Livers",
       "description": "Nunc rhoncus dui vel sem. Sed sagittis.",
@@ -8508,7 +8508,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 707,
-      "image": "http://dummyimage.com/109x228.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/109x228.png/ff4444/ffffff",
       "productcode": "55319-531",
       "name": "Juice - Propel Sport",
       "description": "Duis mattis egestas metus.",
@@ -8520,7 +8520,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 708,
-      "image": "http://dummyimage.com/161x244.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/161x244.jpg/5fa2dd/ffffff",
       "productcode": "51660-939",
       "name": "Bread Foccacia Whole",
       "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
@@ -8532,7 +8532,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 709,
-      "image": "http://dummyimage.com/116x125.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/116x125.bmp/dddddd/000000",
       "productcode": "0268-1477",
       "name": "Wine - Vovray Sec Domaine Huet",
       "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
@@ -8544,7 +8544,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 710,
-      "image": "http://dummyimage.com/213x149.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/213x149.jpg/ff4444/ffffff",
       "productcode": "0006-0735",
       "name": "Ginsing - Fresh",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.",
@@ -8556,7 +8556,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 711,
-      "image": "http://dummyimage.com/212x246.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/212x246.bmp/5fa2dd/ffffff",
       "productcode": "63739-557",
       "name": "Bacardi Limon",
       "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
@@ -8568,7 +8568,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 712,
-      "image": "http://dummyimage.com/185x208.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/185x208.jpg/ff4444/ffffff",
       "productcode": "0409-1160",
       "name": "Coconut - Whole",
       "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna.",
@@ -8580,7 +8580,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 713,
-      "image": "http://dummyimage.com/200x179.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/200x179.bmp/ff4444/ffffff",
       "productcode": "34362-0230",
       "name": "Creme De Cacao White",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
@@ -8592,7 +8592,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 714,
-      "image": "http://dummyimage.com/110x194.png/dddddd/000000",
+      "image": "https://dummyimage.com/110x194.png/dddddd/000000",
       "productcode": "41167-0843",
       "name": "Vinegar - White Wine",
       "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
@@ -8604,7 +8604,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 715,
-      "image": "http://dummyimage.com/220x197.png/dddddd/000000",
+      "image": "https://dummyimage.com/220x197.png/dddddd/000000",
       "productcode": "0074-3290",
       "name": "Water - Aquafina Vitamin",
       "description": "Sed ante.",
@@ -8616,7 +8616,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 716,
-      "image": "http://dummyimage.com/143x103.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/143x103.jpg/5fa2dd/ffffff",
       "productcode": "54868-1082",
       "name": "Amaretto",
       "description": "Nulla tellus.",
@@ -8628,7 +8628,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 717,
-      "image": "http://dummyimage.com/102x137.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/102x137.png/cc0000/ffffff",
       "productcode": "46123-041",
       "name": "Muffin - Mix - Strawberry Rhubarb",
       "description": "Curabitur gravida nisi at nibh.",
@@ -8640,7 +8640,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 718,
-      "image": "http://dummyimage.com/140x189.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/140x189.png/5fa2dd/ffffff",
       "productcode": "52584-641",
       "name": "Oil - Peanut",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
@@ -8652,7 +8652,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 719,
-      "image": "http://dummyimage.com/237x153.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/237x153.jpg/5fa2dd/ffffff",
       "productcode": "67510-0066",
       "name": "Coffee - Ristretto Coffee Capsule",
       "description": "Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
@@ -8664,7 +8664,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 720,
-      "image": "http://dummyimage.com/105x240.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/105x240.jpg/5fa2dd/ffffff",
       "productcode": "68647-173",
       "name": "Muffin Mix - Morning Glory",
       "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
@@ -8676,7 +8676,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 721,
-      "image": "http://dummyimage.com/210x119.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/210x119.bmp/cc0000/ffffff",
       "productcode": "68016-216",
       "name": "Wine - Shiraz South Eastern",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -8688,7 +8688,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 722,
-      "image": "http://dummyimage.com/121x195.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/121x195.jpg/cc0000/ffffff",
       "productcode": "66993-052",
       "name": "Gloves - Goldtouch Disposable",
       "description": "Pellentesque ultrices mattis odio.",
@@ -8700,7 +8700,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 723,
-      "image": "http://dummyimage.com/135x203.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/135x203.bmp/5fa2dd/ffffff",
       "productcode": "61919-416",
       "name": "Cheese - Mix",
       "description": "Duis mattis egestas metus. Aenean fermentum.",
@@ -8712,7 +8712,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 724,
-      "image": "http://dummyimage.com/184x135.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/184x135.bmp/dddddd/000000",
       "productcode": "44119-001",
       "name": "Onions - Pearl",
       "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
@@ -8724,7 +8724,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 725,
-      "image": "http://dummyimage.com/150x166.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/150x166.bmp/cc0000/ffffff",
       "productcode": "52755-100",
       "name": "Icecream - Dstk Super Cone",
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
@@ -8736,7 +8736,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 726,
-      "image": "http://dummyimage.com/158x205.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/158x205.jpg/cc0000/ffffff",
       "productcode": "0074-9642",
       "name": "Compound - Rum",
       "description": "Donec ut mauris eget massa tempor convallis.",
@@ -8748,7 +8748,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 727,
-      "image": "http://dummyimage.com/144x187.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/144x187.jpg/dddddd/000000",
       "productcode": "37808-199",
       "name": "Cheese - Comtomme",
       "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
@@ -8760,7 +8760,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 728,
-      "image": "http://dummyimage.com/207x240.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/207x240.png/ff4444/ffffff",
       "productcode": "37205-539",
       "name": "Bread - Focaccia Quarter",
       "description": "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.",
@@ -8772,7 +8772,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 729,
-      "image": "http://dummyimage.com/129x167.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/129x167.png/ff4444/ffffff",
       "productcode": "50268-263",
       "name": "Chicken - Leg / Back Attach",
       "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
@@ -8784,7 +8784,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 730,
-      "image": "http://dummyimage.com/102x148.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/102x148.jpg/5fa2dd/ffffff",
       "productcode": "49035-499",
       "name": "Plate - Foam, Bread And Butter",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
@@ -8796,7 +8796,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 731,
-      "image": "http://dummyimage.com/127x212.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/127x212.bmp/cc0000/ffffff",
       "productcode": "24286-1559",
       "name": "Wine - Ruffino Chianti Classico",
       "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
@@ -8808,7 +8808,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 732,
-      "image": "http://dummyimage.com/120x145.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/120x145.png/cc0000/ffffff",
       "productcode": "37205-008",
       "name": "Muffin Batt - Blueberry Passion",
       "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
@@ -8820,7 +8820,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 733,
-      "image": "http://dummyimage.com/120x238.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/120x238.bmp/cc0000/ffffff",
       "productcode": "51138-076",
       "name": "Jam - Raspberry",
       "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
@@ -8832,7 +8832,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 734,
-      "image": "http://dummyimage.com/238x148.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/238x148.bmp/cc0000/ffffff",
       "productcode": "49035-994",
       "name": "Wine - Vovray Sec Domaine Huet",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
@@ -8844,7 +8844,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 735,
-      "image": "http://dummyimage.com/193x126.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/193x126.png/ff4444/ffffff",
       "productcode": "49580-2411",
       "name": "Vermacelli - Sprinkles, Assorted",
       "description": "Nullam varius.",
@@ -8856,7 +8856,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 736,
-      "image": "http://dummyimage.com/167x220.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/167x220.bmp/dddddd/000000",
       "productcode": "59779-962",
       "name": "Shrimp, Dried, Small / Lb",
       "description": "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.",
@@ -8868,7 +8868,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 737,
-      "image": "http://dummyimage.com/227x221.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/227x221.bmp/ff4444/ffffff",
       "productcode": "0904-2614",
       "name": "Herb Du Provence - Primerba",
       "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
@@ -8880,7 +8880,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 738,
-      "image": "http://dummyimage.com/105x199.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/105x199.png/5fa2dd/ffffff",
       "productcode": "41520-974",
       "name": "Wine - Spumante Bambino White",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.",
@@ -8892,7 +8892,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 739,
-      "image": "http://dummyimage.com/100x149.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/100x149.bmp/cc0000/ffffff",
       "productcode": "62175-151",
       "name": "Beef - Bresaola",
       "description": "Cras non velit nec nisi vulputate nonummy.",
@@ -8904,7 +8904,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 740,
-      "image": "http://dummyimage.com/218x178.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/218x178.bmp/5fa2dd/ffffff",
       "productcode": "67510-0156",
       "name": "Table Cloth 90x90 White",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -8916,7 +8916,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 741,
-      "image": "http://dummyimage.com/223x117.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/223x117.jpg/cc0000/ffffff",
       "productcode": "54868-6025",
       "name": "Cheese - Cheddar, Mild",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
@@ -8928,7 +8928,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 742,
-      "image": "http://dummyimage.com/198x238.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/198x238.bmp/cc0000/ffffff",
       "productcode": "48951-7006",
       "name": "Celery Root",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
@@ -8940,7 +8940,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 743,
-      "image": "http://dummyimage.com/107x140.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/107x140.jpg/dddddd/000000",
       "productcode": "0924-0160",
       "name": "Cod - Fillets",
       "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
@@ -8952,7 +8952,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 744,
-      "image": "http://dummyimage.com/125x116.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/125x116.bmp/cc0000/ffffff",
       "productcode": "55154-2226",
       "name": "Wine - Chablis 2003 Champs",
       "description": "Proin risus.",
@@ -8964,7 +8964,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 745,
-      "image": "http://dummyimage.com/146x101.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/146x101.jpg/cc0000/ffffff",
       "productcode": "0268-0082",
       "name": "Plasticknivesblack",
       "description": "Donec semper sapien a libero. Nam dui.",
@@ -8976,7 +8976,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 746,
-      "image": "http://dummyimage.com/230x127.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/230x127.bmp/dddddd/000000",
       "productcode": "54868-3103",
       "name": "Longos - Grilled Salmon With Bbq",
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
@@ -8988,7 +8988,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 747,
-      "image": "http://dummyimage.com/218x124.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/218x124.png/ff4444/ffffff",
       "productcode": "66302-105",
       "name": "Pasta - Orecchiette",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -9000,7 +9000,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 748,
-      "image": "http://dummyimage.com/178x194.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/178x194.jpg/dddddd/000000",
       "productcode": "68462-130",
       "name": "Icecream - Dibs",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
@@ -9012,7 +9012,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 749,
-      "image": "http://dummyimage.com/207x139.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/207x139.png/5fa2dd/ffffff",
       "productcode": "22431-111",
       "name": "Turkey - Breast, Bone - In",
       "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -9024,7 +9024,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 750,
-      "image": "http://dummyimage.com/249x162.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/249x162.bmp/5fa2dd/ffffff",
       "productcode": "68382-163",
       "name": "Ice Cream - Strawberry",
       "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
@@ -9036,7 +9036,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 751,
-      "image": "http://dummyimage.com/138x194.png/dddddd/000000",
+      "image": "https://dummyimage.com/138x194.png/dddddd/000000",
       "productcode": "59779-163",
       "name": "Wine - Pinot Noir Mondavi Coastal",
       "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.",
@@ -9048,7 +9048,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 752,
-      "image": "http://dummyimage.com/172x187.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/172x187.bmp/5fa2dd/ffffff",
       "productcode": "52685-359",
       "name": "Liquid Aminios Acid - Braggs",
       "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
@@ -9060,7 +9060,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 753,
-      "image": "http://dummyimage.com/135x124.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/135x124.png/5fa2dd/ffffff",
       "productcode": "50436-4000",
       "name": "Rum - Cream, Amarula",
       "description": "Sed vel enim sit amet nunc viverra dapibus.",
@@ -9072,7 +9072,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 754,
-      "image": "http://dummyimage.com/195x174.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/195x174.png/ff4444/ffffff",
       "productcode": "57520-0085",
       "name": "Sobe - Berry Energy",
       "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
@@ -9084,7 +9084,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 755,
-      "image": "http://dummyimage.com/247x224.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/247x224.jpg/5fa2dd/ffffff",
       "productcode": "50241-142",
       "name": "Sauce - Balsamic Viniagrette",
       "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
@@ -9096,7 +9096,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 756,
-      "image": "http://dummyimage.com/193x247.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/193x247.png/ff4444/ffffff",
       "productcode": "24846-0001",
       "name": "Bagel - Sesame Seed Presliced",
       "description": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
@@ -9108,7 +9108,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 757,
-      "image": "http://dummyimage.com/189x134.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/189x134.jpg/dddddd/000000",
       "productcode": "60258-520",
       "name": "Butcher Twine 4r",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -9120,7 +9120,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 758,
-      "image": "http://dummyimage.com/201x211.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/201x211.jpg/dddddd/000000",
       "productcode": "23155-107",
       "name": "Alize Red Passion",
       "description": "Donec dapibus. Duis at velit eu est congue elementum.",
@@ -9132,7 +9132,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 759,
-      "image": "http://dummyimage.com/211x101.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/211x101.png/ff4444/ffffff",
       "productcode": "63560-001",
       "name": "Chocolate - Unsweetened",
       "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -9144,7 +9144,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 760,
-      "image": "http://dummyimage.com/162x156.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/162x156.jpg/cc0000/ffffff",
       "productcode": "68788-0518",
       "name": "Tarragon - Fresh",
       "description": "Sed ante. Vivamus tortor.",
@@ -9156,7 +9156,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 761,
-      "image": "http://dummyimage.com/208x176.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/208x176.jpg/cc0000/ffffff",
       "productcode": "59779-235",
       "name": "Lemonade - Black Cherry, 591 Ml",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
@@ -9168,7 +9168,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 762,
-      "image": "http://dummyimage.com/131x206.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/131x206.bmp/dddddd/000000",
       "productcode": "48951-1011",
       "name": "Ice Cream Bar - Rolo Cone",
       "description": "Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
@@ -9180,7 +9180,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 763,
-      "image": "http://dummyimage.com/147x110.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/147x110.jpg/cc0000/ffffff",
       "productcode": "41163-311",
       "name": "Appetizer - Mushroom Tart",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -9192,7 +9192,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 764,
-      "image": "http://dummyimage.com/161x220.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/161x220.png/5fa2dd/ffffff",
       "productcode": "51079-028",
       "name": "Syrup - Monin - Blue Curacao",
       "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
@@ -9204,7 +9204,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 765,
-      "image": "http://dummyimage.com/225x101.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/225x101.jpg/ff4444/ffffff",
       "productcode": "64613-5900",
       "name": "Wine - Magnotta - Cab Franc",
       "description": "Morbi ut odio.",
@@ -9216,7 +9216,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 766,
-      "image": "http://dummyimage.com/107x133.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/107x133.jpg/5fa2dd/ffffff",
       "productcode": "66184-155",
       "name": "Kellogs All Bran Bars",
       "description": "Curabitur convallis.",
@@ -9228,7 +9228,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 767,
-      "image": "http://dummyimage.com/125x135.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/125x135.png/5fa2dd/ffffff",
       "productcode": "0555-0158",
       "name": "Chocolate - Semi Sweet",
       "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -9240,7 +9240,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 768,
-      "image": "http://dummyimage.com/106x118.png/dddddd/000000",
+      "image": "https://dummyimage.com/106x118.png/dddddd/000000",
       "productcode": "68258-3035",
       "name": "Beef - Top Butt",
       "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
@@ -9252,7 +9252,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 769,
-      "image": "http://dummyimage.com/173x183.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/173x183.jpg/ff4444/ffffff",
       "productcode": "44577-002",
       "name": "Cheese - Provolone",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -9264,7 +9264,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 770,
-      "image": "http://dummyimage.com/138x218.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/138x218.jpg/dddddd/000000",
       "productcode": "65841-763",
       "name": "Oil - Safflower",
       "description": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
@@ -9276,7 +9276,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 771,
-      "image": "http://dummyimage.com/166x191.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/166x191.png/ff4444/ffffff",
       "productcode": "0121-4780",
       "name": "Chocolate Eclairs",
       "description": "Donec posuere metus vitae ipsum. Aliquam non mauris.",
@@ -9288,7 +9288,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 772,
-      "image": "http://dummyimage.com/234x217.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/234x217.bmp/5fa2dd/ffffff",
       "productcode": "0268-0150",
       "name": "Pastry - Mini French Pastries",
       "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
@@ -9300,7 +9300,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 773,
-      "image": "http://dummyimage.com/191x194.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/191x194.jpg/dddddd/000000",
       "productcode": "55910-378",
       "name": "Bamboo Shoots - Sliced",
       "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -9312,7 +9312,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 774,
-      "image": "http://dummyimage.com/194x226.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/194x226.bmp/ff4444/ffffff",
       "productcode": "58118-5689",
       "name": "Flavouring - Rum",
       "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
@@ -9324,7 +9324,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 775,
-      "image": "http://dummyimage.com/131x154.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/131x154.png/5fa2dd/ffffff",
       "productcode": "54973-0613",
       "name": "Gherkin - Sour",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -9336,7 +9336,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 776,
-      "image": "http://dummyimage.com/158x201.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/158x201.bmp/cc0000/ffffff",
       "productcode": "0703-4852",
       "name": "Beer - Upper Canada Light",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -9348,7 +9348,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 777,
-      "image": "http://dummyimage.com/140x222.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/140x222.bmp/dddddd/000000",
       "productcode": "11727-006",
       "name": "Iced Tea - Lemon, 460 Ml",
       "description": "Nulla nisl.",
@@ -9360,7 +9360,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 778,
-      "image": "http://dummyimage.com/244x228.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/244x228.jpg/dddddd/000000",
       "productcode": "68180-215",
       "name": "Brandy - Orange, Mc Guiness",
       "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
@@ -9372,7 +9372,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 779,
-      "image": "http://dummyimage.com/149x141.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/149x141.bmp/5fa2dd/ffffff",
       "productcode": "49035-445",
       "name": "Salmon - Whole, 4 - 6 Pounds",
       "description": "Nulla ac enim.",
@@ -9384,7 +9384,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 780,
-      "image": "http://dummyimage.com/239x126.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/239x126.jpg/cc0000/ffffff",
       "productcode": "0703-1501",
       "name": "Amaretto",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -9396,7 +9396,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 781,
-      "image": "http://dummyimage.com/230x228.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/230x228.bmp/ff4444/ffffff",
       "productcode": "54868-5699",
       "name": "Puff Pastry - Sheets",
       "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
@@ -9408,7 +9408,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 782,
-      "image": "http://dummyimage.com/160x161.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/160x161.jpg/ff4444/ffffff",
       "productcode": "49852-172",
       "name": "Gingerale - Schweppes, 355 Ml",
       "description": "In congue. Etiam justo.",
@@ -9420,7 +9420,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 783,
-      "image": "http://dummyimage.com/243x186.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/243x186.png/5fa2dd/ffffff",
       "productcode": "55891-002",
       "name": "Soap - Mr.clean Floor Soap",
       "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -9432,7 +9432,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 784,
-      "image": "http://dummyimage.com/250x229.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/250x229.jpg/dddddd/000000",
       "productcode": "45802-318",
       "name": "Salmon - Canned",
       "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -9444,7 +9444,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 785,
-      "image": "http://dummyimage.com/130x204.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/130x204.png/ff4444/ffffff",
       "productcode": "49483-223",
       "name": "Container - Clear 32 Oz",
       "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -9456,7 +9456,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 786,
-      "image": "http://dummyimage.com/132x216.png/dddddd/000000",
+      "image": "https://dummyimage.com/132x216.png/dddddd/000000",
       "productcode": "63354-931",
       "name": "Water - Evian 355 Ml",
       "description": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
@@ -9468,7 +9468,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 787,
-      "image": "http://dummyimage.com/244x158.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/244x158.png/ff4444/ffffff",
       "productcode": "21695-087",
       "name": "Wine - Rosso Del Veronese Igt",
       "description": "Curabitur gravida nisi at nibh.",
@@ -9480,7 +9480,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 788,
-      "image": "http://dummyimage.com/190x138.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/190x138.jpg/cc0000/ffffff",
       "productcode": "49884-065",
       "name": "Wine - Gewurztraminer Pierre",
       "description": "Nunc rhoncus dui vel sem. Sed sagittis.",
@@ -9492,7 +9492,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 789,
-      "image": "http://dummyimage.com/145x233.png/dddddd/000000",
+      "image": "https://dummyimage.com/145x233.png/dddddd/000000",
       "productcode": "68084-447",
       "name": "Sunflower Seed Raw",
       "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
@@ -9504,7 +9504,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 790,
-      "image": "http://dummyimage.com/202x209.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/202x209.jpg/5fa2dd/ffffff",
       "productcode": "58668-2921",
       "name": "Sprouts Dikon",
       "description": "Sed accumsan felis.",
@@ -9516,7 +9516,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 791,
-      "image": "http://dummyimage.com/211x147.png/dddddd/000000",
+      "image": "https://dummyimage.com/211x147.png/dddddd/000000",
       "productcode": "16590-032",
       "name": "Fond - Neutral",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -9528,7 +9528,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 792,
-      "image": "http://dummyimage.com/138x112.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/138x112.bmp/5fa2dd/ffffff",
       "productcode": "53808-0265",
       "name": "Sprouts - Peppercress",
       "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus.",
@@ -9540,7 +9540,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 793,
-      "image": "http://dummyimage.com/129x233.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/129x233.bmp/ff4444/ffffff",
       "productcode": "63824-234",
       "name": "Graham Cracker Mix",
       "description": "Duis mattis egestas metus. Aenean fermentum.",
@@ -9552,7 +9552,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 794,
-      "image": "http://dummyimage.com/204x123.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/204x123.bmp/5fa2dd/ffffff",
       "productcode": "65044-1517",
       "name": "Peas - Frozen",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.",
@@ -9564,7 +9564,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 795,
-      "image": "http://dummyimage.com/157x151.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/157x151.bmp/cc0000/ffffff",
       "productcode": "58118-3162",
       "name": "Turnip - Wax",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -9576,7 +9576,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 796,
-      "image": "http://dummyimage.com/245x221.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/245x221.bmp/cc0000/ffffff",
       "productcode": "0093-8164",
       "name": "Corn - On The Cob",
       "description": "Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -9588,7 +9588,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 797,
-      "image": "http://dummyimage.com/105x247.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/105x247.jpg/dddddd/000000",
       "productcode": "63354-219",
       "name": "Pastrami",
       "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
@@ -9600,7 +9600,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 798,
-      "image": "http://dummyimage.com/129x154.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/129x154.jpg/5fa2dd/ffffff",
       "productcode": "0054-3185",
       "name": "Chutney Sauce - Mango",
       "description": "Suspendisse accumsan tortor quis turpis. Sed ante.",
@@ -9612,7 +9612,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 799,
-      "image": "http://dummyimage.com/193x152.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/193x152.jpg/5fa2dd/ffffff",
       "productcode": "63629-5437",
       "name": "Oil - Grapeseed Oil",
       "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -9624,7 +9624,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 800,
-      "image": "http://dummyimage.com/130x187.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/130x187.jpg/cc0000/ffffff",
       "productcode": "59667-0022",
       "name": "Langers - Mango Nectar",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -9636,7 +9636,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 801,
-      "image": "http://dummyimage.com/139x203.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/139x203.jpg/dddddd/000000",
       "productcode": "51769-411",
       "name": "Veal - Striploin",
       "description": "Sed vel enim sit amet nunc viverra dapibus.",
@@ -9648,7 +9648,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 802,
-      "image": "http://dummyimage.com/101x140.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/101x140.jpg/cc0000/ffffff",
       "productcode": "48951-1154",
       "name": "Ecolab - Hobart Washarm End Cap",
       "description": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
@@ -9660,7 +9660,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 803,
-      "image": "http://dummyimage.com/199x161.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/199x161.png/5fa2dd/ffffff",
       "productcode": "11584-1045",
       "name": "Fish - Bones",
       "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -9672,7 +9672,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 804,
-      "image": "http://dummyimage.com/248x185.png/dddddd/000000",
+      "image": "https://dummyimage.com/248x185.png/dddddd/000000",
       "productcode": "55154-8283",
       "name": "Beans - Soya Bean",
       "description": "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.",
@@ -9684,7 +9684,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 805,
-      "image": "http://dummyimage.com/189x225.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/189x225.jpg/ff4444/ffffff",
       "productcode": "57520-0549",
       "name": "Coconut - Whole",
       "description": "Donec posuere metus vitae ipsum.",
@@ -9696,7 +9696,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 806,
-      "image": "http://dummyimage.com/112x161.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/112x161.bmp/ff4444/ffffff",
       "productcode": "10922-828",
       "name": "Vegetable - Base",
       "description": "Nullam varius. Nulla facilisi.",
@@ -9708,7 +9708,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 807,
-      "image": "http://dummyimage.com/204x114.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/204x114.png/cc0000/ffffff",
       "productcode": "36987-1970",
       "name": "Yogurt - French Vanilla",
       "description": "Fusce posuere felis sed lacus.",
@@ -9720,7 +9720,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 808,
-      "image": "http://dummyimage.com/239x125.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/239x125.jpg/dddddd/000000",
       "productcode": "55154-1493",
       "name": "Lamb - Sausage Casings",
       "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -9732,7 +9732,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 809,
-      "image": "http://dummyimage.com/105x242.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/105x242.bmp/ff4444/ffffff",
       "productcode": "47335-736",
       "name": "Muffin - Mix - Strawberry Rhubarb",
       "description": "Nunc rhoncus dui vel sem.",
@@ -9744,7 +9744,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 810,
-      "image": "http://dummyimage.com/118x149.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/118x149.jpg/ff4444/ffffff",
       "productcode": "62713-802",
       "name": "Soup Campbells - Italian Wedding",
       "description": "Suspendisse potenti.",
@@ -9756,7 +9756,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 811,
-      "image": "http://dummyimage.com/193x152.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/193x152.png/ff4444/ffffff",
       "productcode": "36987-3390",
       "name": "Yoplait Drink",
       "description": "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.",
@@ -9768,7 +9768,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 812,
-      "image": "http://dummyimage.com/210x232.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/210x232.png/ff4444/ffffff",
       "productcode": "57664-370",
       "name": "Salt And Pepper Mix - White",
       "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -9780,7 +9780,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 813,
-      "image": "http://dummyimage.com/221x114.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/221x114.jpg/ff4444/ffffff",
       "productcode": "59572-504",
       "name": "Sugar - Sweet N Low, Individual",
       "description": "Duis ac nibh.",
@@ -9792,7 +9792,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 814,
-      "image": "http://dummyimage.com/160x248.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/160x248.bmp/cc0000/ffffff",
       "productcode": "0093-7314",
       "name": "Wine - Red, Cabernet Merlot",
       "description": "Cras pellentesque volutpat dui.",
@@ -9804,7 +9804,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 815,
-      "image": "http://dummyimage.com/194x244.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/194x244.png/cc0000/ffffff",
       "productcode": "55154-2852",
       "name": "French Pastry - Mini Chocolate",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -9816,7 +9816,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 816,
-      "image": "http://dummyimage.com/189x131.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/189x131.jpg/cc0000/ffffff",
       "productcode": "52125-278",
       "name": "Scallops 60/80 Iqf",
       "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -9828,7 +9828,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 817,
-      "image": "http://dummyimage.com/149x180.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/149x180.png/cc0000/ffffff",
       "productcode": "11822-0130",
       "name": "Pur Source",
       "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
@@ -9840,7 +9840,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 818,
-      "image": "http://dummyimage.com/216x172.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/216x172.png/5fa2dd/ffffff",
       "productcode": "55312-358",
       "name": "Arctic Char - Fresh, Whole",
       "description": "Praesent lectus.",
@@ -9852,7 +9852,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 819,
-      "image": "http://dummyimage.com/165x241.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/165x241.png/cc0000/ffffff",
       "productcode": "68428-735",
       "name": "Vinegar - Red Wine",
       "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -9864,7 +9864,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 820,
-      "image": "http://dummyimage.com/219x183.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/219x183.jpg/5fa2dd/ffffff",
       "productcode": "36800-112",
       "name": "White Fish - Filets",
       "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
@@ -9876,7 +9876,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 821,
-      "image": "http://dummyimage.com/161x195.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/161x195.png/5fa2dd/ffffff",
       "productcode": "49351-103",
       "name": "Wine - Vovray Sec Domaine Huet",
       "description": "Vestibulum rutrum rutrum neque.",
@@ -9888,7 +9888,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 822,
-      "image": "http://dummyimage.com/100x222.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/100x222.bmp/cc0000/ffffff",
       "productcode": "61957-2105",
       "name": "Yucca",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -9900,7 +9900,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 823,
-      "image": "http://dummyimage.com/161x143.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/161x143.png/ff4444/ffffff",
       "productcode": "45861-006",
       "name": "Pepper - Orange",
       "description": "Quisque porta volutpat erat.",
@@ -9912,7 +9912,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 824,
-      "image": "http://dummyimage.com/108x248.png/dddddd/000000",
+      "image": "https://dummyimage.com/108x248.png/dddddd/000000",
       "productcode": "49349-297",
       "name": "Flower - Dish Garden",
       "description": "In hac habitasse platea dictumst.",
@@ -9924,7 +9924,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 825,
-      "image": "http://dummyimage.com/167x103.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/167x103.jpg/ff4444/ffffff",
       "productcode": "67143-2101",
       "name": "Pork - Backs - Boneless",
       "description": "Suspendisse ornare consequat lectus.",
@@ -9936,7 +9936,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 826,
-      "image": "http://dummyimage.com/192x213.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/192x213.jpg/dddddd/000000",
       "productcode": "49351-016",
       "name": "Juice - Apple, 500 Ml",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -9948,7 +9948,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 827,
-      "image": "http://dummyimage.com/134x152.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/134x152.jpg/cc0000/ffffff",
       "productcode": "0143-9749",
       "name": "Longos - Burritos",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
@@ -9960,7 +9960,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 828,
-      "image": "http://dummyimage.com/219x151.png/dddddd/000000",
+      "image": "https://dummyimage.com/219x151.png/dddddd/000000",
       "productcode": "68479-202",
       "name": "Cheese - Cheddar, Old White",
       "description": "Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
@@ -9972,7 +9972,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 829,
-      "image": "http://dummyimage.com/154x145.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/154x145.jpg/5fa2dd/ffffff",
       "productcode": "55154-5433",
       "name": "Alize Gold Passion",
       "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
@@ -9984,7 +9984,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 830,
-      "image": "http://dummyimage.com/210x206.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/210x206.jpg/cc0000/ffffff",
       "productcode": "63824-713",
       "name": "Yogurt - Plain",
       "description": "Nulla tempus.",
@@ -9996,7 +9996,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 831,
-      "image": "http://dummyimage.com/162x130.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/162x130.png/cc0000/ffffff",
       "productcode": "68599-2302",
       "name": "Sauce - Soy Low Sodium - 3.87l",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -10008,7 +10008,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 832,
-      "image": "http://dummyimage.com/164x115.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/164x115.bmp/5fa2dd/ffffff",
       "productcode": "0268-1306",
       "name": "Pesto - Primerba, Paste",
       "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.",
@@ -10020,7 +10020,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 833,
-      "image": "http://dummyimage.com/143x111.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/143x111.jpg/ff4444/ffffff",
       "productcode": "17156-607",
       "name": "Bread - French Stick",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
@@ -10032,7 +10032,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 834,
-      "image": "http://dummyimage.com/152x104.png/dddddd/000000",
+      "image": "https://dummyimage.com/152x104.png/dddddd/000000",
       "productcode": "0228-2996",
       "name": "Potatoes - Instant, Mashed",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
@@ -10044,7 +10044,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 835,
-      "image": "http://dummyimage.com/139x218.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/139x218.bmp/5fa2dd/ffffff",
       "productcode": "30142-231",
       "name": "Pastry - Cheese Baked Scones",
       "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
@@ -10056,7 +10056,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 836,
-      "image": "http://dummyimage.com/112x179.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/112x179.png/cc0000/ffffff",
       "productcode": "62080-4001",
       "name": "Ostrich - Fan Fillet",
       "description": "Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
@@ -10068,7 +10068,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 837,
-      "image": "http://dummyimage.com/109x105.png/dddddd/000000",
+      "image": "https://dummyimage.com/109x105.png/dddddd/000000",
       "productcode": "61587-1001",
       "name": "Oven Mitts - 15 Inch",
       "description": "Duis consequat dui nec nisi volutpat eleifend.",
@@ -10080,7 +10080,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 838,
-      "image": "http://dummyimage.com/212x182.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/212x182.jpg/5fa2dd/ffffff",
       "productcode": "64376-138",
       "name": "Glaze - Apricot",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.",
@@ -10092,7 +10092,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 839,
-      "image": "http://dummyimage.com/180x245.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/180x245.jpg/cc0000/ffffff",
       "productcode": "49035-017",
       "name": "Arctic Char - Fillets",
       "description": "In eleifend quam a odio. In hac habitasse platea dictumst.",
@@ -10104,7 +10104,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 840,
-      "image": "http://dummyimage.com/214x225.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/214x225.jpg/ff4444/ffffff",
       "productcode": "53329-060",
       "name": "Wine - Hardys Bankside Shiraz",
       "description": "Duis aliquam convallis nunc.",
@@ -10116,7 +10116,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 841,
-      "image": "http://dummyimage.com/102x134.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/102x134.jpg/ff4444/ffffff",
       "productcode": "49348-973",
       "name": "Lettuce - Red Leaf",
       "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
@@ -10128,7 +10128,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 842,
-      "image": "http://dummyimage.com/113x203.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/113x203.bmp/dddddd/000000",
       "productcode": "0067-6348",
       "name": "Beans - Black Bean, Preserved",
       "description": "Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -10140,7 +10140,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 843,
-      "image": "http://dummyimage.com/201x135.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/201x135.jpg/cc0000/ffffff",
       "productcode": "36800-630",
       "name": "Pork - Ham, Virginia",
       "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -10152,7 +10152,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 844,
-      "image": "http://dummyimage.com/198x178.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/198x178.png/5fa2dd/ffffff",
       "productcode": "55312-205",
       "name": "Beans - Fava, Canned",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
@@ -10164,7 +10164,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 845,
-      "image": "http://dummyimage.com/151x120.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/151x120.bmp/ff4444/ffffff",
       "productcode": "54868-4101",
       "name": "Ice Cream - Chocolate",
       "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
@@ -10176,7 +10176,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 846,
-      "image": "http://dummyimage.com/230x246.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/230x246.jpg/dddddd/000000",
       "productcode": "68788-6766",
       "name": "Beef - Tongue, Fresh",
       "description": "Donec posuere metus vitae ipsum. Aliquam non mauris.",
@@ -10188,7 +10188,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 847,
-      "image": "http://dummyimage.com/128x231.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/128x231.png/cc0000/ffffff",
       "productcode": "49999-139",
       "name": "Assorted Desserts",
       "description": "Suspendisse potenti.",
@@ -10200,7 +10200,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 848,
-      "image": "http://dummyimage.com/195x210.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/195x210.png/ff4444/ffffff",
       "productcode": "11527-052",
       "name": "Chocolate Bar - Oh Henry",
       "description": "Integer non velit.",
@@ -10212,7 +10212,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 849,
-      "image": "http://dummyimage.com/212x135.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/212x135.jpg/dddddd/000000",
       "productcode": "45945-157",
       "name": "Wine - Hardys Bankside Shiraz",
       "description": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
@@ -10224,7 +10224,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 850,
-      "image": "http://dummyimage.com/217x198.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/217x198.jpg/ff4444/ffffff",
       "productcode": "10819-5808",
       "name": "Toamtoes 6x7 Select",
       "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
@@ -10236,7 +10236,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 851,
-      "image": "http://dummyimage.com/210x119.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/210x119.png/cc0000/ffffff",
       "productcode": "49738-111",
       "name": "Turnip - Wax",
       "description": "Curabitur at ipsum ac tellus semper interdum.",
@@ -10248,7 +10248,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 852,
-      "image": "http://dummyimage.com/118x126.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/118x126.png/5fa2dd/ffffff",
       "productcode": "52125-007",
       "name": "Tomatoes - Roma",
       "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -10260,7 +10260,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 853,
-      "image": "http://dummyimage.com/175x137.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/175x137.jpg/ff4444/ffffff",
       "productcode": "55045-1167",
       "name": "Beef - Kobe Striploin",
       "description": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
@@ -10272,7 +10272,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 854,
-      "image": "http://dummyimage.com/141x234.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/141x234.bmp/5fa2dd/ffffff",
       "productcode": "55045-1594",
       "name": "Vermouth - White, Cinzano",
       "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
@@ -10284,7 +10284,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 855,
-      "image": "http://dummyimage.com/179x153.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/179x153.bmp/dddddd/000000",
       "productcode": "68016-112",
       "name": "Basil - Primerba, Paste",
       "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -10296,7 +10296,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 856,
-      "image": "http://dummyimage.com/246x166.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/246x166.png/cc0000/ffffff",
       "productcode": "68220-133",
       "name": "Sherry - Dry",
       "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
@@ -10308,7 +10308,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 857,
-      "image": "http://dummyimage.com/150x154.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/150x154.jpg/dddddd/000000",
       "productcode": "12213-498",
       "name": "Cheese - Colby",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
@@ -10320,7 +10320,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 858,
-      "image": "http://dummyimage.com/115x161.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/115x161.bmp/cc0000/ffffff",
       "productcode": "68405-033",
       "name": "Vodka - Smirnoff",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
@@ -10332,7 +10332,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 859,
-      "image": "http://dummyimage.com/216x158.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/216x158.jpg/5fa2dd/ffffff",
       "productcode": "62037-676",
       "name": "Nut - Pumpkin Seeds",
       "description": "Nulla tellus. In sagittis dui vel nisl.",
@@ -10344,7 +10344,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 860,
-      "image": "http://dummyimage.com/104x102.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/104x102.png/cc0000/ffffff",
       "productcode": "63304-874",
       "name": "Pepsi - Diet, 355 Ml",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat.",
@@ -10356,7 +10356,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 861,
-      "image": "http://dummyimage.com/189x117.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/189x117.bmp/cc0000/ffffff",
       "productcode": "55289-298",
       "name": "Onions Granulated",
       "description": "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
@@ -10368,7 +10368,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 862,
-      "image": "http://dummyimage.com/109x162.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/109x162.jpg/dddddd/000000",
       "productcode": "41190-243",
       "name": "Cup - 6oz, Foam",
       "description": "In hac habitasse platea dictumst.",
@@ -10380,7 +10380,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 863,
-      "image": "http://dummyimage.com/124x118.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/124x118.bmp/cc0000/ffffff",
       "productcode": "76489-001",
       "name": "Five Alive Citrus",
       "description": "Nulla justo.",
@@ -10392,7 +10392,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 864,
-      "image": "http://dummyimage.com/134x176.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/134x176.png/cc0000/ffffff",
       "productcode": "49288-0856",
       "name": "Corn - On The Cob",
       "description": "Praesent blandit lacinia erat.",
@@ -10404,7 +10404,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 865,
-      "image": "http://dummyimage.com/117x209.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/117x209.bmp/5fa2dd/ffffff",
       "productcode": "0573-0168",
       "name": "Flour - Bread",
       "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
@@ -10416,7 +10416,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 866,
-      "image": "http://dummyimage.com/241x182.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/241x182.jpg/dddddd/000000",
       "productcode": "55312-051",
       "name": "Dates",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -10428,7 +10428,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 867,
-      "image": "http://dummyimage.com/165x119.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/165x119.png/cc0000/ffffff",
       "productcode": "43353-579",
       "name": "Lettuce - Red Leaf",
       "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
@@ -10440,7 +10440,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 868,
-      "image": "http://dummyimage.com/133x235.png/dddddd/000000",
+      "image": "https://dummyimage.com/133x235.png/dddddd/000000",
       "productcode": "0187-5172",
       "name": "Smoked Paprika",
       "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
@@ -10452,7 +10452,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 869,
-      "image": "http://dummyimage.com/141x196.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/141x196.jpg/ff4444/ffffff",
       "productcode": "36800-403",
       "name": "Sproutsmustard Cress",
       "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -10464,7 +10464,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 870,
-      "image": "http://dummyimage.com/113x111.png/dddddd/000000",
+      "image": "https://dummyimage.com/113x111.png/dddddd/000000",
       "productcode": "43269-820",
       "name": "Sloe Gin - Mcguinness",
       "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -10476,7 +10476,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 871,
-      "image": "http://dummyimage.com/142x213.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/142x213.bmp/dddddd/000000",
       "productcode": "98132-300",
       "name": "Venison - Striploin",
       "description": "Morbi a ipsum.",
@@ -10488,7 +10488,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 872,
-      "image": "http://dummyimage.com/154x249.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/154x249.bmp/5fa2dd/ffffff",
       "productcode": "49349-264",
       "name": "Cheese - Parmesan Grated",
       "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.",
@@ -10500,7 +10500,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 873,
-      "image": "http://dummyimage.com/101x180.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/101x180.png/cc0000/ffffff",
       "productcode": "61919-592",
       "name": "Raisin - Golden",
       "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.",
@@ -10512,7 +10512,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 874,
-      "image": "http://dummyimage.com/236x189.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/236x189.bmp/5fa2dd/ffffff",
       "productcode": "65862-605",
       "name": "Foil Cont Round",
       "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
@@ -10524,7 +10524,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 875,
-      "image": "http://dummyimage.com/245x136.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/245x136.jpg/dddddd/000000",
       "productcode": "10096-0188",
       "name": "Tuna - Loin",
       "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
@@ -10536,7 +10536,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 876,
-      "image": "http://dummyimage.com/192x163.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/192x163.jpg/cc0000/ffffff",
       "productcode": "43269-694",
       "name": "Wine - Two Oceans Cabernet",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -10548,7 +10548,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 877,
-      "image": "http://dummyimage.com/187x222.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/187x222.bmp/cc0000/ffffff",
       "productcode": "0085-4353",
       "name": "Shrimp - Tiger 21/25",
       "description": "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.",
@@ -10560,7 +10560,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 878,
-      "image": "http://dummyimage.com/177x189.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/177x189.jpg/cc0000/ffffff",
       "productcode": "24653-270",
       "name": "Island Oasis - Lemonade",
       "description": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
@@ -10572,7 +10572,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 879,
-      "image": "http://dummyimage.com/156x239.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/156x239.jpg/ff4444/ffffff",
       "productcode": "0268-6744",
       "name": "Pasta - Fusili Tri - Coloured",
       "description": "Etiam faucibus cursus urna.",
@@ -10584,7 +10584,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 880,
-      "image": "http://dummyimage.com/161x217.png/dddddd/000000",
+      "image": "https://dummyimage.com/161x217.png/dddddd/000000",
       "productcode": "0245-0181",
       "name": "Walkers Special Old Whiskey",
       "description": "Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
@@ -10596,7 +10596,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 881,
-      "image": "http://dummyimage.com/160x125.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/160x125.bmp/ff4444/ffffff",
       "productcode": "0406-0365",
       "name": "Wine - Cave Springs Dry Riesling",
       "description": "Ut at dolor quis odio consequat varius.",
@@ -10608,7 +10608,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 882,
-      "image": "http://dummyimage.com/120x230.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/120x230.jpg/cc0000/ffffff",
       "productcode": "57237-109",
       "name": "Plasticspoonblack",
       "description": "Nullam molestie nibh in lectus.",
@@ -10620,7 +10620,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 883,
-      "image": "http://dummyimage.com/227x178.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/227x178.jpg/ff4444/ffffff",
       "productcode": "61919-206",
       "name": "Blueberries - Frozen",
       "description": "Maecenas pulvinar lobortis est. Phasellus sit amet erat.",
@@ -10632,7 +10632,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 884,
-      "image": "http://dummyimage.com/244x148.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/244x148.bmp/cc0000/ffffff",
       "productcode": "0904-5797",
       "name": "Bacardi Limon",
       "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
@@ -10644,7 +10644,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 885,
-      "image": "http://dummyimage.com/234x229.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/234x229.jpg/5fa2dd/ffffff",
       "productcode": "63323-288",
       "name": "Pie Filling - Pumpkin",
       "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
@@ -10656,7 +10656,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 886,
-      "image": "http://dummyimage.com/219x130.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/219x130.png/ff4444/ffffff",
       "productcode": "0067-0134",
       "name": "Sage Ground Wiberg",
       "description": "Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
@@ -10668,7 +10668,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 887,
-      "image": "http://dummyimage.com/212x217.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/212x217.jpg/ff4444/ffffff",
       "productcode": "50458-168",
       "name": "Mushroom - Shitake, Dry",
       "description": "Mauris lacinia sapien quis libero.",
@@ -10680,7 +10680,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 888,
-      "image": "http://dummyimage.com/123x139.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/123x139.bmp/cc0000/ffffff",
       "productcode": "36987-1958",
       "name": "Chilli Paste, Ginger Garlic",
       "description": "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.",
@@ -10692,7 +10692,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 889,
-      "image": "http://dummyimage.com/177x182.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/177x182.png/ff4444/ffffff",
       "productcode": "58517-120",
       "name": "Appetizer - Crab And Brie",
       "description": "Integer ac leo. Pellentesque ultrices mattis odio.",
@@ -10704,7 +10704,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 890,
-      "image": "http://dummyimage.com/108x248.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/108x248.jpg/cc0000/ffffff",
       "productcode": "0409-1660",
       "name": "Doilies - 5, Paper",
       "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -10716,7 +10716,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 891,
-      "image": "http://dummyimage.com/241x188.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/241x188.jpg/cc0000/ffffff",
       "productcode": "49884-463",
       "name": "Gatorade - Lemon Lime",
       "description": "Ut at dolor quis odio consequat varius.",
@@ -10728,7 +10728,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 892,
-      "image": "http://dummyimage.com/115x167.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/115x167.jpg/cc0000/ffffff",
       "productcode": "53389-513",
       "name": "Creme De Cacao Mcguines",
       "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
@@ -10740,7 +10740,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 893,
-      "image": "http://dummyimage.com/138x132.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/138x132.png/ff4444/ffffff",
       "productcode": "0777-3104",
       "name": "Chicken - Wieners",
       "description": "Vivamus tortor. Duis mattis egestas metus.",
@@ -10752,7 +10752,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 894,
-      "image": "http://dummyimage.com/136x246.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/136x246.png/5fa2dd/ffffff",
       "productcode": "0641-6139",
       "name": "Cherries - Maraschino,jar",
       "description": "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
@@ -10764,7 +10764,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 895,
-      "image": "http://dummyimage.com/240x164.png/dddddd/000000",
+      "image": "https://dummyimage.com/240x164.png/dddddd/000000",
       "productcode": "0093-9643",
       "name": "Fruit Salad Deluxe",
       "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -10776,7 +10776,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 896,
-      "image": "http://dummyimage.com/147x151.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/147x151.bmp/cc0000/ffffff",
       "productcode": "55111-230",
       "name": "Cabbage - Red",
       "description": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
@@ -10788,7 +10788,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 897,
-      "image": "http://dummyimage.com/218x219.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/218x219.jpg/dddddd/000000",
       "productcode": "60505-2554",
       "name": "Cheese - Manchego, Spanish",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -10800,7 +10800,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 898,
-      "image": "http://dummyimage.com/107x154.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/107x154.bmp/5fa2dd/ffffff",
       "productcode": "66116-447",
       "name": "Ecolab - Medallion",
       "description": "Nunc purus. Phasellus in felis.",
@@ -10812,7 +10812,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 899,
-      "image": "http://dummyimage.com/122x165.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/122x165.jpg/cc0000/ffffff",
       "productcode": "66915-605",
       "name": "Pepper - Jalapeno",
       "description": "Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.",
@@ -10824,7 +10824,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 900,
-      "image": "http://dummyimage.com/180x106.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/180x106.bmp/cc0000/ffffff",
       "productcode": "65862-249",
       "name": "Shrimp - Black Tiger 13/15",
       "description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
@@ -10836,7 +10836,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 901,
-      "image": "http://dummyimage.com/142x244.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/142x244.jpg/dddddd/000000",
       "productcode": "75870-001",
       "name": "Spice - Onion Powder Granulated",
       "description": "Praesent blandit. Nam nulla.",
@@ -10848,7 +10848,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 902,
-      "image": "http://dummyimage.com/189x152.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/189x152.jpg/5fa2dd/ffffff",
       "productcode": "60867-102",
       "name": "Cleaner - Lime Away",
       "description": "Nam nulla.",
@@ -10860,7 +10860,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 903,
-      "image": "http://dummyimage.com/190x189.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/190x189.bmp/ff4444/ffffff",
       "productcode": "57469-057",
       "name": "Shrimp, Dried, Small / Lb",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.",
@@ -10872,7 +10872,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 904,
-      "image": "http://dummyimage.com/188x154.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/188x154.png/ff4444/ffffff",
       "productcode": "50436-2899",
       "name": "Beef - Ground Lean Fresh",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
@@ -10884,7 +10884,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 905,
-      "image": "http://dummyimage.com/118x249.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/118x249.png/ff4444/ffffff",
       "productcode": "0065-0643",
       "name": "Coffee - Beans, Whole",
       "description": "In congue. Etiam justo.",
@@ -10896,7 +10896,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 906,
-      "image": "http://dummyimage.com/199x130.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/199x130.png/cc0000/ffffff",
       "productcode": "49884-412",
       "name": "Milk - Buttermilk",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
@@ -10908,7 +10908,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 907,
-      "image": "http://dummyimage.com/181x136.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/181x136.png/5fa2dd/ffffff",
       "productcode": "36987-1350",
       "name": "Dc Hikiage Hira Huba",
       "description": "Curabitur at ipsum ac tellus semper interdum.",
@@ -10920,7 +10920,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 908,
-      "image": "http://dummyimage.com/130x136.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/130x136.bmp/5fa2dd/ffffff",
       "productcode": "36987-2730",
       "name": "Brandy Apricot",
       "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
@@ -10932,7 +10932,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 909,
-      "image": "http://dummyimage.com/192x150.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/192x150.png/cc0000/ffffff",
       "productcode": "54868-4578",
       "name": "Lemonade - Natural, 591 Ml",
       "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
@@ -10944,7 +10944,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 910,
-      "image": "http://dummyimage.com/138x127.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/138x127.bmp/ff4444/ffffff",
       "productcode": "35356-053",
       "name": "Cheese - Havarti, Roasted Garlic",
       "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
@@ -10956,7 +10956,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 911,
-      "image": "http://dummyimage.com/195x239.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/195x239.bmp/cc0000/ffffff",
       "productcode": "68084-440",
       "name": "Nantucket - Carrot Orange",
       "description": "Morbi a ipsum.",
@@ -10968,7 +10968,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 912,
-      "image": "http://dummyimage.com/167x180.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/167x180.bmp/cc0000/ffffff",
       "productcode": "55714-4624",
       "name": "Loquat",
       "description": "In eleifend quam a odio. In hac habitasse platea dictumst.",
@@ -10980,7 +10980,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 913,
-      "image": "http://dummyimage.com/158x178.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/158x178.jpg/5fa2dd/ffffff",
       "productcode": "63629-1728",
       "name": "Cheese - Mascarpone",
       "description": "Pellentesque ultrices mattis odio.",
@@ -10992,7 +10992,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 914,
-      "image": "http://dummyimage.com/240x185.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/240x185.png/ff4444/ffffff",
       "productcode": "61314-245",
       "name": "Quail - Eggs, Fresh",
       "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -11004,7 +11004,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 915,
-      "image": "http://dummyimage.com/116x183.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/116x183.jpg/dddddd/000000",
       "productcode": "37000-775",
       "name": "Lettuce - California Mix",
       "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
@@ -11016,7 +11016,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 916,
-      "image": "http://dummyimage.com/236x220.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/236x220.jpg/dddddd/000000",
       "productcode": "59316-109",
       "name": "Tomatoes - Plum, Canned",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
@@ -11028,7 +11028,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 917,
-      "image": "http://dummyimage.com/180x108.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/180x108.png/ff4444/ffffff",
       "productcode": "42549-529",
       "name": "Transfer Sheets",
       "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
@@ -11040,7 +11040,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 918,
-      "image": "http://dummyimage.com/103x235.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/103x235.png/ff4444/ffffff",
       "productcode": "35356-921",
       "name": "Sauce - Salsa",
       "description": "Duis bibendum.",
@@ -11052,7 +11052,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 919,
-      "image": "http://dummyimage.com/199x123.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/199x123.bmp/5fa2dd/ffffff",
       "productcode": "68151-4123",
       "name": "Turkey - Oven Roast Breast",
       "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
@@ -11064,7 +11064,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 920,
-      "image": "http://dummyimage.com/173x145.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/173x145.jpg/ff4444/ffffff",
       "productcode": "31722-532",
       "name": "Lettuce - Iceberg",
       "description": "Quisque porta volutpat erat.",
@@ -11076,7 +11076,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 921,
-      "image": "http://dummyimage.com/139x120.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/139x120.bmp/cc0000/ffffff",
       "productcode": "61703-304",
       "name": "Longos - Chicken Caeser Salad",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
@@ -11088,7 +11088,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 922,
-      "image": "http://dummyimage.com/186x101.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/186x101.png/5fa2dd/ffffff",
       "productcode": "0677-1980",
       "name": "Wiberg Cure",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.",
@@ -11100,7 +11100,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 923,
-      "image": "http://dummyimage.com/175x204.png/dddddd/000000",
+      "image": "https://dummyimage.com/175x204.png/dddddd/000000",
       "productcode": "0093-2268",
       "name": "Truffle Cups Green",
       "description": "Ut at dolor quis odio consequat varius. Integer ac leo.",
@@ -11112,7 +11112,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 924,
-      "image": "http://dummyimage.com/123x234.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/123x234.bmp/5fa2dd/ffffff",
       "productcode": "63629-1558",
       "name": "Guava",
       "description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
@@ -11124,7 +11124,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 925,
-      "image": "http://dummyimage.com/235x227.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/235x227.jpg/ff4444/ffffff",
       "productcode": "11673-667",
       "name": "Tomato Puree",
       "description": "Nunc rhoncus dui vel sem.",
@@ -11136,7 +11136,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 926,
-      "image": "http://dummyimage.com/161x120.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/161x120.png/5fa2dd/ffffff",
       "productcode": "49288-0065",
       "name": "Pasta - Shells, Medium, Dry",
       "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
@@ -11148,7 +11148,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 927,
-      "image": "http://dummyimage.com/171x193.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/171x193.bmp/dddddd/000000",
       "productcode": "67938-0936",
       "name": "Soup Campbells Split Pea And Ham",
       "description": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.",
@@ -11160,7 +11160,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 928,
-      "image": "http://dummyimage.com/103x247.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/103x247.png/ff4444/ffffff",
       "productcode": "11410-923",
       "name": "Chilli Paste, Sambal Oelek",
       "description": "Etiam vel augue.",
@@ -11172,7 +11172,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 929,
-      "image": "http://dummyimage.com/138x206.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/138x206.bmp/dddddd/000000",
       "productcode": "49288-0203",
       "name": "Stainless Steel Cleaner Vision",
       "description": "Maecenas tincidunt lacus at velit.",
@@ -11184,7 +11184,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 930,
-      "image": "http://dummyimage.com/196x234.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/196x234.jpg/5fa2dd/ffffff",
       "productcode": "37808-314",
       "name": "Glaze - Apricot",
       "description": "Cras non velit nec nisi vulputate nonummy.",
@@ -11196,7 +11196,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 931,
-      "image": "http://dummyimage.com/157x131.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/157x131.png/cc0000/ffffff",
       "productcode": "76237-195",
       "name": "Dried Peach",
       "description": "Etiam justo. Etiam pretium iaculis justo.",
@@ -11208,7 +11208,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 932,
-      "image": "http://dummyimage.com/163x120.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/163x120.png/5fa2dd/ffffff",
       "productcode": "55289-984",
       "name": "Beef - Roasted, Cooked",
       "description": "Integer ac neque.",
@@ -11220,7 +11220,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 933,
-      "image": "http://dummyimage.com/138x238.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/138x238.bmp/cc0000/ffffff",
       "productcode": "37000-258",
       "name": "Mushroom - King Eryingii",
       "description": "Fusce consequat. Nulla nisl.",
@@ -11232,7 +11232,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 934,
-      "image": "http://dummyimage.com/122x168.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/122x168.bmp/5fa2dd/ffffff",
       "productcode": "31382-753",
       "name": "Wine - Pinot Noir Pond Haddock",
       "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -11244,7 +11244,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 935,
-      "image": "http://dummyimage.com/182x122.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/182x122.png/5fa2dd/ffffff",
       "productcode": "76053-003",
       "name": "Cheese - Feta",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -11256,7 +11256,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 936,
-      "image": "http://dummyimage.com/180x247.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/180x247.jpg/dddddd/000000",
       "productcode": "0603-9013",
       "name": "Flounder - Fresh",
       "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
@@ -11268,7 +11268,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 937,
-      "image": "http://dummyimage.com/193x151.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/193x151.png/ff4444/ffffff",
       "productcode": "48951-5045",
       "name": "Pie Filling - Cherry",
       "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -11280,7 +11280,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 938,
-      "image": "http://dummyimage.com/168x198.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/168x198.jpg/ff4444/ffffff",
       "productcode": "55154-4909",
       "name": "Tea - Herbal - 6 Asst",
       "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.",
@@ -11292,7 +11292,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 939,
-      "image": "http://dummyimage.com/206x116.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/206x116.bmp/ff4444/ffffff",
       "productcode": "76049-555",
       "name": "Yogurt - Strawberry, 175 Gr",
       "description": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
@@ -11304,7 +11304,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 940,
-      "image": "http://dummyimage.com/176x205.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/176x205.jpg/5fa2dd/ffffff",
       "productcode": "59726-225",
       "name": "Sauce - Sesame Thai Dressing",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
@@ -11316,7 +11316,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 941,
-      "image": "http://dummyimage.com/158x103.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/158x103.bmp/dddddd/000000",
       "productcode": "52426-120",
       "name": "Aspic - Light",
       "description": "In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
@@ -11328,7 +11328,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 942,
-      "image": "http://dummyimage.com/189x170.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/189x170.jpg/ff4444/ffffff",
       "productcode": "57483-003",
       "name": "Oil - Olive",
       "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
@@ -11340,7 +11340,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 943,
-      "image": "http://dummyimage.com/157x198.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/157x198.jpg/5fa2dd/ffffff",
       "productcode": "61924-208",
       "name": "Coriander - Ground",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus.",
@@ -11352,7 +11352,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 944,
-      "image": "http://dummyimage.com/124x200.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/124x200.bmp/5fa2dd/ffffff",
       "productcode": "63187-031",
       "name": "Kolrabi",
       "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
@@ -11364,7 +11364,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 945,
-      "image": "http://dummyimage.com/111x229.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/111x229.jpg/5fa2dd/ffffff",
       "productcode": "61570-079",
       "name": "Corn - Cream, Canned",
       "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
@@ -11376,7 +11376,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 946,
-      "image": "http://dummyimage.com/178x100.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/178x100.jpg/ff4444/ffffff",
       "productcode": "55154-2415",
       "name": "Irish Cream - Butterscotch",
       "description": "Cras in purus eu magna vulputate luctus.",
@@ -11388,7 +11388,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 947,
-      "image": "http://dummyimage.com/209x190.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/209x190.jpg/ff4444/ffffff",
       "productcode": "57627-168",
       "name": "Wine - Bouchard La Vignee Pinot",
       "description": "Etiam justo.",
@@ -11400,7 +11400,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 948,
-      "image": "http://dummyimage.com/147x119.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/147x119.png/cc0000/ffffff",
       "productcode": "63323-473",
       "name": "Fish - Artic Char, Cold Smoked",
       "description": "Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.",
@@ -11412,7 +11412,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 949,
-      "image": "http://dummyimage.com/163x187.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/163x187.png/ff4444/ffffff",
       "productcode": "42213-042",
       "name": "Corn Shoots",
       "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
@@ -11424,7 +11424,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 950,
-      "image": "http://dummyimage.com/238x180.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/238x180.png/5fa2dd/ffffff",
       "productcode": "42549-566",
       "name": "Olives - Black, Pitted",
       "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
@@ -11436,7 +11436,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 951,
-      "image": "http://dummyimage.com/157x142.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/157x142.bmp/5fa2dd/ffffff",
       "productcode": "51660-127",
       "name": "Rabbit - Legs",
       "description": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
@@ -11448,7 +11448,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 952,
-      "image": "http://dummyimage.com/202x120.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/202x120.png/ff4444/ffffff",
       "productcode": "68788-8999",
       "name": "Broom - Corn",
       "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
@@ -11460,7 +11460,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 953,
-      "image": "http://dummyimage.com/103x246.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/103x246.bmp/cc0000/ffffff",
       "productcode": "68570-812",
       "name": "Juice - Orange",
       "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
@@ -11472,7 +11472,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 954,
-      "image": "http://dummyimage.com/238x246.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/238x246.bmp/ff4444/ffffff",
       "productcode": "63323-542",
       "name": "Garlic",
       "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
@@ -11484,7 +11484,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 955,
-      "image": "http://dummyimage.com/157x137.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/157x137.jpg/cc0000/ffffff",
       "productcode": "57955-7295",
       "name": "Juice - V8 Splash",
       "description": "Fusce posuere felis sed lacus.",
@@ -11496,7 +11496,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 956,
-      "image": "http://dummyimage.com/182x192.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/182x192.jpg/ff4444/ffffff",
       "productcode": "67877-167",
       "name": "Carbonated Water - Peach",
       "description": "Pellentesque eget nunc.",
@@ -11508,7 +11508,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 957,
-      "image": "http://dummyimage.com/213x209.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/213x209.png/cc0000/ffffff",
       "productcode": "68645-424",
       "name": "Ham - Black Forest",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.",
@@ -11520,7 +11520,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 958,
-      "image": "http://dummyimage.com/205x133.png/dddddd/000000",
+      "image": "https://dummyimage.com/205x133.png/dddddd/000000",
       "productcode": "65517-0004",
       "name": "Wine - Fontanafredda Barolo",
       "description": "In hac habitasse platea dictumst.",
@@ -11532,7 +11532,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 959,
-      "image": "http://dummyimage.com/164x191.png/dddddd/000000",
+      "image": "https://dummyimage.com/164x191.png/dddddd/000000",
       "productcode": "43378-103",
       "name": "Snapple - Iced Tea Peach",
       "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
@@ -11544,7 +11544,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 960,
-      "image": "http://dummyimage.com/166x216.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/166x216.jpg/5fa2dd/ffffff",
       "productcode": "76237-201",
       "name": "Jicama",
       "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
@@ -11556,7 +11556,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 961,
-      "image": "http://dummyimage.com/185x190.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/185x190.bmp/cc0000/ffffff",
       "productcode": "63402-312",
       "name": "Breadfruit",
       "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
@@ -11568,7 +11568,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 962,
-      "image": "http://dummyimage.com/167x156.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/167x156.png/5fa2dd/ffffff",
       "productcode": "0363-0126",
       "name": "Club Soda - Schweppes, 355 Ml",
       "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
@@ -11580,7 +11580,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 963,
-      "image": "http://dummyimage.com/148x118.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/148x118.bmp/ff4444/ffffff",
       "productcode": "24090-721",
       "name": "Chicken - Base, Ultimate",
       "description": "In quis justo.",
@@ -11592,7 +11592,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 964,
-      "image": "http://dummyimage.com/170x198.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/170x198.bmp/cc0000/ffffff",
       "productcode": "76049-005",
       "name": "Cabbage - Nappa",
       "description": "In eleifend quam a odio.",
@@ -11604,7 +11604,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 965,
-      "image": "http://dummyimage.com/143x181.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/143x181.png/ff4444/ffffff",
       "productcode": "51009-119",
       "name": "Turnip - White",
       "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.",
@@ -11616,7 +11616,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 966,
-      "image": "http://dummyimage.com/127x216.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/127x216.bmp/cc0000/ffffff",
       "productcode": "41250-289",
       "name": "Cookies Almond Hazelnut",
       "description": "Nunc rhoncus dui vel sem. Sed sagittis.",
@@ -11628,7 +11628,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 967,
-      "image": "http://dummyimage.com/102x183.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/102x183.jpg/cc0000/ffffff",
       "productcode": "60505-2502",
       "name": "Urban Zen Drinks",
       "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -11640,7 +11640,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 968,
-      "image": "http://dummyimage.com/145x132.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/145x132.jpg/5fa2dd/ffffff",
       "productcode": "36987-2920",
       "name": "Flour - Whole Wheat",
       "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
@@ -11652,7 +11652,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 969,
-      "image": "http://dummyimage.com/241x235.png/dddddd/000000",
+      "image": "https://dummyimage.com/241x235.png/dddddd/000000",
       "productcode": "63736-051",
       "name": "Cheese - Mozzarella",
       "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.",
@@ -11664,7 +11664,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 970,
-      "image": "http://dummyimage.com/139x238.png/dddddd/000000",
+      "image": "https://dummyimage.com/139x238.png/dddddd/000000",
       "productcode": "0363-0392",
       "name": "Beef Wellington",
       "description": "Aenean sit amet justo. Morbi ut odio.",
@@ -11676,7 +11676,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 971,
-      "image": "http://dummyimage.com/186x212.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/186x212.bmp/dddddd/000000",
       "productcode": "0591-5883",
       "name": "Lotus Root",
       "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
@@ -11688,7 +11688,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 972,
-      "image": "http://dummyimage.com/187x138.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/187x138.png/ff4444/ffffff",
       "productcode": "60267-705",
       "name": "Saskatoon Berries - Frozen",
       "description": "Nulla suscipit ligula in lacus.",
@@ -11700,7 +11700,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 973,
-      "image": "http://dummyimage.com/245x198.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/245x198.png/ff4444/ffffff",
       "productcode": "13668-048",
       "name": "Ham - Virginia",
       "description": "Nullam sit amet turpis elementum ligula vehicula consequat.",
@@ -11712,7 +11712,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 974,
-      "image": "http://dummyimage.com/245x142.png/dddddd/000000",
+      "image": "https://dummyimage.com/245x142.png/dddddd/000000",
       "productcode": "42367-202",
       "name": "Pail - 15l White, With Handle",
       "description": "In hac habitasse platea dictumst.",
@@ -11724,7 +11724,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 975,
-      "image": "http://dummyimage.com/101x219.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/101x219.bmp/ff4444/ffffff",
       "productcode": "59667-0055",
       "name": "Turnip - Wax",
       "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum.",
@@ -11736,7 +11736,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 976,
-      "image": "http://dummyimage.com/120x156.png/dddddd/000000",
+      "image": "https://dummyimage.com/120x156.png/dddddd/000000",
       "productcode": "42388-014",
       "name": "Wine - Red, Mosaic Zweigelt",
       "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
@@ -11748,7 +11748,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 977,
-      "image": "http://dummyimage.com/193x208.png/dddddd/000000",
+      "image": "https://dummyimage.com/193x208.png/dddddd/000000",
       "productcode": "64760-408",
       "name": "Wooden Mop Handle",
       "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
@@ -11760,7 +11760,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 978,
-      "image": "http://dummyimage.com/248x161.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/248x161.jpg/ff4444/ffffff",
       "productcode": "54569-5126",
       "name": "Crab - Meat",
       "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
@@ -11772,7 +11772,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 979,
-      "image": "http://dummyimage.com/235x222.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/235x222.jpg/cc0000/ffffff",
       "productcode": "43742-0325",
       "name": "Muffin Batt - Carrot Spice",
       "description": "Vestibulum rutrum rutrum neque.",
@@ -11784,7 +11784,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 980,
-      "image": "http://dummyimage.com/200x229.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/200x229.png/cc0000/ffffff",
       "productcode": "54868-6097",
       "name": "Wine - Chardonnay South",
       "description": "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
@@ -11796,7 +11796,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 981,
-      "image": "http://dummyimage.com/240x183.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/240x183.jpg/ff4444/ffffff",
       "productcode": "55910-306",
       "name": "Onions - Spanish",
       "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
@@ -11808,7 +11808,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 982,
-      "image": "http://dummyimage.com/140x190.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/140x190.bmp/dddddd/000000",
       "productcode": "69152-0065",
       "name": "Goulash Seasoning",
       "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
@@ -11820,7 +11820,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 983,
-      "image": "http://dummyimage.com/215x125.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/215x125.png/5fa2dd/ffffff",
       "productcode": "59767-004",
       "name": "Shrimp - 21/25, Peel And Deviened",
       "description": "In quis justo.",
@@ -11832,7 +11832,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 984,
-      "image": "http://dummyimage.com/216x145.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/216x145.png/5fa2dd/ffffff",
       "productcode": "36987-2354",
       "name": "Shrimp - Black Tiger 8 - 12",
       "description": "Vivamus vestibulum sagittis sapien.",
@@ -11844,7 +11844,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 985,
-      "image": "http://dummyimage.com/130x177.bmp/dddddd/000000",
+      "image": "https://dummyimage.com/130x177.bmp/dddddd/000000",
       "productcode": "63187-141",
       "name": "Beer - Creemore",
       "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
@@ -11856,7 +11856,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 986,
-      "image": "http://dummyimage.com/192x221.bmp/ff4444/ffffff",
+      "image": "https://dummyimage.com/192x221.bmp/ff4444/ffffff",
       "productcode": "0268-1107",
       "name": "Chips Potato Salt Vinegar 43g",
       "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
@@ -11868,7 +11868,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 987,
-      "image": "http://dummyimage.com/190x163.png/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/190x163.png/5fa2dd/ffffff",
       "productcode": "36987-1213",
       "name": "Asparagus - White, Fresh",
       "description": "Praesent blandit.",
@@ -11880,7 +11880,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 988,
-      "image": "http://dummyimage.com/200x189.jpg/ff4444/ffffff",
+      "image": "https://dummyimage.com/200x189.jpg/ff4444/ffffff",
       "productcode": "50154-5000",
       "name": "Steampan - Foil",
       "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
@@ -11892,7 +11892,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 989,
-      "image": "http://dummyimage.com/116x137.jpg/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/116x137.jpg/5fa2dd/ffffff",
       "productcode": "49967-129",
       "name": "Oil - Coconut",
       "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
@@ -11904,7 +11904,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 990,
-      "image": "http://dummyimage.com/191x174.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/191x174.png/ff4444/ffffff",
       "productcode": "42961-012",
       "name": "Coffee - Cafe Moreno",
       "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum.",
@@ -11916,7 +11916,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 991,
-      "image": "http://dummyimage.com/133x176.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/133x176.png/ff4444/ffffff",
       "productcode": "58118-0016",
       "name": "Corn Shoots",
       "description": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.",
@@ -11928,7 +11928,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 992,
-      "image": "http://dummyimage.com/190x105.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/190x105.bmp/cc0000/ffffff",
       "productcode": "55648-781",
       "name": "Turkey - Breast, Smoked",
       "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.",
@@ -11940,7 +11940,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 993,
-      "image": "http://dummyimage.com/153x242.jpg/cc0000/ffffff",
+      "image": "https://dummyimage.com/153x242.jpg/cc0000/ffffff",
       "productcode": "35000-067",
       "name": "Cinnamon - Stick",
       "description": "Proin risus.",
@@ -11952,7 +11952,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 994,
-      "image": "http://dummyimage.com/213x124.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/213x124.jpg/dddddd/000000",
       "productcode": "15127-283",
       "name": "Potatoes - Idaho 80 Count",
       "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
@@ -11964,7 +11964,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 995,
-      "image": "http://dummyimage.com/233x116.png/cc0000/ffffff",
+      "image": "https://dummyimage.com/233x116.png/cc0000/ffffff",
       "productcode": "43063-443",
       "name": "Pastry - Key Limepoppy Seed Tea",
       "description": "Fusce consequat. Nulla nisl. Nunc nisl.",
@@ -11976,7 +11976,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 996,
-      "image": "http://dummyimage.com/185x112.bmp/5fa2dd/ffffff",
+      "image": "https://dummyimage.com/185x112.bmp/5fa2dd/ffffff",
       "productcode": "10544-202",
       "name": "Grapes - Black",
       "description": "Nullam molestie nibh in lectus.",
@@ -11988,7 +11988,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 997,
-      "image": "http://dummyimage.com/203x168.bmp/cc0000/ffffff",
+      "image": "https://dummyimage.com/203x168.bmp/cc0000/ffffff",
       "productcode": "67046-222",
       "name": "Lobster - Tail 6 Oz",
       "description": "Etiam justo.",
@@ -12000,7 +12000,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 998,
-      "image": "http://dummyimage.com/188x109.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/188x109.png/ff4444/ffffff",
       "productcode": "67938-1044",
       "name": "Beer - True North Lager",
       "description": "Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
@@ -12012,7 +12012,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 999,
-      "image": "http://dummyimage.com/104x231.png/ff4444/ffffff",
+      "image": "https://dummyimage.com/104x231.png/ff4444/ffffff",
       "productcode": "0002-8148",
       "name": "Oregano - Dry, Rubbed",
       "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.",
@@ -12024,7 +12024,7 @@ const PRODUCTS:IProduct[] =
   },
   {
       "id": 1000,
-      "image": "http://dummyimage.com/130x247.jpg/dddddd/000000",
+      "image": "https://dummyimage.com/130x247.jpg/dddddd/000000",
       "productcode": "24236-584",
       "name": "Chutney Sauce",
       "description": "Donec ut dolor.",

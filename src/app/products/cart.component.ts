@@ -1,7 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {ProductService, IProduct} from './shared/index';
 import {ActivatedRoute, Params} from '@angular/router';
-import {ToastrService} from './common/toastr.service';
 
 import {LocalStorageService} from 'ngx-webstorage';
 
@@ -37,11 +36,7 @@ import {LocalStorageService} from 'ngx-webstorage';
 })
 export class CartComponent {
   productsInCart: IProduct[];
-  constructor(
-    private toastr: ToastrService,
-    private route: ActivatedRoute,
-    private localSt: LocalStorageService
-  ) {}
+  constructor(private route: ActivatedRoute, private localSt: LocalStorageService) {}
   ngOnInit() {
     if (this.localSt.retrieve('productsInCart')) {
       this.productsInCart = this.localSt.retrieve('productsInCart');
@@ -57,6 +52,5 @@ export class CartComponent {
     });
     this.productsInCart.splice(spliceIndex, 1);
     this.localSt.store('productsInCart', this.productsInCart);
-    this.toastr.info('Item deleted.');
   }
 }

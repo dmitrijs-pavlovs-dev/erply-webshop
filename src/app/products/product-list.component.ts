@@ -1,7 +1,6 @@
 import {Component, OnInit, Inject, ViewChild} from '@angular/core';
 import {IProduct, PagerService} from './shared';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ToastrService} from './common/toastr.service';
 import {LocalStorageService} from 'ngx-webstorage';
 
 @Component({
@@ -23,7 +22,6 @@ export class ProductListComponent implements OnInit {
   visibleProducts: IProduct[] = [];
 
   constructor(
-    private toastr: ToastrService,
     private route: ActivatedRoute,
     private router: Router,
     private pagerService: PagerService,
@@ -59,14 +57,9 @@ export class ProductListComponent implements OnInit {
     );
   }
   addProductToCard(product) {
-    if (product.instock) {
-      this.productsInCart.push(product);
-      this.localSt.store('productsInCart', this.productsInCart);
-
-      this.toastr.success(product.name + ' added to cart !');
-    } else {
-      this.toastr.error(product.name + ' not in stock!');
-    }
+    product.instock;
+    this.productsInCart.push(product);
+    this.localSt.store('productsInCart', this.productsInCart);
   }
   applyFilters1(event) {
     this.filterByStore = event.value;

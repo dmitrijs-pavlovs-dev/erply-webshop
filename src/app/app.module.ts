@@ -15,8 +15,7 @@ import {
   ProductListResolver,
   ProductDetailsComponent,
   MaterialModule,
-  CartComponent,
-  ToastrService
+  CartComponent
 } from './products/index';
 
 @NgModule({
@@ -36,7 +35,7 @@ import {
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ToastrService, ProductListResolver, PagerService, ProductService],
+  providers: [ProductListResolver, PagerService, ProductService],
   bootstrap: [WebshopAppComponent]
 })
 export class AppModule {}

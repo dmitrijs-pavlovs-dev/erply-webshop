@@ -1,7 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {IProduct} from './shared/index';
 import {ActivatedRoute, Params} from '@angular/router';
-import {ToastrService} from './common/toastr.service';
 import {LocalStorageService} from 'ngx-webstorage';
 
 @Component({
@@ -42,11 +41,7 @@ export class ProductDetailsComponent {
   products: IProduct[];
   productsInCart: IProduct[] = [];
   id: number;
-  constructor(
-    private toastr: ToastrService,
-    private route: ActivatedRoute,
-    private localSt: LocalStorageService
-  ) {}
+  constructor(private route: ActivatedRoute, private localSt: LocalStorageService) {}
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.route.params.forEach((params: Params) => {
@@ -62,12 +57,7 @@ export class ProductDetailsComponent {
     }
   }
   addProductToCard(product) {
-    if (product.instock) {
-      this.productsInCart.push(product);
-      this.localSt.store('productsInCart', this.productsInCart);
-      this.toastr.success(product.name + ' added to cart !');
-    } else {
-      this.toastr.error(product.name + ' not in stock!');
-    }
+    this.productsInCart.push(product);
+    this.localSt.store('productsInCart', this.productsInCart);
   }
 }
