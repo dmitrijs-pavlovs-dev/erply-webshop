@@ -1,0 +1,28 @@
+<h1>Product details</h1>
+<mat-divider></mat-divider>
+<mat-toolbar>
+    <div class="toolbarItem"></div>
+    <button [matBadge]="productsInCart.length" mat-raised-button color="warm" [routerLink]="['/cart']">My cart
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-raised-button color="warm" [routerLink]="['/products']">Home
+        <mat-icon>home</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-card>
+    <h1>{{product.name}}</h1>
+    <img [src]="product.image" [alt]="product.name">
+    <h6>Department: {{product.department}}</h6>
+    <h6>Store: {{product.store}}</h6>
+    <h6 *ngIf="product.instock">Availability: In stock</h6>
+    <h6 *ngIf="!product.instock">Availability: Not in stock</h6>
+    <p>
+        Description: {{product.description}}
+    </p>
+    <h4>
+        Price: {{product.price}} {{product.currency}}
+    </h4>
+    <button mat-raised-button color="warm" (click)=addProductToCard(product)>Add to cart
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+</mat-card>

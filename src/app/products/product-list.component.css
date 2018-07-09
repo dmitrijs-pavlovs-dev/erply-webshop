@@ -1,0 +1,65 @@
+mat-toolbar .toolbarItem {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+mat-toolbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 10px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+mat-toolbar .pagnav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+mat-toolbar a {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 992px) {
+  .pagnav-Pagebar {
+    display: none;
+  }
+}
+.productlist-wrapper {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+mat-card {
+  flex-basis: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 5px;
+}
+mat-card-content {
+  flex-grow: 1;
+}
+mat-card-footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 2px;
+}
+mat-card-footer h6 {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+mat-card img {
+  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
+  height: 250px;
+  width: 250px;
+}
+mat-toolbar button {
+  margin-left: 10px;
+  margin-right: 10px;
+}

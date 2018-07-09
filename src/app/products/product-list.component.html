@@ -1,0 +1,78 @@
+<h1>Store products</h1>
+<mat-divider></mat-divider>
+<mat-toolbar>
+    <mat-checkbox (change)="applyFilters2($event)">Show available only</mat-checkbox>
+
+    <div class=toolbarItem>
+        <mat-form-field>
+            <mat-select placeholder="Store" (selectionChange)="applyFilters1($event)">
+                <mat-option *ngFor="let store of availableStores" [value]="store">{{store}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button [matBadge]="productsInCart.length" mat-raised-button color="warm" [routerLink]="['/cart']">My cart
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-raised-button color="warm" [routerLink]="['/products']">Home
+            <mat-icon>home</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+<div class="productlist-wrapper">
+    <mat-card *ngFor="let product of pagedItems">
+
+        <div></div>
+        <mat-card-header [routerLink]="['/products', product.id]">
+            <div mat-card-avatar [ngStyle]="{background: 'url(' + product.image + ') no-repeat center center ',
+             'background-size': 'cover'}"></div>
+            <mat-card-title>
+                <h5>{{product.name}}</h5>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <h6>{{product.store}}</h6>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+
+        </mat-card-content>
+        <mat-card-footer>
+            <h6>
+                Price: {{product.price}} {{product.currency}}
+            </h6>
+            <button mat-button color="warm" (click)=addProductToCard(product)>Add to cart
+                <mat-icon>shopping_cart</mat-icon>
+            </button>
+        </mat-card-footer>
+    </mat-card>
+</div>
+<mat-toolbar>
+    <mat-card-content></mat-card-content>
+    <div *ngIf="pager.pages && pager.pages.length" class="pagnav">
+
+
+        <div class="pagnav-item pagnav-Pagebar" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)" mat-icon-button [color]="page===pager.currentPage?'accent':'warm'">
+                {{page}}</a>
+        </div>
+        <div class="pagnav-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)" mat-icon-button>
+                <mat-icon>first_page</mat-icon>
+            </a>
+        </div>
+        <div class="pagnav-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)" mat-icon-button>
+                <mat-icon>chevron_left</mat-icon>
+            </a>
+        </div>
+        <div class="pagnav-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)" mat-icon-button>
+                <mat-icon>chevron_right</mat-icon>
+            </a>
+        </div>
+        <div class="pagnav-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)" mat-icon-button>
+                <mat-icon>last_page</mat-icon>
+            </a>
+        </div>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,20 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 25px;
+}
+.basic-container {
+  padding: 30px;
+}
+mat-card:hover {
+  background-color: #f0f0f033;
+}
+mat-card mat-card-header {
+  cursor: pointer;
+}
+.toast-success {
+  background-color: #314c85;
+}
+.toast-info {
+  background-color: #bfcfd4;
+}

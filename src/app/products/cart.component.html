@@ -1,0 +1,33 @@
+<h1>My cart</h1>
+<mat-divider></mat-divider>
+<mat-toolbar>
+  <div class="toolbarItem"></div>
+  <button [matBadge]="productsInCart.length" mat-raised-button color="warm" [routerLink]="['/cart']">My cart
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button mat-raised-button color="warm" [routerLink]="['/products']">Home
+    <mat-icon>home</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-card *ngIf="productsInCart.length===0">Cart Is empty</mat-card>
+
+<mat-card *ngIf="productsInCart.length>0">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let product of productsInCart">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div mat-card-avatar [ngStyle]="{background: 'url(' + product.image + ') no-repeat center center ',
+                        'background-size': 'cover'}"></div>
+          {{product.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p> {{product.department}}</p>
+      <p> {{product.description}}</p>
+      <mat-action-row>
+        <button mat-button (click)=deleteFromCart(product.id)>
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
