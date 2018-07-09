@@ -4,7 +4,7 @@ export interface IProduct {
   productcode: string;
   name: string;
   description: string;
-  department: number;
+  department: string;
   price: number;
   currency: string;
   store: string;
