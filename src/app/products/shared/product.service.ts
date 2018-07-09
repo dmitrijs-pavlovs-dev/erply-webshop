@@ -6,6 +6,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable()
 export class ProductService {
   private apiUrl = 'https://erply-challenge.herokuapp.com';
+
   constructor(private http: HttpClient) {}
   getProducts(): Observable<IProduct[]> {
     let options = {
