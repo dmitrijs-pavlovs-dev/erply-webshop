@@ -19,7 +19,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css", "src/customTheme.scss"]
+            "styles": [
+              "../erply-webshop/node_modules/toastr/build/toastr.min.css",
+              "src/styles.css",
+              "src/customTheme.scss"
+            ],
+            "scripts": [
+              "../erply-webshop/node_modules/jquery/dist/jquery.min.js",
+              "../erply-webshop/node_modules/toastr/build/toastr.min.js"
+            ]
           },
           "configurations": {
             "production": {
