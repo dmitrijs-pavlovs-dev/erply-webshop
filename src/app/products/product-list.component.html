@@ -29,7 +29,8 @@
             </mat-card-title>
             <mat-card-subtitle>
                 <h6>{{product.store}}</h6>
-                <h6>{{product.instock}}</h6>
+                <h6 *ngIf="product.instock">Availability: In stock</h6>
+                <h6 *ngIf="!product.instock">Availability: Not in stock</h6>
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
