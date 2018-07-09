@@ -23,8 +23,7 @@
               "../erply-webshop/node_modules/toastr/build/toastr.min.css",
               "src/styles.css",
               "src/customTheme.scss"
-            ],
-            "scripts": ["../erply-webshop/node_modules/toastr/build/toastr.min.js"]
+            ]
           },
           "configurations": {
             "production": {
