@@ -1,8 +1,12 @@
 # ErplyWebshop 
 https://erply-webshop.herokuapp.com/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
-
 ## Development server
 
-Run `ng run build` for a dev server. Navigate to `http://localhost:8080/`. The build artifacts will be stored in the `dist/` directory. 
+- Install npm and node https://nodejs.org/en/.
+- Download project or run `git clone https://github.com/dayrim/erply-webshop.git` to clone project.
+- Go to project root.
+- Run `npm install` to download all flagged dependencies and build the project. All build artifacts will be stored in the `dist/` directory.
+- Run `npm start` to start development server.
+- Navigate to `http://localhost:8080/`.
+
